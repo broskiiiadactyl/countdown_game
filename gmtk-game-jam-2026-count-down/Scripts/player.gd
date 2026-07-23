@@ -1,9 +1,9 @@
 extends Camera3D
 
 @export_group("Bounds") #in degrees from camera origin
-@export var max_yaw : float = 8.0
+@export var max_yaw : float = 100.0
 @export var max_pitch : float = 5.0
-@export var move_scale : float = 0.5
+@export var move_scale : float = 0.25
 
 #init starting camera position as the origin from which to calculate relative mouse position
 @onready var start_basis : Basis = self.basis
@@ -17,7 +17,7 @@ func _process(_delta: float) -> void:
 	mouse = mouse.clamp(rect.position, rect.end)
 	
 	#normalize mouse to camera basis
-	var normalized = (mouse - rect.size * move_scale) / (rect.size * move_scale)
+	var normalized = ((mouse - rect.size/2) / (rect.size/2)) * move_scale
 	
 	#clamp pitch (y) and yaw (x) within defined bounds
 	var yaw = deg_to_rad(-normalized.x * max_yaw)

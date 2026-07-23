@@ -27,9 +27,10 @@ func _on_door_l_mouse_entered() -> void:
 	door = "Left"
 	Input.set_default_cursor_shape(Input.CURSOR_IBEAM)
 
+
 func _on_door_l_mouse_exited() -> void:
 	is_mouse_over = false
-	door = "Foyer"
+	#door = "Foyer"
 	Input.set_default_cursor_shape(Input.CURSOR_ARROW)
 
 
@@ -37,21 +38,11 @@ func _on_door_l_mouse_exited() -> void:
 func _on_door_r_mouse_entered() -> void:
 	is_mouse_over = true
 	door = "Right"
+	print("Entered right")
 	Input.set_default_cursor_shape(Input.CURSOR_IBEAM)
 
 func _on_door_r_mouse_exited() -> void:
 	is_mouse_over = false
-	door = "Foyer"
-	Input.set_default_cursor_shape(Input.CURSOR_ARROW)
-
-
-#Front Door
-func _on_door_f_mouse_entered() -> void:
-	is_mouse_over = true
-	door = "Front"
-	Input.set_default_cursor_shape(Input.CURSOR_IBEAM)
-
-func _on_door_f_mouse_exited() -> void:
-	is_mouse_over = false
-	door = "Foyer"
+	#door = "Foyer"
+	print("Exited Right")
 	Input.set_default_cursor_shape(Input.CURSOR_ARROW)
