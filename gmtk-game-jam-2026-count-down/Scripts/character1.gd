@@ -1,16 +1,15 @@
 extends StaticBody3D
 
 var is_mouse_over : bool = false
+var has_met : bool = false
 
 
 var resource := "res://Dialogue/some_dialogue.dialogue"
 
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	print(resource)
-	pass # Replace with function body.
+	DialogueManager.dialogue_ended.connect(test)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -23,7 +22,6 @@ func _unhandled_input(event: InputEvent) -> void:
 		self.visible = false
 		#spawn in dialogue position
 		DialogueManager.show_example_dialogue_balloon(load(resource), "start")
-		await DialogueManager.dialogue_ended.connect(test)
 
 
 func _on_mouse_entered() -> void:

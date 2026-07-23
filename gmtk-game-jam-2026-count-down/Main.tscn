@@ -2,10 +2,13 @@
 
 [ext_resource type="Script" uid="uid://y7hbvbsbi8w4" path="res://Scripts/main.gd" id="1_fos0i"]
 [ext_resource type="Texture2D" uid="uid://dwjfvgkk63uqe" path="res://Assets/Test/skybox-space.png" id="1_r0du0"]
-[ext_resource type="PackedScene" uid="uid://4dg2g8xa40vf" path="res://Scenes/room1.tscn" id="1_uu6xs"]
+[ext_resource type="PackedScene" uid="uid://4dg2g8xa40vf" path="res://Scenes/Foyer.tscn" id="1_uu6xs"]
 [ext_resource type="PackedScene" uid="uid://bt37vltorrs6j" path="res://Scenes/character1.tscn" id="2_r0du0"]
 [ext_resource type="Script" uid="uid://4aeb1xe7ombx" path="res://Scripts/player.gd" id="4_cm0pq"]
+[ext_resource type="PackedScene" uid="uid://cedc7tdt05uw0" path="res://Scenes/Garden.tscn" id="4_trn2v"]
+[ext_resource type="PackedScene" uid="uid://cw8u2l6n3t4k" path="res://Scenes/Kitchen.tscn" id="5_03owx"]
 [ext_resource type="PackedScene" uid="uid://dfxvimp776pvm" path="res://Scenes/journal.tscn" id="6_3dxm6"]
+[ext_resource type="PackedScene" uid="uid://c7snsflexnn8p" path="res://Scenes/Library.tscn" id="6_03owx"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_cm0pq"]
 panorama = ExtResource("1_r0du0")
@@ -41,23 +44,26 @@ color = Color(0, 0, 0, 0)
 
 [node name="Rooms" type="Node3D" parent="." unique_id=1488119261]
 
-[node name="Room1" parent="Rooms" unique_id=225874475 instance=ExtResource("1_uu6xs")]
+[node name="Foyer" parent="Rooms" unique_id=225874475 instance=ExtResource("1_uu6xs")]
 unique_name_in_owner = true
 
-[node name="Room2" parent="Rooms" unique_id=171716780 instance=ExtResource("1_uu6xs")]
+[node name="Garden" parent="Rooms" unique_id=1939298819 instance=ExtResource("4_trn2v")]
 unique_name_in_owner = true
 process_mode = 4
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.598193, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12)
+visible = false
 
-[node name="Room3" parent="Rooms" unique_id=1305232497 instance=ExtResource("1_uu6xs")]
+[node name="Kitchen" parent="Rooms" unique_id=253366505 instance=ExtResource("5_03owx")]
 unique_name_in_owner = true
 process_mode = 4
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.421382, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 0)
+visible = false
 
-[node name="Room4" parent="Rooms" unique_id=1943537448 instance=ExtResource("1_uu6xs")]
+[node name="Library" parent="Rooms" unique_id=1309834914 instance=ExtResource("6_03owx")]
 unique_name_in_owner = true
 process_mode = 4
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -15.62252)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, 0)
+visible = false
 
 [node name="Characters" type="Node3D" parent="." unique_id=2007826507]
 

@@ -13,10 +13,10 @@ var can_move : bool = false
 var is_talking : bool = false
 
 #init room vars
-@onready var foyer : Node3D = %Room1
-@onready var right : Node3D = %Room3
-@onready var left : Node3D = %Room2
-@onready var front : Node3D = %Room4
+@onready var foyer : Node3D = %Foyer
+@onready var kitchen : Node3D = %Kitchen
+@onready var library : Node3D = %Library
+@onready var garden : Node3D = %Garden
 
 #Camera vars
 @onready var camera : Camera3D = %PlayerCamera
@@ -48,12 +48,7 @@ func _process(_delta: float) -> void:
 			pass
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_right"):
-		#some kind of transition effect?
-		camera.global_position = %Room2.get_node("%CameraPos").global_position
-	if event.is_action_pressed("ui_left"):
-		#some kind of transition effect?
-		camera.global_position = %Room1.get_node("%CameraPos").global_position
+	pass
 
 
 func count_down(blocks : int) -> void:
@@ -64,20 +59,23 @@ func count_down(blocks : int) -> void:
 func transition_to_room(room : String) -> void:
 	var target : Node3D
 	
+	print("room: ", room)
+	
 	match room:
 		"Foyer":
 			target = foyer
-		"Right":
-			target = right
-		"Left":
-			target = left
-		"Front":
-			target = front
+		"Kitchen":
+			target = kitchen
+		"Library":
+			target = library
+		"Garden":
+			target = garden
 		_:
 			target = foyer
 	
 	target_room = target
-	#print("Active: ", active_room, "\n", "Target: ", target)
+	camera.max_yaw = target.max_yaw
+	print("Active: ", active_room, "\n", "Target: ", target)
 	
 	#is already in the target room do nothing
 	if target == active_room:
@@ -138,6 +136,7 @@ func murder_someone() -> bool:
 	#place body in murder room
 	#randomly place all other characters
 	#set starting room for player (active_room)
+	#set camera yaw based on active room
 	#once everything is loaded in, return true
 	return true
 	
