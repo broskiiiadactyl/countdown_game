@@ -1,0 +1,13 @@
+~ start
+%3 Wide Komaeda: Hey
+%3 Wide Komaeda: Yo
+% Wide Komaeda: Fuck you
+Wide Komaeda: Did you know...
+- What?
+	Wide Komaeda: I can't actually speak.
+	Wide Komaeda: This is simply [wave]stolen dialogue[/wave].  
+- Not interested
+	Wide Komaeda: What the fuck,[br] [color=crimson][font_size=50]R[wait=0.1] U[wait=0.1] D[wait=0.1] E[wait=0.1][/font_size][/color].
+	Wide Komaeda: You know what? [color=crimson]No more game for you[/color].[next=1]
+	do get_tree().quit()
+=> END

@@ -7,6 +7,11 @@ extends Node3D
 ##Dictates the remaining time blocks on scene start. Default is 16.
 @export var current_time : int = 16
 
+enum gamestate {MENU, MOVE, SPEAK}
+var active_state : gamestate = gamestate.MOVE
+var can_move : bool = false
+var is_talking : bool = false
+
 #init room vars
 @onready var foyer : Node3D = %Room1
 @onready var right : Node3D = %Room3
@@ -21,14 +26,26 @@ var trans_speed : float = 25.0
 var trans_time : float = 0.25
 @onready var active_room : Node3D = foyer
 var target_room : Node3D
+var mouse_pos : Vector2 = Vector2.ZERO
 
 func _ready() -> void:
+	Globals.trans.connect(transition_to_room)
+	
 	#init start scenario
 	Input.set_custom_mouse_cursor(Globals.arrow)
+	mouse_pos = get_viewport().get_visible_rect().size / 2
 	murder_someone()
+	
+	set_active_state(gamestate.MOVE)
 
 func _process(_delta: float) -> void:
-	pass
+	match active_state:
+		gamestate.MENU:
+			pass
+		gamestate.MOVE:
+			pass
+		gamestate.SPEAK:
+			pass
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_right"):
@@ -96,6 +113,22 @@ func transition_to_room(room : String) -> void:
 	active_room = target
 	pass
 
+
+func set_active_state(state : gamestate) -> void:
+	match state:
+		gamestate.MENU:
+			can_move = false
+			is_talking = false
+		gamestate.MOVE:
+			can_move = true
+			is_talking = false
+			camera.process_mode = Node.PROCESS_MODE_ALWAYS
+			Input.warp_mouse(mouse_pos)
+		gamestate.SPEAK:
+			can_move = false
+			is_talking = true
+			camera.process_mode = Node.PROCESS_MODE_DISABLED
+			mouse_pos = get_viewport().get_mouse_position()
 
 func murder_someone() -> bool:
 	#init character traits
