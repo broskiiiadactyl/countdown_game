@@ -1,13 +1,23 @@
 ~ start
-%3 Wide Komaeda: Hey
-%3 Wide Komaeda: Yo
-% Wide Komaeda: Fuck you
-Wide Komaeda: Did you know...
-- What?
-	Wide Komaeda: I can't actually speak.
-	Wide Komaeda: This is simply [wave]stolen dialogue[/wave].  
-- Not interested
-	Wide Komaeda: What the fuck,[br] [color=crimson][font_size=50]R[wait=0.1] U[wait=0.1] D[wait=0.1] E[wait=0.1][/font_size][/color].
-	Wide Komaeda: You know what? [color=crimson]No more game for you[/color].[next=1]
-	do get_tree().quit()
+Suspiciously Buff Tiger: Howdy.
+Clay: Name's Clay. 'Fore you ask, Yes.
+Clay: I am a [color=crimson]cowboy catboy[/color].
+Clay: Now that that's out the way, you the detective they called for?[br]You a little tender aintcha?
+Clay: Well nice ta meet ya and I didn't do it...
+~ nuetral
+% Clay: [wait=1] Speak fast, bud.
+% Clay:[wait=1] Somethin' you need?
+% Clay: [wait=1] Don't touch the ears or the hat.
+- Who do you think did it?
+	Clay:  Well... Can't say I rightly know.[br]Don't judge 'em till I know 'em.[br]And I ain't ever known no murderer.
+	=> nuetral
+- Tell me about yourself.
+	Clay: Not much to say. I like steerin'[wait=0.5], rearin', [wait=0.5]and nappin'.
+	Clay: Was called to the Manor by the Count on account of some manners he forgot to have.
+	Clay: Point is, I didn't kill 'em. And that's that.
+	=> nuetral
 => END
+
+#  [if SomeGlobal.some_property == true /] ,- check for variables
+# use % to create a random percentage they say something
+# ~ to make a cue, => to jump to a cue
