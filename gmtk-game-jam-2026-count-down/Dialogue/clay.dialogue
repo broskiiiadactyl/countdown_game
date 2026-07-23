@@ -1,21 +1,25 @@
 ~ start
-Suspiciously Buff Tiger: Howdy.
-Clay: Name's Clay. 'Fore you ask, Yes.
-Clay: I am a [color=crimson]cowboy catboy[/color].
-Clay: Now that that's out the way, you the detective they called for?[br]You a little tender aintcha?
-Clay: Well nice ta meet ya and I didn't do it...
+while Character1.has_met == false:
+	Suspiciously Buff Tiger: Howdy.
+	Clay: Name's Clay.[br]'Fore you ask, Yes.
+	Clay: I am a [color=crimson]cowboy catboy[/color].
+	Clay: Now that that's out the way, you the detective they called for?[br]You a little tender aintcha?
+	Clay: Well nice ta meet ya and I didn't do it...
+	set Character1.has_met = true
 ~ nuetral
-% Clay: [wait=1] Speak fast, bud.
-% Clay:[wait=1] Somethin' you need?
-% Clay: [wait=1] Don't touch the ears or the hat.
+% Clay: Speak fast, bud.[wait=1] 
+% Clay: Somethin' you need?[wait=1]
+% Clay: Don't touch the ears or the hat.[wait=1]
 - Who do you think did it?
 	Clay:  Well... Can't say I rightly know.[br]Don't judge 'em till I know 'em.[br]And I ain't ever known no murderer.
 	=> nuetral
 - Tell me about yourself.
-	Clay: Not much to say. I like steerin'[wait=0.5], rearin', [wait=0.5]and nappin'.
-	Clay: Was called to the Manor by the Count on account of some manners he forgot to have.
+	Clay: Not much to say. I like nappin', steerin', and rearin'.
+	Clay: Count called me here and I obliged.[br]Not sure why.
 	Clay: Point is, I didn't kill 'em. And that's that.
 	=> nuetral
+- That's all.
+	=> END
 => END
 
 #  [if SomeGlobal.some_property == true /] ,- check for variables
