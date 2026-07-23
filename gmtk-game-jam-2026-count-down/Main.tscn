@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://dnmeghfp8trcm"]
+
+[ext_resource type="Script" uid="uid://y7hbvbsbi8w4" path="res://Scripts/main.gd" id="1_fos0i"]
+[ext_resource type="Texture2D" uid="uid://dwjfvgkk63uqe" path="res://Assets/Test/skybox-space.png" id="1_r0du0"]
+[ext_resource type="PackedScene" uid="uid://4dg2g8xa40vf" path="res://Scenes/room1.tscn" id="1_uu6xs"]
+[ext_resource type="PackedScene" uid="uid://bt37vltorrs6j" path="res://Scenes/character1.tscn" id="2_r0du0"]
+[ext_resource type="Script" uid="uid://4aeb1xe7ombx" path="res://Scripts/player.gd" id="4_cm0pq"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_cm0pq"]
+panorama = ExtResource("1_r0du0")
+
+[sub_resource type="Sky" id="Sky_r0du0"]
+sky_material = SubResource("PanoramaSkyMaterial_cm0pq")
+
+[sub_resource type="Environment" id="Environment_cm0pq"]
+background_mode = 2
+sky = SubResource("Sky_r0du0")
+tonemap_mode = 2
+
+[node name="Main" type="Node3D" unique_id=544896189]
+script = ExtResource("1_fos0i")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=682936293]
+environment = SubResource("Environment_cm0pq")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1782394225]
+transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 4.757884, 0)
+light_energy = 0.5
+shadow_enabled = true
+
+[node name="Room1" parent="." unique_id=225874475 instance=ExtResource("1_uu6xs")]
+unique_name_in_owner = true
+
+[node name="Room2" parent="." unique_id=1321425432 instance=ExtResource("1_uu6xs")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.698225, 0, 0)
+
+[node name="Character1" parent="." unique_id=999625138 instance=ExtResource("2_r0du0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4832044, 0, -0.8694649)
+visible = false
+
+[node name="Player" type="Camera3D" parent="." unique_id=292106789]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 3.5)
+fov = 50.0
+script = ExtResource("4_cm0pq")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1545550181]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.93879586, 0)
+light_energy = 0.25
+omni_range = 10.0
+omni_attenuation = 0.5

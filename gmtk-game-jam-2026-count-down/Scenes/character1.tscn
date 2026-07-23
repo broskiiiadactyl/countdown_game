@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bt37vltorrs6j"]
+
+[ext_resource type="Texture2D" uid="uid://bk26j6whqsfec" path="res://Assets/Test/PngItem_247356.png" id="1_rwu2g"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e0j01"]
+transparency = 1
+albedo_texture = ExtResource("1_rwu2g")
+billboard_mode = 2
+
+[sub_resource type="QuadMesh" id="QuadMesh_vifax"]
+material = SubResource("StandardMaterial3D_e0j01")
+
+[node name="Character1" type="Node3D" unique_id=999625138]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1452014896]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5017682, 0)
+mesh = SubResource("QuadMesh_vifax")
