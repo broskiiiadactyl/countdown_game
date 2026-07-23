@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://d0y2pnm66t7c5"
+path="res://.godot/imported/clay.dialogue-73ae04277ec02fbf8e7e0ba880762451.tres"
+
+[deps]
+
+source_file="res://Dialogue/clay.dialogue"
+dest_files=["res://.godot/imported/clay.dialogue-73ae04277ec02fbf8e7e0ba880762451.tres"]
+
+[params]
+
+defaults=true

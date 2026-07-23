@@ -4,7 +4,7 @@ var is_mouse_over : bool = false
 var has_met : bool = false
 
 
-var resource := "res://Dialogue/some_dialogue.dialogue"
+var resource := "res://Dialogue/clay.dialogue"
 
 
 # Called when the node enters the scene tree for the first time.
