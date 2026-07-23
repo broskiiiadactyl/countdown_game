@@ -51,11 +51,6 @@ func _unhandled_input(event: InputEvent) -> void:
 	pass
 
 
-func count_down(blocks : int) -> void:
-	#logic to count down time blocks
-	#current_time - blocks
-	pass
-
 func transition_to_room(room : String) -> void:
 	var target : Node3D
 	

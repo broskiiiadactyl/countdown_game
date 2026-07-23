@@ -8,15 +8,15 @@ var door = load("res://Assets/Test/door_enter.png")
 
 signal trans(target: String)
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+	pass 
 
 
 func transition_to_room(target: String) -> void:
 	trans.emit(target)
+
+func count_down(blocks : int) -> void:
+	#logic to count down time blocks
+	#current_time - blocks
+	pass
