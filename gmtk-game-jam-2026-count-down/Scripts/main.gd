@@ -7,7 +7,16 @@ extends Node3D
 ##Dictates the remaining time blocks on scene start. Default is 16.
 @export var current_time : int = 16
 
+var arrow = load("res://Assets/Test/gauntlet_default.png")
+var talk = load("res://Assets/Test/message_dots_round.png")
+var point = load("res://Assets/Test/look_c.png")
+var door = load("res://Assets/Test/door_enter.png")
+
 func _ready() -> void:
+	Input.set_custom_mouse_cursor(arrow)
+	Input.set_custom_mouse_cursor(talk, Input.CURSOR_POINTING_HAND)
+	Input.set_custom_mouse_cursor(point, Input.CURSOR_HELP)
+	Input.set_custom_mouse_cursor(door, Input.CURSOR_IBEAM)
 	pass
 
 func _process(_delta: float) -> void:
@@ -26,3 +35,7 @@ func count_down(blocks : int) -> void:
 	#logic to count down time blocks
 	#current_time - blocks
 	pass
+
+
+func move_right() -> void:
+	%Player.global_position = %Room2.get_node("%CameraPos").global_position

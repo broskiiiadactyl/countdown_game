@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bt37vltorrs6j"]
 
+[ext_resource type="Script" uid="uid://berh88p72pmvv" path="res://Scripts/character1.gd" id="1_e0j01"]
 [ext_resource type="Texture2D" uid="uid://bk26j6whqsfec" path="res://Assets/Test/PngItem_247356.png" id="1_rwu2g"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e0j01"]
@@ -10,8 +11,20 @@ billboard_mode = 2
 [sub_resource type="QuadMesh" id="QuadMesh_vifax"]
 material = SubResource("StandardMaterial3D_e0j01")
 
-[node name="Character1" type="Node3D" unique_id=999625138]
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_e0j01"]
+height = 0.9321289
+radius = 0.26708984
+
+[node name="Character1" type="StaticBody3D" unique_id=531970119]
+script = ExtResource("1_e0j01")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1452014896]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5017682, 0)
 mesh = SubResource("QuadMesh_vifax")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1572774374]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.46845514, 0)
+shape = SubResource("CylinderShape3D_e0j01")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

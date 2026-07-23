@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://4dg2g8xa40vf" path="res://Scenes/room1.tscn" id="1_uu6xs"]
 [ext_resource type="PackedScene" uid="uid://bt37vltorrs6j" path="res://Scenes/character1.tscn" id="2_r0du0"]
 [ext_resource type="Script" uid="uid://4aeb1xe7ombx" path="res://Scripts/player.gd" id="4_cm0pq"]
+[ext_resource type="PackedScene" uid="uid://dfxvimp776pvm" path="res://Scenes/journal.tscn" id="6_3dxm6"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_cm0pq"]
 panorama = ExtResource("1_r0du0")
@@ -37,13 +38,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.698225, 0, 0)
 
 [node name="Character1" parent="." unique_id=999625138 instance=ExtResource("2_r0du0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4832044, 0, -0.8694649)
-visible = false
 
 [node name="Player" type="Camera3D" parent="." unique_id=292106789]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 3.5)
 fov = 50.0
 script = ExtResource("4_cm0pq")
+
+[node name="Journal" parent="Player" unique_id=1851798099 instance=ExtResource("6_3dxm6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12039691, -0.05464959, -0.17849684)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1545550181]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.93879586, 0)
