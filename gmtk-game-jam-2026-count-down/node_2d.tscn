@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dyo8v6gk3tu0s"]
+
+[node name="Node2D" type="Node2D" unique_id=1519913044]
+
+[node name="Label" type="Label" parent="." unique_id=758915390]
+offset_right = 1148.0
+offset_bottom = 649.0
+text = "I legit can't believe you removed the Penis scene from the game what are you a MONSTER?!"
