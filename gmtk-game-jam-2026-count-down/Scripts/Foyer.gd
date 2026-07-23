@@ -4,6 +4,7 @@ var is_door_mouse_over : bool = true
 var door : String
 
 @onready var camera_pos : Vector3 = %CameraPos.global_position
+@onready var camera_basis : Basis = %CameraPos.global_basis
 var max_yaw : float = 100.0
 
 var test : String = ""

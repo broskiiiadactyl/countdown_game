@@ -37,6 +37,8 @@ func _ready() -> void:
 	murder_someone()
 	
 	set_active_state(gamestate.MOVE)
+	
+	print(CharacterGlobals.characters["Clay"].has_met)
 
 func _process(_delta: float) -> void:
 	match active_state:
@@ -92,6 +94,7 @@ func transition_to_room(room : String) -> void:
 	target.process_mode = Node.PROCESS_MODE_INHERIT
 	tween0.stop()
 	camera.global_position = target.camera_pos
+	camera.start_basis = target.camera_basis
 	active_room.visible = false
 	active_room.process_mode = Node.PROCESS_MODE_DISABLED
 	
