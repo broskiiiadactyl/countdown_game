@@ -1,7 +1,57 @@
 [gd_scene format=3 uid="uid://bbsap6rfnc483"]
 
-[ext_resource type="Script" uid="uid://bw8vgtdryiomq" path="res://Scripts/room2.gd" id="1_mrjev"]
 [ext_resource type="PackedScene" uid="uid://opcvibsthlty" path="res://Assets/Test/Room1-Foyer-merged.glb" id="2_limdr"]
+
+[sub_resource type="GDScript" id="GDScript_6qrli"]
+script/source = "extends Node3D
+
+var is_mouse_over : bool = true
+var door : String
+
+@onready var camera_pos : Vector3 = %CameraPos.global_position
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	door = \"Foyer\"
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	print(get_instance_id(), \" \", door)
+	pass
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed(\"LMB\") and is_mouse_over:
+		get_parent().transition_to_room(door)
+
+
+#Left Door
+func _on_door_l_mouse_entered() -> void:
+	is_mouse_over = true
+	door = \"Left\"
+	Input.set_default_cursor_shape(Input.CURSOR_IBEAM)
+
+
+func _on_door_l_mouse_exited() -> void:
+	is_mouse_over = false
+	#door = \"Foyer\"
+	Input.set_default_cursor_shape(Input.CURSOR_ARROW)
+
+
+#Right Door
+func _on_door_r_mouse_entered() -> void:
+	is_mouse_over = true
+	door = \"Right\"
+	print(\"Entered right\")
+	Input.set_default_cursor_shape(Input.CURSOR_IBEAM)
+
+func _on_door_r_mouse_exited() -> void:
+	is_mouse_over = false
+	#door = \"Foyer\"
+	print(\"Exited Right\")
+	Input.set_default_cursor_shape(Input.CURSOR_ARROW)
+"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xeud7"]
 albedo_color = Color(0.2656272, 0.111869626, 0.03823105, 1)
@@ -10,7 +60,7 @@ albedo_color = Color(0.2656272, 0.111869626, 0.03823105, 1)
 size = Vector3(0.06530762, 1.6675415, 0.9546814)
 
 [node name="Room1" type="Node3D" unique_id=225874475]
-script = ExtResource("1_mrjev")
+script = SubResource("GDScript_6qrli")
 
 [node name="Geometry" type="Node3D" parent="." unique_id=143802983]
 process_mode = 4

@@ -15,9 +15,9 @@ func _process(delta: float) -> void:
 
 func _on_jornal_area_mouse_entered() -> void:
 	is_mouse_over = true
-	Input.set_default_cursor_shape(Input.CURSOR_HELP)
+	Input.set_custom_mouse_cursor(Globals.look)
 
 
 func _on_jornal_area_mouse_exited() -> void:
 	is_mouse_over = false
-	Input.set_default_cursor_shape(Input.CURSOR_ARROW)
+	Input.set_custom_mouse_cursor(Globals.arrow)

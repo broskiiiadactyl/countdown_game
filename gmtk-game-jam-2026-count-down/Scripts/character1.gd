@@ -18,9 +18,9 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _on_mouse_entered() -> void:
 	is_mouse_over = true
-	Input.set_default_cursor_shape(Input.CURSOR_POINTING_HAND)
+	Input.set_custom_mouse_cursor(Globals.talk)
 
 
 func _on_mouse_exited() -> void:
 	is_mouse_over = false
-	Input.set_default_cursor_shape(Input.CURSOR_ARROW)
+	Input.set_custom_mouse_cursor(Globals.arrow)

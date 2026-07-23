@@ -16,19 +16,15 @@ extends Node3D
 #Camera vars
 @onready var camera : Camera3D = %PlayerCamera
 @onready var target_position : Vector3 = camera.global_position
-var trans_offset : Vector3 = Vector3.ZERO
-var trans_time : float = 1.0
+@onready var fade : ColorRect = %Fade
+var trans_speed : float = 25.0
+var trans_time : float = 0.25
 @onready var active_room : Node3D = foyer
 var target_room : Node3D
 
-#Cursor assignment
-var arrow = load("res://Assets/Test/gauntlet_default.png")
-var talk = load("res://Assets/Test/message_dots_round.png")
-var point = load("res://Assets/Test/look_c.png")
-var door = load("res://Assets/Test/door_enter.png")
-
 func _ready() -> void:
 	#init start scenario
+	Input.set_custom_mouse_cursor(Globals.arrow)
 	murder_someone()
 
 func _process(_delta: float) -> void:
@@ -64,15 +60,39 @@ func transition_to_room(room : String) -> void:
 			target = foyer
 	
 	target_room = target
+	#print("Active: ", active_room, "\n", "Target: ", target)
+	
+	#is already in the target room do nothing
+	if target == active_room:
+		return
+	
 	#move camera in the direction of the room
 	#fade in black overlay over time
+	var tween0 = create_tween()
+	tween0.tween_property(camera, "global_position", target.camera_pos, trans_speed)
+	
+	await get_tree().create_timer(trans_time).timeout
+	
+	var tween = create_tween()
+	tween.tween_property(fade, "color", Color(0.0, 0.0, 0.0, 1.0), trans_time)
+	await tween.finished
+	
+	#move camera position to target room
 	target.visible = true
 	target.process_mode = Node.PROCESS_MODE_INHERIT
+	tween0.stop()
 	camera.global_position = target.camera_pos
 	active_room.visible = false
-	active_room.process_mode = Node.PROCESS_MODE_INHERIT
-	#move camer from starting position to resting position
-	#fade out black overlay over time
+	active_room.process_mode = Node.PROCESS_MODE_DISABLED
+	
+	#fade out black overlay
+	await get_tree().create_timer(trans_time).timeout
+	
+	var tween2 = create_tween()
+	tween2.tween_property(fade, "color", Color(0.0, 0.0, 0.0, 0.0), trans_time)
+	await tween2.finished
+	
+	#set target room as active room
 	active_room = target
 	pass
 
