@@ -15,7 +15,7 @@ material = SubResource("StandardMaterial3D_e0j01")
 height = 0.9321289
 radius = 0.26708984
 
-[node name="Character1" type="StaticBody3D" unique_id=531970119]
+[node name="Clay" type="StaticBody3D" unique_id=531970119]
 script = ExtResource("1_e0j01")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1452014896]

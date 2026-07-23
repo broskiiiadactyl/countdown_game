@@ -2,6 +2,7 @@ extends StaticBody3D
 
 var is_mouse_over : bool = false
 var has_met : bool = false
+var is_lying : 
 
 
 var resource := "res://Dialogue/clay.dialogue"

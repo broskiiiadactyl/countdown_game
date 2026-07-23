@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Globals="*uid://cnp7i40mqy16p"
 DialogueManager="*uid://c3rodes2l3gxb"
+CharacterGlobals="*uid://be0ujwtjs25ji"
 
 [display]
 
