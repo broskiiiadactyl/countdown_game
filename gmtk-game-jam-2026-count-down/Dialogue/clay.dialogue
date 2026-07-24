@@ -74,4 +74,11 @@ while CharacterGlobals.characters["Clay"].has_met == false:
 if Globals.inventory.size() == 0
 	You don't have anything. Maybe there are things to find in the Manor...?
 	- Go back
+		=> nuetral
+if Globals.inventory.has("Hefty Knife")
+	- Hefty Knife
+if Globals.inventory.has("Ripped Nets")
+	- Ripped Nets
+
+#Hefty Knife, Ripped Nets ,Gallon Bag, Rubber Gloves, Nightshade, Large Scissors
 => nuetral
