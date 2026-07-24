@@ -4,10 +4,10 @@
 
 ~ start
 while CharacterGlobals.characters["Clay"].has_met == false:
-	#Suspiciously Buff Tiger: Howdy.
-	#Clay: Name's Clay.[br]'Fore you ask, Yes.
-	#Clay: I am a cowboy catboy.
-	#Clay: Now that that's out the way, you the detective they called for?[br]You a little tender aintcha?
+	Suspiciously Buff Tiger: Howdy.
+	Clay: Name's Clay.[br]'Fore you ask, Yes.
+	Clay: I am a cowboy catboy.
+	Clay: Now that that's out the way, you the detective they called for?[br]You a little tender aintcha?
 	Clay: Well, whatever.
 	set CharacterGlobals.characters["Clay"].has_met = true
 ~ nuetral
@@ -34,7 +34,7 @@ while CharacterGlobals.characters["Clay"].has_met == false:
 			Clay: Only thing I love more than trailin' is eatin' and you gotta cook to eat.
 		when "Gardening"
 			Clay: Spent a good chunk of time [color=crimson]gardening[/color].
-			 Nice to see some green before headin' out on those plains.
+			Clay: Nice to see some green before headin' out on those plains.
 		when "Dressing Up"
 			Clay: I ain't ashamed to admit I spent the day [color=crimson]dressin' up[/color].
 			Clay: You think these hats and spurs buy themselves?[br]You gotta know if you like 'em.
