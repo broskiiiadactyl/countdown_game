@@ -42,7 +42,6 @@ func set_active_state(state : gamestate) -> void:
 			is_talking = false
 			states.emit("Menu")
 		gamestate.MOVE:
-			print("Gamestate set to Move!")
 			can_move = true
 			is_talking = false
 			states.emit("Move")

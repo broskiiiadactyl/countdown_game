@@ -58,19 +58,11 @@ color = Color(0, 0, 0, 0)
 [node name="Foyer" parent="Rooms" unique_id=225874475 instance=ExtResource("1_uu6xs")]
 unique_name_in_owner = true
 
-[node name="Character1" parent="Rooms/Foyer" unique_id=999625138 instance=ExtResource("2_r0du0")]
-unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7674031, 2.3841858e-07, -2.2397425)
-
 [node name="Garden" parent="Rooms" unique_id=1939298819 instance=ExtResource("4_trn2v")]
 unique_name_in_owner = true
 process_mode = 4
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -4.5297585, 0, -20.788494)
 visible = false
-
-[node name="Character2" parent="Rooms/Garden" unique_id=531970119 instance=ExtResource("2_r0du0")]
-unique_name_in_owner = true
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -4.358366, 2.3841858e-07, 7.908617)
 
 [node name="Kitchen" parent="Rooms" unique_id=253366505 instance=ExtResource("5_03owx")]
 unique_name_in_owner = true
@@ -78,21 +70,18 @@ process_mode = 4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 0)
 visible = false
 
-[node name="Character3" parent="Rooms" unique_id=1742868091 instance=ExtResource("2_r0du0")]
-unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.891289, 2.3841858e-07, -0.048797607)
-
 [node name="Library" parent="Rooms" unique_id=1309834914 instance=ExtResource("6_03owx")]
 unique_name_in_owner = true
 process_mode = 4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, 0)
 visible = false
 
-[node name="Character4" parent="Rooms/Library" unique_id=559418817 instance=ExtResource("2_r0du0")]
-unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.0534554, 2.2049692, -2.7484214)
-
 [node name="Characters" type="Node3D" parent="." unique_id=2007826507]
+unique_name_in_owner = true
+
+[node name="Clay" parent="Characters" unique_id=999625138 instance=ExtResource("2_r0du0")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7674031, 2.3841858e-07, -2.2397425)
 
 [node name="PlayerCamera" type="Camera3D" parent="." unique_id=292106789]
 unique_name_in_owner = true
