@@ -32,15 +32,6 @@ func _ready() -> void:
 	Input.set_custom_mouse_cursor(Globals.arrow)
 	mouse_pos = get_viewport().get_visible_rect().size / 2
 	down_count()
-	down_count()
-	down_count()
-	down_count()
-	down_count()
-	down_count()
-	down_count()
-	down_count()
-	down_count()
-	down_count()
 	
 	Globals.set_active_state(Globals.gamestate.MOVE)
 
@@ -77,8 +68,9 @@ func transition_to_room(room : String) -> void:
 	camera.max_yaw = target.max_yaw
 	
 	#if is already in the target room do nothing. failsafe and ideally should never be called
+	#after much testing, this is called all the time....... at least it works.....
 	if target == active_room:
-		print("Error assigning target room.")
+		#print("Error assigning target room.")
 		return
 	
 	#move camera in the direction of the room
@@ -148,19 +140,51 @@ func down_count() -> bool:
 
 func assign_things() -> void:
 	var met : bool = false
-	
-	var activities : Array = CharacterGlobals.activities.keys()
-	activities.shuffle()
-	
+		
 	var rooms = CharacterGlobals.places.keys()
 	rooms += rooms	#this allows up to 2 characters to be in 1 room. remove for 1 character per room
 	rooms.shuffle()
 	
+	var activities : Dictionary = CharacterGlobals.activities
 	var items := {}
-	for activity in CharacterGlobals.activities:
-		var options = CharacterGlobals.activities[activity]
-		var key = options.keys().pick_random()
-		items[activity] = options[key]
+	var hold := {}
+	var retry := true
+	
+	#assign each activity a unique item
+	while retry:
+		items.clear()
+		for activity in activities:
+			retry = false
+			var success = false
+			hold.clear()
+			var mix : Array = activities[activity].keys()
+			mix.shuffle()
+			
+			for i in mix.size():
+				hold[activity] = activities[activity][mix[i-1]]
+				if hold[activity] not in items.values():
+					items[activity] = activities[activity][mix[i-1]]
+					success = true
+					break
+			if success:
+				continue
+			
+			push_error("BAD")
+			retry = true
+			break
+	
+	#shuffle items/activities
+	var shuffled_copy : Dictionary = {}
+	var shuffled_keys : Array = items.keys()
+	shuffled_keys.shuffle()
+	
+	for key in shuffled_keys:
+		shuffled_copy[key] = items[key]
+	
+	items.clear()
+	items.merge(shuffled_copy)
+	
+	print("ITEMS: ", items)
 	
 	#assign 1 random liar
 	#lying array with 1 extra value to allow for nobody being the liar
@@ -235,6 +259,12 @@ func assign_things() -> void:
 	print(CharacterGlobals.places)
 
 func place_things() -> void:
+	var characters : Dictionary = CharacterGlobals.characters
+	var places : Dictionary = CharacterGlobals.places
+	
+	#for names in characters:
+		#places[names] = 
+	
 	#place body in murder room
 	#randomly place all other characters
 	#make those characters children of their assigned rooms

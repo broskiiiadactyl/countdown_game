@@ -7,6 +7,10 @@ var door : String
 @onready var camera_basis : Basis = %CameraPos.global_basis
 var max_yaw : float = 100.0
 
+@onready var body_pos : Vector3 = %BodyPos.global_position
+@onready var char_pos1 : Vector3 = %CharacterPos1.global_position
+@onready var char_pos2 : Vector3 = %CharacterPos2.global_position
+
 var test : String = ""
 var test2 : String = ""
 
@@ -14,16 +18,6 @@ var test2 : String = ""
 func _ready() -> void:
 	door = "Library"
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	#test = str(get_instance_id()) + " " + door
-	#if test == test2:
-		#pass
-	#else: 
-		#test2 = test
-		#print(test2)
-	pass
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("LMB") and is_door_mouse_over:

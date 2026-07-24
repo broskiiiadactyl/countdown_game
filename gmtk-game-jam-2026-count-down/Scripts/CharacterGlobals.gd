@@ -59,24 +59,24 @@ var characters : Dictionary = {
 
 var activities : Dictionary = {
 	"Fishing": {
-		1: "Fish1",
-		2: "Fish2",
-		3: "Fish3"
+		1: "Hefty Knife",
+		2: "Ripped Nets",
+		3: "Gallon Bag"
 	},
 	"Cooking": {
-		1: "Cook1",
-		2: "Cook2",
-		3: "Cook3"
+		1: "Hefty Knife",
+		2: "Rubber Gloves",
+		3: "Nightshade"
 	},
 	"Gardening": {
-		1: "Garden1",
-		2: "Garden2",
-		3: "Garden3"
+		1: "Large Scissors",
+		2: "Gallon Bag",
+		3: "Nightshade"
 	},
 	"Dressing up": {
-		1: "Dress1",
-		2: "Dress2",
-		3: "Dress3"
+		1: "Ripped Nets",
+		2: "Rubber Gloves",
+		3: "Large Scissors"
 	}
 }
 

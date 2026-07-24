@@ -46,7 +46,7 @@ while CharacterGlobals.characters["Clay"].has_met == false:
 	=> timesegments
 - Count down once.
 	Clay: I'm counting down.
-	do GlobalVars.down_count()
+	do Globals.count_down(1)
 	=> nuetral
 - That's all.
 	=> END
@@ -66,7 +66,7 @@ while CharacterGlobals.characters["Clay"].has_met == false:
 	=> nuetral
 - Afternoon
 	Clay: You chose afternoon'.
-	match CharacterGlobals.characters["Clay"].afternoon:
+	match CharacterGlobals.characters["Clay"].noon:
 		when "Foyer"
 			Clay: This is a placeholder. If you get this, we messed up.
 		when "Garden"

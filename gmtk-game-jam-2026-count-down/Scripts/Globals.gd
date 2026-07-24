@@ -32,6 +32,7 @@ func transition_to_room(target: String) -> void:
 func count_down(blocks : int) -> void:
 	#logic to count down time blocks
 	current_time -= blocks
+	print(current_time, "/", MAX_TIME)
 	pass
 
 func set_active_state(state : gamestate) -> void:
