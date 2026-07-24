@@ -22,7 +22,7 @@ signal trans(target: String)
 signal states(state)
 
 #shit jeff added
-var inventory = [""] #player's inventory relative to what they collected
+var inventory = [] #player's inventory relative to what they collected
 var item1 = ""
 var item2 = ""
 var item3 = ""
