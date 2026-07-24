@@ -22,10 +22,11 @@ signal trans(target: String)
 signal states(state)
 
 #shit jeff added
-var inventory = ["Hefty Knife", "Ripped Nets"] #player's inventory relative to what they collected
+var inventory = [""] #player's inventory relative to what they collected
 var item1 = ""
 var item2 = ""
 var item3 = ""
+var item4 = ""
 
 func dm_print( p ): #print function so I can print from the dialogue manager
 	print(p)

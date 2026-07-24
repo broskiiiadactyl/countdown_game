@@ -71,14 +71,82 @@ while CharacterGlobals.characters["Clay"].has_met == false:
 	=> nuetral
 
 ~ items
-if Globals.inventory.size() == 0
-	You don't have anything. Maybe there are things to find in the Manor...?
-	- Go back
-		=> nuetral
-if Globals.inventory.has("Hefty Knife")
-	- Hefty Knife
-if Globals.inventory.has("Ripped Nets")
-	- Ripped Nets
+#check the size of the inventory array and use a match case
+#did you know toby fox used one giant match case for the entirety of the homsetuck dialogue wow
+match Globals.inventory.size()
+	when 0
+		You don't have anything. Maybe there are things to find in the Manor...?
+		- Go back
+			=> nuetral
 
-#Hefty Knife, Ripped Nets ,Gallon Bag, Rubber Gloves, Nightshade, Large Scissors
+	when 1
+		- {{Globals.item1}}
+			=> checkitem1
+		- No Item [if Globals.item1==""]
+		- No Item [if Globals.item1==""]
+		- No Item [if Globals.item1==""]
+		- Go back
+			=> nuetral
+
+	when 2
+		- {{Globals.item1}}
+			=> checkitem1
+		- {{Globals.item2}}
+			=> checkitem2
+		- No Item [if Globals.item1==""]
+		- No Item [if Globals.item1==""]
+		- Go back
+			=> nuetral
+
+	when 3
+		- {{Globals.item1}}
+			=> checkitem1
+		- {{Globals.item2}}
+			=> checkitem2
+		- {{Globals.item3}}
+			=> checkitem3
+		- No Item [if Globals.item1==""]
+		- Go back
+			=> nuetral
+
+	when 4
+		- {{Globals.item1}}
+			=> checkitem1
+		- {{Globals.item2}}
+			=> checkitem2
+		- {{Globals.item3}}
+			=> checkitem3
+		- {{Globals.item4}}
+			=> checkitem4
+		- Go back
+			=> nuetral
+
+=> nuetral
+
+~ checkitem1
+if Globals.item1 == CharacterGlobals.characters["Clay"].item:
+	Yup, I reckon that's mine. How did I lose it 'gain...
+else
+	Nope. Never seen it' fore.
+=> nuetral
+
+~ checkitem2
+if Globals.item2 == CharacterGlobals.characters["Clay"].item:
+	Yup, I reckon that's mine. How did I lose it 'gain...
+else
+	Nope. Never seen it' fore.
+=> nuetral
+
+~ checkitem3
+if Globals.item3 == CharacterGlobals.characters["Clay"].item:
+	Yup, I reckon that's mine. How did I lose it 'gain...
+else
+	Nope. Never seen it' fore.
+=> nuetral
+
+~ checkitem4
+if Globals.item4 == CharacterGlobals.characters["Clay"].item:
+	Yup, I reckon that's mine. How did I lose it 'gain...
+else
+	Nope. Never seen it' fore.
 => nuetral
