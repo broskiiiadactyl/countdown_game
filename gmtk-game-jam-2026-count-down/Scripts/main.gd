@@ -269,6 +269,9 @@ func place_things() -> void:
 			nodes.global_position = room_node.char_pos2
 		else:
 			nodes.global_position = room_node.char_pos1
+			room_node.is_placed = true
+		
+		nodes.reparent(room_node)
 	
 	#place body in murder room
 	#randomly place all other characters

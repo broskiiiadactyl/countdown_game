@@ -37,11 +37,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2140801, 0.4032882, 0.35349
 
 [node name="CharacterPos1" type="Marker3D" parent="." unique_id=397960053]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9408069, 0.4032882, -1.8933029)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9398606, 0.4032882, 1.2838187)
 
 [node name="CharacterPos2" type="Marker3D" parent="." unique_id=2007928873]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.50544864, 0.4032882, -4.1948566)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5176826, 0.4032882, -0.96409893)
 
 [connection signal="mouse_entered" from="DoorL" to="." method="_on_door_l_mouse_entered"]
 [connection signal="mouse_exited" from="DoorL" to="." method="_on_door_l_mouse_exited"]

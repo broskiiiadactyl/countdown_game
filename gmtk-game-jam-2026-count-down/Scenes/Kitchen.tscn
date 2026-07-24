@@ -40,7 +40,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2505438, 0, -2.299975)
 
 [node name="CharacterPos2" type="Marker3D" parent="." unique_id=422742031]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.7610404, 0, -1.5615132)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8609695, -9.536743e-07, 0.33614612)
 
 [connection signal="mouse_entered" from="DoorL" to="." method="_on_door_l_mouse_entered"]
 [connection signal="mouse_exited" from="DoorL" to="." method="_on_door_l_mouse_exited"]

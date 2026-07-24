@@ -9,6 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://cw8u2l6n3t4k" path="res://Scenes/Kitchen.tscn" id="5_03owx"]
 [ext_resource type="PackedScene" uid="uid://dfxvimp776pvm" path="res://Scenes/journal.tscn" id="6_3dxm6"]
 [ext_resource type="PackedScene" uid="uid://c7snsflexnn8p" path="res://Scenes/Library.tscn" id="6_03owx"]
+[ext_resource type="PackedScene" uid="uid://djmr3d6f1dgit" path="res://Scenes/Cookie.tscn" id="8_5vvyt"]
+[ext_resource type="PackedScene" uid="uid://dnlv4ds13wkxx" path="res://Scenes/Jerry.tscn" id="9_c6i3y"]
+[ext_resource type="PackedScene" uid="uid://dun3be2mqshyu" path="res://Scenes/Mike.tscn" id="10_c2ibq"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_cm0pq"]
 panorama = ExtResource("1_r0du0")
@@ -62,16 +65,19 @@ unique_name_in_owner = true
 unique_name_in_owner = true
 process_mode = 4
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -4.5297585, 0, -20.788494)
+visible = false
 
 [node name="Kitchen" parent="Rooms" unique_id=253366505 instance=ExtResource("5_03owx")]
 unique_name_in_owner = true
 process_mode = 4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 0)
+visible = false
 
 [node name="Library" parent="Rooms" unique_id=1309834914 instance=ExtResource("6_03owx")]
 unique_name_in_owner = true
 process_mode = 4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, 0)
+visible = false
 
 [node name="Characters" type="Node3D" parent="." unique_id=2007826507]
 unique_name_in_owner = true
@@ -79,6 +85,15 @@ unique_name_in_owner = true
 [node name="Clay" parent="Characters" unique_id=999625138 instance=ExtResource("2_r0du0")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7674031, 2.3841858e-07, -2.2397425)
+
+[node name="Cookie" parent="Characters" unique_id=1801030772 instance=ExtResource("8_5vvyt")]
+unique_name_in_owner = true
+
+[node name="Jerry" parent="Characters" unique_id=266817054 instance=ExtResource("9_c6i3y")]
+unique_name_in_owner = true
+
+[node name="Mike" parent="Characters" unique_id=1864362735 instance=ExtResource("10_c2ibq")]
+unique_name_in_owner = true
 
 [node name="PlayerCamera" type="Camera3D" parent="." unique_id=292106789]
 unique_name_in_owner = true
