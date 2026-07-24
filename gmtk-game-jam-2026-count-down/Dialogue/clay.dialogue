@@ -22,6 +22,8 @@ while CharacterGlobals.characters["Clay"].has_met == false:
 	Clay: Count called me here and I obliged.[br]Not sure why.
 	Clay: Point is, I didn't kill 'em. And that's that.
 	=> nuetral
+- Do you recognize this item?
+	=> items
 - What were you doing today?
 	match CharacterGlobals.characters["Clay"].activity:
 		when "Fishing"
@@ -51,7 +53,7 @@ while CharacterGlobals.characters["Clay"].has_met == false:
 	=> nuetral
 - That's all.
 	=> END
-	
+
 ~ timesegments
 - Morning
 	Clay: Welp. Started my ride today in the [color=crimson]{{CharacterGlobals.characters["Clay"].morning}}[/color].
@@ -65,3 +67,11 @@ while CharacterGlobals.characters["Clay"].has_met == false:
 	Clay: Spent the evenin' round the [color=crimson]{{CharacterGlobals.characters["Clay"].morning}}[/color].
 	do Globals.count_down(1, "clay_night")
 	=> nuetral
+- Nevermind
+	=> nuetral
+
+~ items
+if Globals.inventory.size() == 0
+	You don't have anything. Maybe there are things to find in the Manor...?
+	- Go back
+=> nuetral
