@@ -7,11 +7,6 @@ extends Node3D
 ##Dictates the remaining time blocks on scene start. Default is 16.
 @export var current_time : int = 16
 
-enum gamestate {MENU, MOVE, SPEAK}
-var active_state : gamestate = gamestate.MOVE
-var can_move : bool = false
-var is_talking : bool = false
-
 #init room vars
 @onready var foyer : Node3D = %Foyer
 @onready var kitchen : Node3D = %Kitchen
@@ -30,24 +25,26 @@ var mouse_pos : Vector2 = Vector2.ZERO
 
 func _ready() -> void:
 	Globals.trans.connect(transition_to_room)
+	Globals.states.connect(change_camera_state)
 	
 	#init start scenario
 	Input.set_custom_mouse_cursor(Globals.arrow)
 	mouse_pos = get_viewport().get_visible_rect().size / 2
-	#murder_someone()
+	down_count()
 	
-	set_active_state(gamestate.MOVE)
+	Globals.set_active_state(Globals.gamestate.MOVE)
 	
 	print(CharacterGlobals.characters["Clay"].has_met)
 
 func _process(_delta: float) -> void:
-	match active_state:
-		gamestate.MENU:
-			pass
-		gamestate.MOVE:
-			pass
-		gamestate.SPEAK:
-			pass
+	#match active_state:
+		#gamestate.MENU:
+			#pass
+		#gamestate.MOVE:
+			#pass
+		#gamestate.SPEAK:
+			#pass
+	pass
 
 func _unhandled_input(event: InputEvent) -> void:
 	pass
@@ -109,24 +106,6 @@ func transition_to_room(room : String) -> void:
 	active_room = target
 	pass
 
-
-func set_active_state(state : gamestate) -> void:
-	match state:
-		gamestate.MENU:
-			can_move = false
-			is_talking = false
-		gamestate.MOVE:
-			print("Gamestate set to Move!")
-			can_move = true
-			is_talking = false
-			camera.process_mode = Node.PROCESS_MODE_ALWAYS
-			Input.warp_mouse(mouse_pos)
-		gamestate.SPEAK:
-			can_move = false
-			is_talking = true
-			camera.process_mode = Node.PROCESS_MODE_DISABLED
-			mouse_pos = get_viewport().get_mouse_position()
-
 func down_count() -> bool:
 	#init character traits
 	#note: need list of traits for this
@@ -140,8 +119,23 @@ func down_count() -> bool:
 	#once everything is loaded in, return true
 	return true
 	
+
+	
+func change_camera_state(state):
+	match state:
+		"Move":
+			camera.process_mode = Node.PROCESS_MODE_ALWAYS
+			Input.warp_mouse(mouse_pos)
+		"Speak":
+			camera.process_mode = Node.PROCESS_MODE_DISABLED
+			mouse_pos = get_viewport().get_mouse_position()
+		"Menu":
+			pass
 	
 	
+	
+	
+
 	
 	
 	
