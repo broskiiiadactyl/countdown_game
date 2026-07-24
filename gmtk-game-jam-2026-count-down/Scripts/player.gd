@@ -1,7 +1,7 @@
 extends Camera3D
 
 @export_group("Bounds") #in degrees from camera origin
-@export var max_yaw : float = 0.0
+@export var max_yaw : float = 100.0
 @export var max_pitch : float = 5.0
 @export var move_scale : float = 0.25
 

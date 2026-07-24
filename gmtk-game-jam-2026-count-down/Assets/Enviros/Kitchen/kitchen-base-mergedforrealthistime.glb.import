@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://drkqv10u3sh7m"
-path="res://.godot/imported/Room1-Foyer-merged-extendedfloor.glb-7631d055d7f97a111cbdb5e86584c856.scn"
+uid="uid://dympknj5pwym2"
+path="res://.godot/imported/kitchen-base-mergedforrealthistime.glb-0c035ca2250787afeb666d29f94cd3fc.scn"
 
 [deps]
 
-source_file="res://Assets/Enviros/Foyer/Room1-Foyer-merged-extendedfloor.glb"
-dest_files=["res://.godot/imported/Room1-Foyer-merged-extendedfloor.glb-7631d055d7f97a111cbdb5e86584c856.scn"]
+source_file="res://Assets/Enviros/Kitchen/kitchen-base-mergedforrealthistime.glb"
+dest_files=["res://.godot/imported/kitchen-base-mergedforrealthistime.glb-0c035ca2250787afeb666d29f94cd3fc.scn"]
 
 [params]
 

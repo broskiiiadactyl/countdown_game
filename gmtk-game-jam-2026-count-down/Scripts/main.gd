@@ -126,15 +126,16 @@ func set_active_state(state : gamestate) -> void:
 			camera.process_mode = Node.PROCESS_MODE_DISABLED
 			mouse_pos = get_viewport().get_mouse_position()
 
-func murder_someone() -> bool:
+func down_count() -> bool:
 	#init character traits
+	#note: need list of traits for this
 	#place items in rooms
 	#pick random character to mark as murdered
 	#pick random character to mark as culprit
 	#place body in murder room
 	#randomly place all other characters
+	#make those characters children of their assigned rooms
 	#set starting room for player (active_room)
-	#set camera yaw based on active room
 	#once everything is loaded in, return true
 	return true
 	
