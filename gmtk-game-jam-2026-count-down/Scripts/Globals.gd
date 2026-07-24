@@ -29,7 +29,7 @@ func _ready() -> void:
 func transition_to_room(target: String) -> void:
 	trans.emit(target)
 
-func count_down(blocks : int) -> void:
+func count_down(blocks : int, ID : String) -> void:
 	#logic to count down time blocks
 	current_time -= blocks
 	print(current_time, "/", MAX_TIME)
