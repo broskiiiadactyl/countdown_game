@@ -62,24 +62,33 @@ unique_name_in_owner = true
 unique_name_in_owner = true
 process_mode = 4
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -4.5297585, 0, -20.788494)
-visible = false
 
 [node name="Kitchen" parent="Rooms" unique_id=253366505 instance=ExtResource("5_03owx")]
 unique_name_in_owner = true
 process_mode = 4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 0)
-visible = false
 
 [node name="Library" parent="Rooms" unique_id=1309834914 instance=ExtResource("6_03owx")]
 unique_name_in_owner = true
 process_mode = 4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, 0)
-visible = false
 
 [node name="Characters" type="Node3D" parent="." unique_id=2007826507]
 unique_name_in_owner = true
 
 [node name="Clay" parent="Characters" unique_id=999625138 instance=ExtResource("2_r0du0")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7674031, 2.3841858e-07, -2.2397425)
+
+[node name="2" parent="Characters" unique_id=531970119 instance=ExtResource("2_r0du0")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7674031, 2.3841858e-07, -2.2397425)
+
+[node name="3" parent="Characters" unique_id=2083056066 instance=ExtResource("2_r0du0")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7674031, 2.3841858e-07, -2.2397425)
+
+[node name="4" parent="Characters" unique_id=1227636763 instance=ExtResource("2_r0du0")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7674031, 2.3841858e-07, -2.2397425)
 

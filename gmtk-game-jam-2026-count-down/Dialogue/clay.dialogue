@@ -35,7 +35,7 @@ while CharacterGlobals.characters["Clay"].has_met == false:
 		when "Gardening"
 			Clay: Spent a good chunk of time [color=crimson]gardening[/color].
 			Clay: Nice to see some green before headin' out on those plains.
-		when "Dressing Up"
+		when "Dressing up"
 			Clay: I ain't ashamed to admit I spent the day [color=crimson]dressin' up[/color].
 			Clay: You think these hats and spurs buy themselves?[br]You gotta know if you like 'em.
 		when ""

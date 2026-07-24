@@ -1,7 +1,13 @@
 [gd_scene format=3 uid="uid://4dg2g8xa40vf"]
 
 [ext_resource type="Script" uid="uid://4qp3kpyaplnr" path="res://Scripts/Foyer.gd" id="1_2nqm4"]
-[ext_resource type="PackedScene" uid="uid://opcvibsthlty" path="res://Assets/Test/Room1-Foyer-merged.glb" id="2_gxaye"]
+[ext_resource type="PackedScene" uid="uid://brk62cuvac4dh" path="res://Assets/Enviros/Foyer/Room1-Foyer-merged-extendedfloor.glb" id="2_p66fs"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p66fs"]
+size = Vector3(0.06530762, 1.6675415, 1.0009766)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l2ayy"]
+size = Vector3(0.06530762, 1.6675415, 0.9824219)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gxaye"]
 size = Vector3(0.06530762, 1.6675415, 1.8031845)
@@ -9,8 +15,8 @@ size = Vector3(0.06530762, 1.6675415, 1.8031845)
 [node name="Foyer" type="Node3D" unique_id=225874475]
 script = ExtResource("1_2nqm4")
 
-[node name="Room1-Foyer-merged" parent="." unique_id=308120337 instance=ExtResource("2_gxaye")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 1.715621)
+[node name="Foyer Model" parent="." unique_id=2134806133 instance=ExtResource("2_p66fs")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 1.7334943)
 
 [node name="DoorL" type="Area3D" parent="." unique_id=725154496]
 unique_name_in_owner = true
@@ -18,7 +24,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.850956, 0.39291382, -0.213
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DoorL" unique_id=101067387]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.064941406, 0.4058838, -0.074523926)
-shape = SubResource("BoxShape3D_gxaye")
+shape = SubResource("BoxShape3D_p66fs")
 
 [node name="DoorR" type="Area3D" parent="." unique_id=2100667104]
 unique_name_in_owner = true
@@ -26,7 +32,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.7906923, 0.39291382, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DoorR" unique_id=468301133]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06536865, 0.4633484, -0.2751007)
-shape = SubResource("BoxShape3D_gxaye")
+shape = SubResource("BoxShape3D_l2ayy")
 
 [node name="DoorF" type="Area3D" parent="." unique_id=947823439]
 unique_name_in_owner = true

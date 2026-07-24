@@ -259,11 +259,16 @@ func assign_things() -> void:
 	print(CharacterGlobals.places)
 
 func place_things() -> void:
-	var characters : Dictionary = CharacterGlobals.characters
-	var places : Dictionary = CharacterGlobals.places
+	var characters : Array = %Characters.get_children()
 	
-	#for names in characters:
-		#places[names] = 
+	for nodes in characters:
+		var room_name : String = "%" + CharacterGlobals.characters[nodes.name].in_room
+		var room_node : Node3D = get_node(room_name)
+		
+		if room_node.is_placed:
+			nodes.global_position = room_node.char_pos2
+		else:
+			nodes.global_position = room_node.char_pos1
 	
 	#place body in murder room
 	#randomly place all other characters
@@ -281,18 +286,4 @@ func change_camera_state(state):
 			mouse_pos = get_viewport().get_mouse_position()
 		"Menu":
 			pass
-	
-	
-	
-	
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	

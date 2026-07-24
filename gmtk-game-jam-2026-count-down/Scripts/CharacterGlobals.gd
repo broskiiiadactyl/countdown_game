@@ -23,7 +23,7 @@ var characters : Dictionary = {
 		"in_room": ""
 	},
 	
-	"2": {
+	"Cookie": {
 		"has_met": false,
 		"is_lying": false,
 		"activity": "",
@@ -34,7 +34,7 @@ var characters : Dictionary = {
 		"in_room": ""
 	},
 	
-	"3": {
+	"Mike": {
 		"has_met": false,
 		"is_lying": false,
 		"activity": "",
@@ -45,7 +45,7 @@ var characters : Dictionary = {
 		"in_room": ""
 	},
 	
-	"4": {
+	"Jerry": {
 		"has_met": false,
 		"is_lying": false,
 		"activity": "",

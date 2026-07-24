@@ -10,6 +10,7 @@ var max_yaw : float = 100.0
 @onready var body_pos : Vector3 = %BodyPos.global_position
 @onready var char_pos1 : Vector3 = %CharacterPos1.global_position
 @onready var char_pos2 : Vector3 = %CharacterPos2.global_position
+var is_placed : bool = false
 
 var test : String = ""
 var test2 : String = ""
