@@ -3,6 +3,13 @@ extends Node
 var liar : String = ""
 var murderer : String = ""
 
+var victim : Dictionary = {
+	"name": "The Count",
+	"has_met": false,
+	"time_of_death": "",
+	"murder_weapon": "",
+	"in_room": ""
+}
 
 var characters : Dictionary = {
 	"Clay": {
@@ -12,7 +19,8 @@ var characters : Dictionary = {
 		"morning": "",
 		"noon": "",
 		"night": "",
-		"item": ""
+		"item": "",
+		"in_room": ""
 	},
 	
 	"2": {
@@ -22,7 +30,8 @@ var characters : Dictionary = {
 		"morning": "",
 		"noon": "",
 		"night": "",
-		"item": ""
+		"item": "",
+		"in_room": ""
 	},
 	
 	"3": {
@@ -32,7 +41,8 @@ var characters : Dictionary = {
 		"morning": "",
 		"noon": "",
 		"night": "",
-		"item": ""
+		"item": "",
+		"in_room": ""
 	},
 	
 	"4": {
@@ -42,7 +52,8 @@ var characters : Dictionary = {
 		"morning": "",
 		"noon": "",
 		"night": "",
-		"item": ""
+		"item": "",
+		"in_room": ""
 	}
 }
 
@@ -69,9 +80,9 @@ var activities : Dictionary = {
 	}
 }
 
-var places : Array = [
-	"Foyer",
-	"Garden",
-	"Kitchen",
-	"Library"
-]
+var places : Dictionary = {
+	"Foyer": "",
+	"Garden": "",
+	"Kitchen": "",
+	"Library": ""
+}

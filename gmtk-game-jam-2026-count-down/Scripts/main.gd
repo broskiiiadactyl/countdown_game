@@ -32,6 +32,15 @@ func _ready() -> void:
 	Input.set_custom_mouse_cursor(Globals.arrow)
 	mouse_pos = get_viewport().get_visible_rect().size / 2
 	down_count()
+	down_count()
+	down_count()
+	down_count()
+	down_count()
+	down_count()
+	down_count()
+	down_count()
+	down_count()
+	down_count()
 	
 	Globals.set_active_state(Globals.gamestate.MOVE)
 
@@ -103,12 +112,49 @@ func transition_to_room(room : String) -> void:
 	active_room = target
 
 #init the murder
-#this block is too big and should ideally be split if there's time
 func down_count() -> bool:
+	assign_things()
+	
+	#pick random character to mark as culprit
+	var pick : String = CharacterGlobals.characters.keys()[randi_range(0,3)]
+	var murderer : Dictionary = CharacterGlobals.characters[pick]
+	var rand_time : int = randi_range(0,2)
+	var block : String = ""
+	
+	print("Murderer: ",pick, "\nLiar: ", CharacterGlobals.liar)
+	
+	match rand_time:
+		0:
+			block = "morning"
+		1:
+			block = "noon"
+		2:
+			block = "night"
+		_:
+			push_error("ERROR ASSIGNING MURDER TIME")
+			get_tree().quit()
+	
+	CharacterGlobals.victim.has_met = false
+	CharacterGlobals.victim.time_of_death = block
+	CharacterGlobals.victim.murder_weapon = murderer["item"]
+	CharacterGlobals.victim.in_room = murderer[block]
+	
+	CharacterGlobals.murderer = pick
+	
+	print(CharacterGlobals.victim)
+	
+	place_things()
+	return true
+
+func assign_things() -> void:
 	var met : bool = false
 	
 	var activities : Array = CharacterGlobals.activities.keys()
 	activities.shuffle()
+	
+	var rooms = CharacterGlobals.places.keys()
+	rooms += rooms	#this allows up to 2 characters to be in 1 room. remove for 1 character per room
+	rooms.shuffle()
 	
 	var items := {}
 	for activity in CharacterGlobals.activities:
@@ -135,21 +181,26 @@ func down_count() -> bool:
 		var act = items.keys()[i]
 		var thing = items[act]
 		var lie = lying[i]
-		var time1 = CharacterGlobals.places[randi_range(0,3)]
-		var time2 = CharacterGlobals.places[randi_range(0,3)]
-		var time3 = CharacterGlobals.places[randi_range(0,3)]
+		var time1 = CharacterGlobals.places.keys()[randi_range(0,3)]
+		var time2 = CharacterGlobals.places.keys()[randi_range(0,3)]
+		var time3 = CharacterGlobals.places.keys()[randi_range(0,3)]
 		
-		character["has_met"] = met
-		character["is_lying"] = lie
-		character["activity"] = act
-		character["item"] = thing
+		character.has_met = met
+		character.is_lying = lie
+		character.activity = act
+		character.item = thing
 		
-		character["morning"] = time1
-		character["noon"] = time2
-		character["night"] = time3
+		character.morning = time1
+		character.noon = time2
+		character.night = time3
+		
+		character.in_room = rooms[i]
 		
 		print(character_name, ": ", CharacterGlobals.characters[character_name])
 		
+		if character.is_lying:
+			CharacterGlobals.liar = character_name
+			
 		i += 1
 	
 	#verify everyone is different
@@ -170,18 +221,26 @@ func down_count() -> bool:
 		else:
 			check[check_value] = char_name
 	
+	#reset rooms array for reuse
+	rooms = CharacterGlobals.places.keys()
+	rooms.shuffle()
 	
-	#place items in rooms
-	#pick random character to mark as culprit
+	#assign items to rooms
+	i = 0
+	for rm in rooms:
+		CharacterGlobals.places[rm] = items[items.keys()[i]]
+		
+		i += 1
+	
+	print(CharacterGlobals.places)
+
+func place_things() -> void:
 	#place body in murder room
 	#randomly place all other characters
 	#make those characters children of their assigned rooms
 	#set starting room for player (active_room)
-	#once everything is loaded in, return true
-	return true
-	
+	pass
 
-	
 func change_camera_state(state):
 	match state:
 		"Move":
