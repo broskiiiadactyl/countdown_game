@@ -6,11 +6,18 @@ var talk = load("res://Assets/Test/message_dots_round.png")
 var look = load("res://Assets/Test/look_c.png")
 var door = load("res://Assets/Test/door_enter.png")
 
+#game state management
 enum gamestate {MENU, MOVE, SPEAK}
 var active_state : gamestate = gamestate.MOVE
+#I think these vars can probably be removed
 var can_move : bool = false
 var is_talking : bool = false
 
+#time management
+const MAX_TIME : int = 16
+var current_time : int = MAX_TIME
+
+#signals
 signal trans(target: String)
 signal states(state)
 
@@ -24,7 +31,7 @@ func transition_to_room(target: String) -> void:
 
 func count_down(blocks : int) -> void:
 	#logic to count down time blocks
-	#current_time - blocks
+	current_time -= blocks
 	pass
 
 func set_active_state(state : gamestate) -> void:

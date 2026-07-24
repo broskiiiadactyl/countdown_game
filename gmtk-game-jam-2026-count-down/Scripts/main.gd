@@ -24,6 +24,7 @@ var target_room : Node3D
 var mouse_pos : Vector2 = Vector2.ZERO
 
 func _ready() -> void:
+	#connect signals
 	Globals.trans.connect(transition_to_room)
 	Globals.states.connect(change_camera_state)
 	
@@ -33,9 +34,8 @@ func _ready() -> void:
 	down_count()
 	
 	Globals.set_active_state(Globals.gamestate.MOVE)
-	
-	print(CharacterGlobals.characters["Clay"].has_met)
 
+#I don't think this block is needed at all, probably delete
 func _process(_delta: float) -> void:
 	#match active_state:
 		#gamestate.MENU:
@@ -46,15 +46,11 @@ func _process(_delta: float) -> void:
 			#pass
 	pass
 
-func _unhandled_input(event: InputEvent) -> void:
-	pass
-
-
+#handle literal movement between rooms
 func transition_to_room(room : String) -> void:
 	var target : Node3D
 	
-	print("room: ", room)
-	
+	#find correct node based on room name
 	match room:
 		"Foyer":
 			target = foyer
@@ -67,16 +63,17 @@ func transition_to_room(room : String) -> void:
 		_:
 			target = foyer
 	
+	#assign node to target amd pull any necessary vars
 	target_room = target
 	camera.max_yaw = target.max_yaw
-	print("Active: ", active_room, "\n", "Target: ", target)
 	
-	#is already in the target room do nothing
+	#if is already in the target room do nothing. failsafe and ideally should never be called
 	if target == active_room:
+		print("Error assigning target room.")
 		return
 	
 	#move camera in the direction of the room
-	#fade in black overlay over time
+	#fade in black overlay over time to smooth transition
 	var tween0 = create_tween()
 	tween0.tween_property(camera, "global_position", target.camera_pos, trans_speed)
 	
@@ -104,13 +101,77 @@ func transition_to_room(room : String) -> void:
 	
 	#set target room as active room
 	active_room = target
-	pass
 
+#init the murder
+#this block is too big and should ideally be split if there's time
 func down_count() -> bool:
-	#init character traits
-	#note: need list of traits for this
+	var met : bool = false
+	
+	var activities : Array = CharacterGlobals.activities.keys()
+	activities.shuffle()
+	
+	var items := {}
+	for activity in CharacterGlobals.activities:
+		var options = CharacterGlobals.activities[activity]
+		var key = options.keys().pick_random()
+		items[activity] = options[key]
+	
+	#assign 1 random liar
+	#lying array with 1 extra value to allow for nobody being the liar
+	var lying : Array = [
+		false,
+		false,
+		false,
+		false,
+		false
+	]
+	lying[randi_range(0,4)] = true
+	
+	#assign traits to characters
+	var i : int = 0
+	for character_name in CharacterGlobals.characters:
+		var character = CharacterGlobals.characters[character_name]
+		
+		var act = items.keys()[i]
+		var thing = items[act]
+		var lie = lying[i]
+		var time1 = CharacterGlobals.places[randi_range(0,3)]
+		var time2 = CharacterGlobals.places[randi_range(0,3)]
+		var time3 = CharacterGlobals.places[randi_range(0,3)]
+		
+		character["has_met"] = met
+		character["is_lying"] = lie
+		character["activity"] = act
+		character["item"] = thing
+		
+		character["morning"] = time1
+		character["noon"] = time2
+		character["night"] = time3
+		
+		print(character_name, ": ", CharacterGlobals.characters[character_name])
+		
+		i += 1
+	
+	#verify everyone is different
+	var check : Dictionary = {}
+	
+	for char_name in CharacterGlobals.characters:
+		var chara = CharacterGlobals.characters[char_name]
+		
+		var check_value = [
+			chara["activity"],
+			chara["morning"],
+			chara["noon"],
+			chara["night"]
+		]
+	
+		if check.has(check_value):
+			print(char_name, " matches ", check[check_value])
+		else:
+			check[check_value] = char_name
+	
+	
 	#place items in rooms
-	#pick random character to mark as murdered
 	#pick random character to mark as culprit
 	#place body in murder room
 	#randomly place all other characters
