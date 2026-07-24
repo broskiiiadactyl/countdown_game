@@ -34,7 +34,7 @@ func _ready() -> void:
 	#init start scenario
 	Input.set_custom_mouse_cursor(Globals.arrow)
 	mouse_pos = get_viewport().get_visible_rect().size / 2
-	murder_someone()
+	#murder_someone()
 	
 	set_active_state(gamestate.MOVE)
 	
@@ -116,6 +116,7 @@ func set_active_state(state : gamestate) -> void:
 			can_move = false
 			is_talking = false
 		gamestate.MOVE:
+			print("Gamestate set to Move!")
 			can_move = true
 			is_talking = false
 			camera.process_mode = Node.PROCESS_MODE_ALWAYS

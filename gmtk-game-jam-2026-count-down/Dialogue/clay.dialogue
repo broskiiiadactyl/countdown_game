@@ -1,15 +1,19 @@
+#  [if SomeGlobal.some_property == true /] ,- check for variables
+# use % to create a random percentage they say something
+# ~ to make a cue, => to jump to a cue
+
 ~ start
 while CharacterGlobals.characters["Clay"].has_met == false:
-	Suspiciously Buff Tiger: Howdy.
-	Clay: Name's Clay.[br]'Fore you ask, Yes.
-	Clay: I am a [color=crimson]cowboy catboy[/color].
-	Clay: Now that that's out the way, you the detective they called for?[br]You a little tender aintcha?
-	Clay: Well nice ta meet ya and I didn't do it...
+	#Suspiciously Buff Tiger: Howdy.
+	#Clay: Name's Clay.[br]'Fore you ask, Yes.
+	#Clay: I am a cowboy catboy.
+	#Clay: Now that that's out the way, you the detective they called for?[br]You a little tender aintcha?
+	Clay: Well, whatever.
 	set CharacterGlobals.characters["Clay"].has_met = true
 ~ nuetral
-% Clay: Speak fast, bud.[wait=1] 
-% Clay: Somethin' you need?[wait=1]
-% Clay: Don't touch the ears or the hat.[wait=1]
+% Clay: Hop to it, son. I ain't got all day.
+% Clay: Somethin' you need?
+% Clay: Don't touch the ears or the hat.
 - Who do you think did it?
 	Clay:  Well... Can't say I rightly know.[br]Don't judge 'em till I know 'em.[br]And I ain't ever known no murderer.
 	=> nuetral
@@ -18,10 +22,65 @@ while CharacterGlobals.characters["Clay"].has_met == false:
 	Clay: Count called me here and I obliged.[br]Not sure why.
 	Clay: Point is, I didn't kill 'em. And that's that.
 	=> nuetral
+- What were you doing today?
+	match CharacterGlobals.characters["Clay"].activity:
+		when "fishing"
+			Clay: Welp, spent the day untanglin' bird's nests.
+			Clay: Long ride down a cold trail.
+			Clay: Losin' worms in water.
+			Clay: [color=crimson]Fishin[/color]... I was [color=crimson]fishin[/color].
+		when "cooking"
+			Clay: [color=crimson]Cooking[/color].
+			Clay: Only thing I love more than trailin' is eatin' and you gotta cook to eat.
+		when "gardening"
+			Clay: Spent a good chunk of time [color=crimson]gardening[/color].
+			 Nice to see some green before headin' out on those plains.
+		when "dressing_up"
+			Clay: I ain't ashamed to admit I spent the day [color=crimson]dressin' up[/color].
+			Clay: You think these hats and spurs buy themselves?[br]You gotta know if you like 'em.
+		when ""
+			Clay: Looks like initialization didn't assign me anything.
+			Clay: So nothing, apparently. [rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Honk Honk![/rainbow]
+	=> nuetral
+- Where were you...
+	=> timesegments
 - That's all.
 	=> END
-=> END
-
-#  [if SomeGlobal.some_property == true /] ,- check for variables
-# use % to create a random percentage they say something
-# ~ to make a cue, => to jump to a cue
+	
+~ timesegments
+- Morning
+	Clay: You chose mornin'.
+	match CharacterGlobals.characters["Clay"].morning:
+		when "foyer"
+			Clay: This is a placeholder. If you get this, we messed up.
+		when "garden"
+			Clay: This is a placeholder. If you get this, we messed up.
+		when "library"
+			Clay: This is a placeholder. If you get this, we messed up.
+		when "kitchen"
+			Clay: This is a placeholder. If you get this, we messed up.
+	=> nuetral
+- Afternoon
+	Clay: You chose afternoon'.
+	match CharacterGlobals.characters["Clay"].afternoon:
+		when "foyer"
+			Clay: This is a placeholder. If you get this, we messed up.
+		when "garden"
+			Clay: This is a placeholder. If you get this, we messed up.
+		when "library"
+			Clay: This is a placeholder. If you get this, we messed up.
+		when "kitchen"
+			Clay: This is a placeholder. If you get this, we messed up.
+	=> nuetral
+- Evening
+	Clay: You chose evenin'.
+	match CharacterGlobals.characters["Clay"].night:
+		when "foyer"
+			Clay: This is a placeholder. If you get this, we messed up.
+		when "garden"
+			Clay: This is a placeholder. If you get this, we messed up.
+		when "library"
+			Clay: This is a placeholder. If you get this, we messed up.
+		when "kitchen"
+			Clay: This is a placeholder. If you get this, we messed up.
+	=> nuetral

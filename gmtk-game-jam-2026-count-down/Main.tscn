@@ -34,8 +34,6 @@ fog_depth_end = 0.1
 
 [node name="Main" type="Node3D" unique_id=544896189]
 script = ExtResource("1_fos0i")
-current_room = null
-current_time = null
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=682936293]
 environment = SubResource("Environment_cm0pq")

@@ -17,7 +17,7 @@ func _process(_delta: float) -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("LMB") and is_mouse_over:
-		$"../..".set_active_state($"../..".gamestate.SPEAK)
+		$"../../..".set_active_state($"../../..".gamestate.SPEAK)
 		self.visible = false
 		#spawn in dialogue position
 		DialogueManager.show_example_dialogue_balloon(load(resource), "start")
@@ -35,4 +35,4 @@ func _on_mouse_exited() -> void:
 func test(x : Resource) -> void:
 	if x.resource_path == resource:
 		self.visible = true
-		$"../..".set_active_state($"../..".gamestate.MOVE)
+		$"../../..".set_active_state($"../../..".gamestate.MOVE)
