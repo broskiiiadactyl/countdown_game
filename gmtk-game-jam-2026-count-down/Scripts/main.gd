@@ -13,6 +13,8 @@ extends Node3D
 @onready var library : Node3D = %Library
 @onready var garden : Node3D = %Garden
 
+@onready var body : Node3D = %Body
+
 #Camera vars
 @onready var camera : Camera3D = %PlayerCamera
 @onready var target_position : Vector3 = camera.global_position
@@ -259,6 +261,7 @@ func assign_things() -> void:
 	print(CharacterGlobals.places)
 
 func place_things() -> void:
+	#Place Characters
 	var characters : Array = %Characters.get_children()
 	
 	for nodes in characters:
@@ -273,10 +276,31 @@ func place_things() -> void:
 		
 		nodes.reparent(room_node)
 	
-	#place body in murder room
-	#randomly place all other characters
-	#make those characters children of their assigned rooms
-	#set starting room for player (active_room)
+	#Place Body
+	var room_name2 : String = "%" + CharacterGlobals.victim.in_room
+	var room_node2 : Node3D = get_node(room_name2)
+	
+	body.global_position = room_node2.body_pos
+	
+	transition_to_room(CharacterGlobals.victim.in_room)
+	
+	#Place Items
+	var items : Array = %Items.get_children()
+	var places : Dictionary = CharacterGlobals.places
+	
+	var i : int = 0
+	for item in items:
+		var clean_room_name : String = places.keys()[i]
+		var room_name3 : String = "%" + clean_room_name
+		var room_node3 : Node3D = get_node(room_name3)
+		
+		var item_name : String = places[clean_room_name]
+
+		item.set_item(item_name)
+		item.global_position = room_node3.item_pos
+		
+		i += 1
+	
 	pass
 
 func change_camera_state(state):

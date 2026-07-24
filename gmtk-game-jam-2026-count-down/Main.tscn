@@ -9,9 +9,11 @@
 [ext_resource type="PackedScene" uid="uid://cw8u2l6n3t4k" path="res://Scenes/Kitchen.tscn" id="5_03owx"]
 [ext_resource type="PackedScene" uid="uid://dfxvimp776pvm" path="res://Scenes/journal.tscn" id="6_3dxm6"]
 [ext_resource type="PackedScene" uid="uid://c7snsflexnn8p" path="res://Scenes/Library.tscn" id="6_03owx"]
+[ext_resource type="PackedScene" uid="uid://om0os628vkyh" path="res://Scenes/Body.tscn" id="7_c6i3y"]
 [ext_resource type="PackedScene" uid="uid://djmr3d6f1dgit" path="res://Scenes/Cookie.tscn" id="8_5vvyt"]
 [ext_resource type="PackedScene" uid="uid://dnlv4ds13wkxx" path="res://Scenes/Jerry.tscn" id="9_c6i3y"]
 [ext_resource type="PackedScene" uid="uid://dun3be2mqshyu" path="res://Scenes/Mike.tscn" id="10_c2ibq"]
+[ext_resource type="PackedScene" uid="uid://dto8xuuar0ffb" path="res://Scenes/item.tscn" id="14_c2ibq"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_cm0pq"]
 panorama = ExtResource("1_r0du0")
@@ -79,8 +81,12 @@ process_mode = 4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, 0)
 visible = false
 
+[node name="Body" parent="." unique_id=531970119 instance=ExtResource("7_c6i3y")]
+unique_name_in_owner = true
+
 [node name="Characters" type="Node3D" parent="." unique_id=2007826507]
 unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -12.35482, 0)
 
 [node name="Clay" parent="Characters" unique_id=999625138 instance=ExtResource("2_r0du0")]
 unique_name_in_owner = true
@@ -105,6 +111,7 @@ script = ExtResource("4_cm0pq")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12039691, -0.05464959, -0.17849684)
 
 [node name="Debug" type="Node3D" parent="." unique_id=1932556557]
+visible = false
 
 [node name="Fy" type="Label3D" parent="Debug" unique_id=1344102503]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.070867, 0)
@@ -125,3 +132,18 @@ text = "FRONT"
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=742726102]
 transform = Transform3D(44.545776, 0, 0, 0, -4.036672e-07, -1.8620415, 0, 9.234829, -8.139242e-08, 0.32621002, 6.3639, -2.1022356)
 mesh = SubResource("QuadMesh_03owx")
+
+[node name="Items" type="Node3D" parent="." unique_id=1840380233]
+unique_name_in_owner = true
+
+[node name="Item1" parent="Items" unique_id=376145413 instance=ExtResource("14_c2ibq")]
+unique_name_in_owner = true
+
+[node name="Item2" parent="Items" unique_id=1599460642 instance=ExtResource("14_c2ibq")]
+unique_name_in_owner = true
+
+[node name="Item3" parent="Items" unique_id=694405820 instance=ExtResource("14_c2ibq")]
+unique_name_in_owner = true
+
+[node name="Item4" parent="Items" unique_id=1907961873 instance=ExtResource("14_c2ibq")]
+unique_name_in_owner = true
