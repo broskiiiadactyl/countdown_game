@@ -3,45 +3,43 @@
 # ~ to make a cue, => to jump to a cue
 
 ~ start
-while CharacterGlobals.characters["Mike"].has_met == false:
-	Mike: [wave amp=50.0 freq=5.0 connected=1]Oh my god it's so nice to meet you![/wave]
-	Mike: You're the detective, right? My name is Mike and I think you may have solved the case of my new best friend.
-	set CharacterGlobals.characters["Mike"].has_met = true
+while CharacterGlobals.characters["Jerry"].has_met == false:
+	Jerry: Evening. My name is Gerard but you may call me Jerry.
+	Jerry: I served at the pleasure of his Count.
+	Jerry: I'm very eager for this matter to be over so I can take a nap for the first time in twenty years.
+	set CharacterGlobals.characters["Jerry"].has_met = true
 ~ nuetral
-% Mike: I AM SO EXCITED TO SEE YOU AGIAN.
-% Mike: We should [wave amp=50.0 freq=5.0 connected=1]totally[/wave] hang out after this.
-% Mike: Anything you need, just ask.
+% Jerry: Sorry I kind of spaced out there for a minute.
+% Jerry: I live to serve.
+% Jerry: *sigh* How can I help?
 - Who do you think did it?
-	Mike: Maybe he did it to himself?
-	Mike: I don't know, everyone here seems so nice I can't imagine anyone doing anything bad basically ever.
+	Jerry: If I say it was me do I get to go home sooner?
 	=> nuetral
 - Tell me about yourself.
-	Mike: Where do I even begin? [wave amp=50.0 freq=5.0 connected=1]Literally.[/wave]
-	Mike: I have WAY too much to tell you as my new best friend.
-	Mike: Let's just tell the police that someone did this whole murder thing and go for drinks. [wave amp=50.0 freq=5.0 connected=1]My treat![/wave]
+	Jerry: I am now realizing that the Count's passing has made me unemployed.
+	Jerry: I have never feel so relieved while being so panicked in my life.
 	=> nuetral
 - Do you recognize this item?
 	=> items
 - What were you doing today?
-	match CharacterGlobals.characters["Mike"].activity:
+	match CharacterGlobals.characters["Jerry"].activity:
 		when "Fishing"
-			Mike: [color=crimson]Fishing[/color]. I'm like, [wave amp=50.0 freq=5.0 connected=1]really good[/wave].
-			Mike: I hold the records for the most fish ever stacked on top of eachother [wave amp=50.0 freq=5.0 connected=1]TO THIS DAY[/wave].
+			Jerry: *sigh* The Count wanted fresh fish.
+			Jerry:  Store bought wasn't nearly good enough for our dearest Count, so I was forced to cultivate the habit of [color=crimson]fishing[/color].
 		when "Cooking"
-			Mike: [color=crimson]Cooking[/color], or at least I would call it cooking...[br]What would you call making and eating the same sandwich for several hours?
+			Jerry: The Count's schedule necessitates an incredible need for meal prepping in order to secure gains and as such I was [color=crimson]Cooking[/color].
 		when "Gardening"
-			Mike: You have [wave amp=50.0 freq=5.0 connected=1]NO IDEA[/wave] how long I was [color=crimson]gardening[/color]!
-			Mike: I like to stare at the worms and try to imagine what jobs they would have if they were people.
+			Jerry: [color=crimson]Gardening[/color]. Someone has to maintain the pristine edge of this manor both within and without.
 		when "Dressing up"
-			 Mike: [color=crimson]Dressing up![/color] I must have tried a thousand new hairstyles today. [wave amp=50.0 freq=5.0 connected=1]Who even knows[/wave].
+			 Jerry: Well if you must know, I spent the day [color=crimson]dressing up[/color]. A man simply must have hobbies.
 		when ""
-			Mike: Looks like initialization didn't assign me anything.
-			Mike: So nothing, apparently. [rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Honk Honk![/rainbow]
+			Jerry: Looks like initialization didn't assign me anything.
+			Jerry: So nothing, apparently. [rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Honk Honk![/rainbow]
 	=> nuetral
 - Where were you...
 	=> timesegments
 - Count down once.
-	Mike: I'm counting down.
+	Jerry: I'm counting down.
 	do Globals.count_down(1)
 	=> nuetral
 - That's all. (Leave)
@@ -49,16 +47,16 @@ while CharacterGlobals.characters["Mike"].has_met == false:
 
 ~ timesegments
 - Morning
-	Mike: I greeted the wonderful morning in my [wave amp=50.0 freq=5.0 connected=1]favorite [/wave] place in the Manor, the [color=crimson]{{CharacterGlobals.characters["Mike"].morning}}[/color].
-	do Globals.count_down(1, "Mike_morning")
+	Jerry: As Usual. Languishing in the [color=crimson]{{CharacterGlobals.characters["Jerry"].morning}}[/color].
+	do Globals.count_down(1, "Jerry_morning")
 	=> nuetral
 - Afternoon
-	Mike: When it gets hot I like to make my way to the [color=crimson]{{CharacterGlobals.characters["Mike"].noon}}[/color]. It really gets the [wave amp=50.0 freq=5.0 connected=1]juices[/wave] flowing.
-	do Globals.count_down(1, "Mike_noon")
+	Jerry: To be frank, hiding. The Count spends very little time in the [color=crimson]{{CharacterGlobals.characters["Jerry"].noon}}[/color] so I try to frequent it when possible.
+	do Globals.count_down(1, "Jerry_noon")
 	=> nuetral
 - Evening
-	Mike: [wave amp=50.0 freq=5.0 connected=1]OH MY G O D[/wave]! Have you seen the [color=crimson]{{CharacterGlobals.characters["Mike"].night}}[/color] at night? It's not just good, it's also PRETTY good!
-	do Globals.count_down(1, "Mike_night")
+	Jerry: Around the [color=crimson]{{CharacterGlobals.characters["Jerry"].night}}[/color]. I will not lie, I sort of entered a fugue state and wandered into there.
+	do Globals.count_down(1, "Jerry_night")
 	=> nuetral
 - Nevermind
 	=> nuetral
@@ -117,37 +115,37 @@ match Globals.inventory.size()
 => nuetral
 
 ~ checkitem1
-if Globals.item1 == CharacterGlobals.characters["Mike"].item:
-	Mike: Oh my god, [wave amp=50.0 freq=5.0 connected=1]YES[/wave]! I've been looking for it everywhere. Thaaaaaaaanks~
-	do Globals.blocks.append("The "+Globals.item1+" belongs to Mike.")
+if Globals.item1 == CharacterGlobals.characters["Jerry"].item:
+	Jerry: Why, yes. It is. Thank you for finding it.
+	do Globals.blocks.append("The "+Globals.item1+" belongs to Jerry.")
 	$> Globals.update_blocks.emit()
 else
-	Mike: Whomp Whomp. Huge loser moment! Not even close!
+	Jerry: Whomp Whomp. Huge loser moment! Not even close!
 => nuetral
 
 ~ checkitem2
-if Globals.item2 == CharacterGlobals.characters["Mike"].item:
-	Mike: Oh my god, [wave amp=50.0 freq=5.0 connected=1]YES[/wave]! I've been looking for it everywhere. Thaaaaaaaanks~
-	do Globals.blocks.append("The "+Globals.item2+" belongs to Mike.")
+if Globals.item2 == CharacterGlobals.characters["Jerry"].item:
+	Jerry: Why, yes. It is. Thank you for finding it.
+	do Globals.blocks.append("The "+Globals.item2+" belongs to Jerry.")
 	$> Globals.update_blocks.emit()
 else
-	Mike:[wave amp=50.0 freq=5.0 connected=1]Uhhh...[/wave]Yeeeees? I mean... it isn't. I have no idea what that is. But if I say it's mine, will that help?
+	Jerry: Unfortunately, no. You will have to continue your journey elsewhere.
 => nuetral
 
 ~ checkitem3
-if Globals.item3 == CharacterGlobals.characters["Mike"].item:
-	Mike: Oh my god, [wave amp=50.0 freq=5.0 connected=1]YES[/wave]! I've been looking for it everywhere. Thaaaaaaaanks~
-	do Globals.blocks.append("The "+Globals.item3+" belongs to Mike.")
+if Globals.item3 == CharacterGlobals.characters["Jerry"].item:
+	Jerry: Why, yes. It is. Thank you for finding it.
+	do Globals.blocks.append("The "+Globals.item3+" belongs to Jerry.")
 	$> Globals.update_blocks.emit()
 else
-	Mike: [wave amp=50.0 freq=5.0 connected=1]Uhhh...[/wave]Yeeeees? I mean... it isn't. I have no idea what that is. But if I say it's mine, will that help?
+	Jerry: Unfortunately, no. You will have to continue your journey elsewhere.
 => nuetral
 
 ~ checkitem4
-if Globals.item4 == CharacterGlobals.characters["Mike"].item:
-	Mike: Oh my god, [wave amp=50.0 freq=5.0 connected=1]YES[/wave]! I've been looking for it everywhere. Thaaaaaaaanks~
-	do Globals.blocks.append("The "+Globals.item4+" belongs to Mike.")
+if Globals.item4 == CharacterGlobals.characters["Jerry"].item:
+	Jerry: Oh my god, [wave amp=50.0 freq=5.0 connected=1]YES[/wave]! I've been looking for it everywhere. Thaaaaaaaanks~
+	do Globals.blocks.append("The "+Globals.item4+" belongs to Jerry.")
 	$> Globals.update_blocks.emit()
 else
-	Mike:[wave amp=50.0 freq=5.0 connected=1]Uhhh...[/wave]Yeeeees? I mean... it isn't. I have no idea what that is. But if I say it's mine, will that help?
+	Jerry: Unfortunately, no. You will have to continue your journey elsewhere.
 => nuetral
