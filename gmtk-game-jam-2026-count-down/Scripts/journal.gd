@@ -41,18 +41,20 @@ func set_state(state) -> void:
 			icon.visible = false
 
 func populate_journal() -> void:
+	print("JOURNAL")
 	var journal_blocks : Array = Globals.blocks
 	
-	var firstLoop = true
+	#skip title and buffer
+	var x = 2
 	for child in %LPage.get_children():
-		if firstLoop == true:
-			firstLoop = false
-			continue
-		child.queue_free()
+		if x <= 0:
+			child.queue_free()
+		x -= 1
 	
 	for block in journal_blocks:
 		var new_label = Label.new()
 		new_label.text = block
+		new_label.autowrap_mode = TextServer.AUTOWRAP_WORD
 		%LPage.add_child(new_label)
 
 
@@ -67,7 +69,6 @@ func _on_jornal_area_mouse_exited() -> void:
 
 func _on_exit_area_mouse_entered() -> void:
 	is_over_cross = true
-	print(true)
 
 func _on_exit_area_mouse_exited() -> void:
 	is_over_cross = false

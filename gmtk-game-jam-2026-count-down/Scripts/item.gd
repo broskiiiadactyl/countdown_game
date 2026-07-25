@@ -55,4 +55,3 @@ func take_item() -> void:
 		Globals.item3 = item_name
 	elif Globals.item4 == "":
 		Globals.item4 = item_name
-	print(Globals.inventory, "\n", Globals.item1, "\n", Globals.item2, "\n", Globals.item3, "\n", Globals.item4)

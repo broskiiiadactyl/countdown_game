@@ -3,7 +3,10 @@
 [ext_resource type="Script" uid="uid://7ieaplgag0t8" path="res://Scripts/journal.gd" id="1_civ5d"]
 [ext_resource type="Texture2D" uid="uid://dmwn4bfx1xq01" path="res://Assets/Test/icon_pause.png" id="2_d4r5f"]
 [ext_resource type="Texture2D" uid="uid://g2doseq4wchv" path="res://Assets/Test/spellbook.png" id="3_4xnl1"]
+[ext_resource type="FontFile" uid="uid://brnnt80mky7j6" path="res://Assets/Test/NanumPenScript-Regular.ttf" id="4_nv2gc"]
 [ext_resource type="Texture2D" uid="uid://bl0c15e4cu0mg" path="res://Assets/Test/icon_cross.png" id="4_x6005"]
+[ext_resource type="Shader" uid="uid://dg8p5n2ichiyp" path="res://journal.gdshader" id="5_jqjty"]
+[ext_resource type="PackedScene" uid="uid://dto8xuuar0ffb" path="res://Scenes/item.tscn" id="6_nv2gc"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_okafp"]
 resource_local_to_scene = true
@@ -19,6 +22,37 @@ size = Vector2(0.05, 0.05)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_x6005"]
 size = Vector3(0.044677734, 0.04321289, 0.001)
+
+[sub_resource type="Theme" id="Theme_4xnl1"]
+default_font = ExtResource("4_nv2gc")
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 1)
+Label/constants/line_spacing = 0
+Label/constants/outline_size = 0
+Label/constants/shadow_offset_x = 0
+Label/constants/shadow_offset_y = 0
+Label/constants/shadow_outline_size = 0
+Label/font_sizes/font_size = 30
+Label/fonts/font = ExtResource("4_nv2gc")
+Label/styles/focus = null
+Label/styles/normal = null
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_wnnew"]
+viewport_path = NodePath("Cameras/Item1")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_16vce"]
+resource_local_to_scene = true
+shader = ExtResource("5_jqjty")
+shader_parameter/mask_texture = SubResource("ViewportTexture_wnnew")
+
+[sub_resource type="QuadMesh" id="QuadMesh_q37xc"]
+material = SubResource("ShaderMaterial_16vce")
+size = Vector2(100, 100)
+center_offset = Vector3(0, -50, 0)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_3thhg"]
+viewport_path = NodePath("Cameras/Item1")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4xnl1"]
 size = Vector2(97.49951, 102.00001)
@@ -42,7 +76,6 @@ transparent_bg = true
 
 [node name="JMenu" type="Control" parent="." unique_id=64371072]
 unique_name_in_owner = true
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -95,37 +128,146 @@ vertical_alignment = 1
 [node name="LPage" type="VBoxContainer" parent="JMenu" unique_id=144834416]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 222.0
-offset_top = 126.0
-offset_right = 518.0
-offset_bottom = 488.0
+offset_left = 207.0
+offset_top = 99.0
+offset_right = 533.0
+offset_bottom = 549.0
 mouse_filter = 2
+theme = SubResource("Theme_4xnl1")
 
 [node name="CluesTitle" type="Label" parent="JMenu/LPage" unique_id=1271017074]
+visible = false
 layout_mode = 2
 text = "Info"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="BUFFER" type="Label" parent="JMenu/LPage" unique_id=395847593]
+visible = false
 layout_mode = 2
 
-[node name="RPage" type="VBoxContainer" parent="JMenu" unique_id=1867291211]
-layout_mode = 0
-offset_left = 645.0
-offset_top = 126.0
-offset_right = 941.0
-offset_bottom = 488.0
-mouse_filter = 2
+[node name="FirstHint" type="Label" parent="JMenu/LPage" unique_id=1162005031]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Lorem ipsum dolor sit amet"
+autowrap_mode = 2
 
-[node name="ItemsTitle" type="Label" parent="JMenu/RPage" unique_id=1341718535]
+[node name="RPage" type="VBoxContainer" parent="JMenu" unique_id=411943378]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 623.0
+offset_top = 107.0
+offset_right = 949.0
+offset_bottom = 549.0
+mouse_filter = 2
+theme = SubResource("Theme_4xnl1")
+
+[node name="ItemsTitle" type="Label" parent="JMenu/RPage" unique_id=1506389701]
 layout_mode = 2
 text = "Items"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="BUFFER" type="Label" parent="JMenu/RPage" unique_id=1995597237]
+[node name="BUFFER" type="Label" parent="JMenu/RPage" unique_id=681575708]
+visible = false
 layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="JMenu/RPage" unique_id=1824750225]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="JMenu/RPage/VBoxContainer" unique_id=582342388]
+custom_minimum_size = Vector2(300, 150)
+layout_mode = 2
+
+[node name="Item1" type="MarginContainer" parent="JMenu/RPage/VBoxContainer/HBoxContainer" unique_id=1303077161]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+
+[node name="TextureRect" type="MeshInstance2D" parent="JMenu/RPage/VBoxContainer/HBoxContainer/Item1" unique_id=501828399]
+position = Vector2(74, 122)
+mesh = SubResource("QuadMesh_q37xc")
+texture = SubResource("ViewportTexture_3thhg")
+
+[node name="Label" type="Label" parent="JMenu/RPage/VBoxContainer/HBoxContainer/Item1/TextureRect" unique_id=1483403766]
+offset_left = -73.0
+offset_top = -2.0
+offset_right = 77.0
+offset_bottom = 33.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_nv2gc")
+theme_override_font_sizes/font_size = 30
+text = "test"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Item2" type="MarginContainer" parent="JMenu/RPage/VBoxContainer/HBoxContainer" unique_id=1257541261]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+
+[node name="TextureRect" type="MeshInstance2D" parent="JMenu/RPage/VBoxContainer/HBoxContainer/Item2" unique_id=1100291257]
+position = Vector2(74, 122)
+mesh = SubResource("QuadMesh_q37xc")
+texture = SubResource("ViewportTexture_3thhg")
+
+[node name="Label" type="Label" parent="JMenu/RPage/VBoxContainer/HBoxContainer/Item2/TextureRect" unique_id=1249575806]
+offset_left = -73.0
+offset_top = -2.0
+offset_right = 77.0
+offset_bottom = 33.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_nv2gc")
+theme_override_font_sizes/font_size = 30
+text = "test"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="JMenu/RPage/VBoxContainer" unique_id=941379916]
+custom_minimum_size = Vector2(300, 150)
+layout_mode = 2
+
+[node name="Item3" type="MarginContainer" parent="JMenu/RPage/VBoxContainer/HBoxContainer2" unique_id=472208216]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+
+[node name="TextureRect" type="MeshInstance2D" parent="JMenu/RPage/VBoxContainer/HBoxContainer2/Item3" unique_id=447614272]
+position = Vector2(74, 122)
+mesh = SubResource("QuadMesh_q37xc")
+texture = SubResource("ViewportTexture_3thhg")
+
+[node name="Label" type="Label" parent="JMenu/RPage/VBoxContainer/HBoxContainer2/Item3/TextureRect" unique_id=1593432533]
+offset_left = -73.0
+offset_top = -2.0
+offset_right = 77.0
+offset_bottom = 33.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_nv2gc")
+theme_override_font_sizes/font_size = 30
+text = "test"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Item4" type="MarginContainer" parent="JMenu/RPage/VBoxContainer/HBoxContainer2" unique_id=2117578926]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+
+[node name="TextureRect" type="MeshInstance2D" parent="JMenu/RPage/VBoxContainer/HBoxContainer2/Item4" unique_id=1340671388]
+position = Vector2(74, 122)
+mesh = SubResource("QuadMesh_q37xc")
+texture = SubResource("ViewportTexture_3thhg")
+
+[node name="Label" type="Label" parent="JMenu/RPage/VBoxContainer/HBoxContainer2/Item4/TextureRect" unique_id=434883415]
+offset_left = -73.0
+offset_top = -2.0
+offset_right = 77.0
+offset_bottom = 33.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_nv2gc")
+theme_override_font_sizes/font_size = 30
+text = "test"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Exit" type="Control" parent="JMenu" unique_id=2046026006]
 unique_name_in_owner = true
@@ -146,6 +288,55 @@ scale = Vector2(0.9999999, 0.9999999)
 position = Vector2(-0.75, 1.5)
 scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("RectangleShape2D_4xnl1")
+
+[node name="Cameras" type="Node3D" parent="." unique_id=200272820]
+
+[node name="Item1" type="SubViewport" parent="Cameras" unique_id=365634016]
+transparent_bg = true
+
+[node name="Camera3D" type="Camera3D" parent="Cameras/Item1" unique_id=210586314]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -46.035084, 0)
+current = true
+fov = 37.849285
+
+[node name="Item" parent="Cameras/Item1/Camera3D" unique_id=376145413 instance=ExtResource("6_nv2gc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.052782048, -0.6543999)
+
+[node name="Item2" type="SubViewport" parent="Cameras" unique_id=368085601]
+transparent_bg = true
+
+[node name="Camera3D" type="Camera3D" parent="Cameras/Item2" unique_id=2046204427]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -46.035084, 0)
+visible = false
+current = true
+fov = 37.849285
+
+[node name="Item" parent="Cameras/Item2/Camera3D" unique_id=457385037 instance=ExtResource("6_nv2gc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05278206, -0.30083758)
+
+[node name="Item3" type="SubViewport" parent="Cameras" unique_id=1440926018]
+transparent_bg = true
+
+[node name="Camera3D" type="Camera3D" parent="Cameras/Item3" unique_id=1337066584]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -46.035084, 0)
+visible = false
+current = true
+fov = 37.849285
+
+[node name="Item" parent="Cameras/Item3/Camera3D" unique_id=338309705 instance=ExtResource("6_nv2gc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05278206, -0.30083758)
+
+[node name="Item4" type="SubViewport" parent="Cameras" unique_id=1556395608]
+transparent_bg = true
+
+[node name="Camera3D" type="Camera3D" parent="Cameras/Item4" unique_id=1632327078]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -46.035084, 0)
+visible = false
+current = true
+fov = 37.849285
+
+[node name="Item" parent="Cameras/Item4/Camera3D" unique_id=1379981131 instance=ExtResource("6_nv2gc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05278206, -0.30083758)
 
 [connection signal="mouse_entered" from="Icon/IconArea" to="." method="_on_jornal_area_mouse_entered"]
 [connection signal="mouse_exited" from="Icon/IconArea" to="." method="_on_jornal_area_mouse_exited"]
