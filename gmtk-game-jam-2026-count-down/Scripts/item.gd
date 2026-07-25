@@ -9,9 +9,9 @@ var item_name : String = "Hefty Knife"
 @onready var bag = %bag
 @onready var gloves = %gloves
 @onready var knife = %knife
-@onready var net = %net
+@onready var net = %nets
 @onready var nightshade = %nightshade
-@onready var scissors = %Scissors
+@onready var scissors = %scissors
 
 func _ready() -> void:
 	#DialogueManager.dialogue_ended.connect(test)
@@ -61,6 +61,7 @@ func set_item(naem: String):
 func take_item() -> void:
 	self.visible = false
 	Globals.inventory.append(item_name)
+	Globals.items.emit(item_name)
 	if Globals.item1 == "":
 		Globals.item1 = item_name
 	elif Globals.item2 == "":

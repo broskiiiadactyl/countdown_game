@@ -33,6 +33,7 @@ var item1 = ""
 var item2 = ""
 var item3 = ""
 var item4 = ""
+signal items(item)
 
 func dm_print( p ): #print function so I can print from the dialogue manager
 	print(p)

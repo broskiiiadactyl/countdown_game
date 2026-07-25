@@ -10,8 +10,7 @@ var resource := "res://Dialogue/cookie.dialogue"
 
 func _ready() -> void:
 	DialogueManager.dialogue_ended.connect(test)
-	
-	anim_player.play("Cookie/Action")
+	anim_player.play("cookie/Idle")
 
 
 func _process(_delta: float) -> void:
@@ -24,6 +23,9 @@ func _unhandled_input(event: InputEvent) -> void:
 		Globals.toggle_characters("Cookie")
 		#spawn in dialogue position
 		DialogueManager.show_example_dialogue_balloon(load(resource), "start")
+
+func talk_anim() -> void:
+	anim_player.play("cookie/TalkPose")
 
 
 func _on_mouse_entered() -> void:

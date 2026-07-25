@@ -5,7 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://g2doseq4wchv" path="res://Assets/Test/spellbook.png" id="3_4xnl1"]
 [ext_resource type="FontFile" uid="uid://brnnt80mky7j6" path="res://Assets/Test/NanumPenScript-Regular.ttf" id="4_nv2gc"]
 [ext_resource type="Texture2D" uid="uid://bl0c15e4cu0mg" path="res://Assets/Test/icon_cross.png" id="4_x6005"]
-[ext_resource type="Shader" uid="uid://dg8p5n2ichiyp" path="res://journal.gdshader" id="5_jqjty"]
 [ext_resource type="PackedScene" uid="uid://dto8xuuar0ffb" path="res://Scenes/item.tscn" id="6_nv2gc"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_okafp"]
@@ -38,21 +37,33 @@ Label/fonts/font = ExtResource("4_nv2gc")
 Label/styles/focus = null
 Label/styles/normal = null
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_wnnew"]
-viewport_path = NodePath("Cameras/Item1")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_16vce"]
-resource_local_to_scene = true
-shader = ExtResource("5_jqjty")
-shader_parameter/mask_texture = SubResource("ViewportTexture_wnnew")
-
-[sub_resource type="QuadMesh" id="QuadMesh_q37xc"]
-material = SubResource("ShaderMaterial_16vce")
+[sub_resource type="QuadMesh" id="QuadMesh_nv2gc"]
 size = Vector2(100, 100)
 center_offset = Vector3(0, -50, 0)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_3thhg"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_nv2gc"]
 viewport_path = NodePath("Cameras/Item1")
+
+[sub_resource type="QuadMesh" id="QuadMesh_jqjty"]
+size = Vector2(100, 100)
+center_offset = Vector3(0, -50, 0)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_jqjty"]
+viewport_path = NodePath("Cameras/Item2")
+
+[sub_resource type="QuadMesh" id="QuadMesh_wnnew"]
+size = Vector2(100, 100)
+center_offset = Vector3(0, -50, 0)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_wnnew"]
+viewport_path = NodePath("Cameras/Item3")
+
+[sub_resource type="QuadMesh" id="QuadMesh_16vce"]
+size = Vector2(100, 100)
+center_offset = Vector3(0, -50, 0)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_16vce"]
+viewport_path = NodePath("Cameras/Item4")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4xnl1"]
 size = Vector2(97.49951, 102.00001)
@@ -76,7 +87,6 @@ transparent_bg = true
 
 [node name="JMenu" type="Control" parent="." unique_id=64371072]
 unique_name_in_owner = true
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -179,6 +189,7 @@ layout_mode = 2
 [node name="HBoxContainer" type="HBoxContainer" parent="JMenu/RPage/VBoxContainer" unique_id=582342388]
 custom_minimum_size = Vector2(300, 150)
 layout_mode = 2
+theme_override_constants/separation = 10
 
 [node name="Item1" type="MarginContainer" parent="JMenu/RPage/VBoxContainer/HBoxContainer" unique_id=1303077161]
 custom_minimum_size = Vector2(150, 0)
@@ -186,10 +197,12 @@ layout_mode = 2
 
 [node name="TextureRect" type="MeshInstance2D" parent="JMenu/RPage/VBoxContainer/HBoxContainer/Item1" unique_id=501828399]
 position = Vector2(74, 122)
-mesh = SubResource("QuadMesh_q37xc")
-texture = SubResource("ViewportTexture_3thhg")
+mesh = SubResource("QuadMesh_nv2gc")
+texture = SubResource("ViewportTexture_nv2gc")
 
-[node name="Label" type="Label" parent="JMenu/RPage/VBoxContainer/HBoxContainer/Item1/TextureRect" unique_id=1483403766]
+[node name="Label1" type="Label" parent="JMenu/RPage/VBoxContainer/HBoxContainer/Item1/TextureRect" unique_id=1483403766]
+unique_name_in_owner = true
+visible = false
 offset_left = -73.0
 offset_top = -2.0
 offset_right = 77.0
@@ -207,10 +220,12 @@ layout_mode = 2
 
 [node name="TextureRect" type="MeshInstance2D" parent="JMenu/RPage/VBoxContainer/HBoxContainer/Item2" unique_id=1100291257]
 position = Vector2(74, 122)
-mesh = SubResource("QuadMesh_q37xc")
-texture = SubResource("ViewportTexture_3thhg")
+mesh = SubResource("QuadMesh_jqjty")
+texture = SubResource("ViewportTexture_jqjty")
 
-[node name="Label" type="Label" parent="JMenu/RPage/VBoxContainer/HBoxContainer/Item2/TextureRect" unique_id=1249575806]
+[node name="Label2" type="Label" parent="JMenu/RPage/VBoxContainer/HBoxContainer/Item2/TextureRect" unique_id=1249575806]
+unique_name_in_owner = true
+visible = false
 offset_left = -73.0
 offset_top = -2.0
 offset_right = 77.0
@@ -232,10 +247,12 @@ layout_mode = 2
 
 [node name="TextureRect" type="MeshInstance2D" parent="JMenu/RPage/VBoxContainer/HBoxContainer2/Item3" unique_id=447614272]
 position = Vector2(74, 122)
-mesh = SubResource("QuadMesh_q37xc")
-texture = SubResource("ViewportTexture_3thhg")
+mesh = SubResource("QuadMesh_wnnew")
+texture = SubResource("ViewportTexture_wnnew")
 
-[node name="Label" type="Label" parent="JMenu/RPage/VBoxContainer/HBoxContainer2/Item3/TextureRect" unique_id=1593432533]
+[node name="Label3" type="Label" parent="JMenu/RPage/VBoxContainer/HBoxContainer2/Item3/TextureRect" unique_id=1593432533]
+unique_name_in_owner = true
+visible = false
 offset_left = -73.0
 offset_top = -2.0
 offset_right = 77.0
@@ -254,10 +271,12 @@ layout_mode = 2
 
 [node name="TextureRect" type="MeshInstance2D" parent="JMenu/RPage/VBoxContainer/HBoxContainer2/Item4" unique_id=1340671388]
 position = Vector2(74, 122)
-mesh = SubResource("QuadMesh_q37xc")
-texture = SubResource("ViewportTexture_3thhg")
+mesh = SubResource("QuadMesh_16vce")
+texture = SubResource("ViewportTexture_16vce")
 
-[node name="Label" type="Label" parent="JMenu/RPage/VBoxContainer/HBoxContainer2/Item4/TextureRect" unique_id=434883415]
+[node name="Label4" type="Label" parent="JMenu/RPage/VBoxContainer/HBoxContainer2/Item4/TextureRect" unique_id=434883415]
+unique_name_in_owner = true
+visible = false
 offset_left = -73.0
 offset_top = -2.0
 offset_right = 77.0
@@ -296,48 +315,56 @@ shape = SubResource("RectangleShape2D_4xnl1")
 transparent_bg = true
 
 [node name="Camera3D" type="Camera3D" parent="Cameras/Item1" unique_id=210586314]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -46.035084, 0)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 2.0382566, -46.035084, 0)
 current = true
 fov = 37.849285
 
-[node name="Item" parent="Cameras/Item1/Camera3D" unique_id=376145413 instance=ExtResource("6_nv2gc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.052782048, -0.6543999)
+[node name="1" parent="Cameras/Item1/Camera3D" unique_id=376145413 instance=ExtResource("6_nv2gc")]
+unique_name_in_owner = true
+process_mode = 4
+transform = Transform3D(-1, 8.742278e-08, 3.821371e-15, -6.181723e-08, -0.7071068, 0.7071067, 6.181724e-08, 0.7071067, 0.7071068, 0, 3.846094e-08, -0.8798866)
 
 [node name="Item2" type="SubViewport" parent="Cameras" unique_id=368085601]
 transparent_bg = true
 
 [node name="Camera3D" type="Camera3D" parent="Cameras/Item2" unique_id=2046204427]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -46.035084, 0)
-visible = false
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.7538933, -46.035084, 0)
 current = true
 fov = 37.849285
 
-[node name="Item" parent="Cameras/Item2/Camera3D" unique_id=457385037 instance=ExtResource("6_nv2gc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05278206, -0.30083758)
+[node name="2" parent="Cameras/Item2/Camera3D" unique_id=457385037 instance=ExtResource("6_nv2gc")]
+unique_name_in_owner = true
+process_mode = 4
+transform = Transform3D(-1, 8.742278e-08, 3.821371e-15, -6.181723e-08, -0.7071068, 0.7071067, 6.181724e-08, 0.7071067, 0.7071068, 0, 3.846094e-08, -0.8798866)
+visible = false
 
 [node name="Item3" type="SubViewport" parent="Cameras" unique_id=1440926018]
 transparent_bg = true
 
 [node name="Camera3D" type="Camera3D" parent="Cameras/Item3" unique_id=1337066584]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -46.035084, 0)
-visible = false
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.41174334, -46.035084, 0)
 current = true
 fov = 37.849285
 
-[node name="Item" parent="Cameras/Item3/Camera3D" unique_id=338309705 instance=ExtResource("6_nv2gc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05278206, -0.30083758)
+[node name="3" parent="Cameras/Item3/Camera3D" unique_id=338309705 instance=ExtResource("6_nv2gc")]
+unique_name_in_owner = true
+process_mode = 4
+transform = Transform3D(-1, 8.742278e-08, 3.821371e-15, -6.181723e-08, -0.7071068, 0.7071067, 6.181724e-08, 0.7071067, 0.7071068, 0, 3.846094e-08, -0.8798866)
+visible = false
 
 [node name="Item4" type="SubViewport" parent="Cameras" unique_id=1556395608]
 transparent_bg = true
 
 [node name="Camera3D" type="Camera3D" parent="Cameras/Item4" unique_id=1632327078]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -46.035084, 0)
-visible = false
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -1.7283615, -46.035084, 0)
 current = true
 fov = 37.849285
 
-[node name="Item" parent="Cameras/Item4/Camera3D" unique_id=1379981131 instance=ExtResource("6_nv2gc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05278206, -0.30083758)
+[node name="4" parent="Cameras/Item4/Camera3D" unique_id=1379981131 instance=ExtResource("6_nv2gc")]
+unique_name_in_owner = true
+process_mode = 4
+transform = Transform3D(-1, 8.742278e-08, 3.821371e-15, -6.181723e-08, -0.7071068, 0.7071067, 6.181724e-08, 0.7071067, 0.7071068, 0, 3.846094e-08, -0.8798866)
+visible = false
 
 [connection signal="mouse_entered" from="Icon/IconArea" to="." method="_on_jornal_area_mouse_entered"]
 [connection signal="mouse_exited" from="Icon/IconArea" to="." method="_on_jornal_area_mouse_exited"]

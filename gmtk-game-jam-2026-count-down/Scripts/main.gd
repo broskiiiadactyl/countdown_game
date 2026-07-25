@@ -44,6 +44,13 @@ func _ready() -> void:
 	down_count()
 	
 	Globals.set_active_state(Globals.gamestate.MOVE)
+	
+	cookie.talk_anim()
+	#clay.talk_anim()
+	#jerry.talk_anim()
+	#mike.talk_anim()
+	#count.talk_anim()
+	
 
 #I don't think this block is needed at all, probably delete
 func _process(_delta: float) -> void:

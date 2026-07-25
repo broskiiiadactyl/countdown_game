@@ -37,17 +37,17 @@ unique_name_in_owner = true
 transform = Transform3D(0.09330976, -1.4954253, -0.07068591, -1.2677063, -0.11659862, 0.7933004, -0.7963756, 0.010390867, -1.2710932, 0.32986802, 0.11956234, -0.012184769)
 visible = false
 
-[node name="net" parent="." unique_id=1332337027 instance=ExtResource("6_66iod")]
+[node name="nets" parent="." unique_id=1332337027 instance=ExtResource("6_66iod")]
 unique_name_in_owner = true
 transform = Transform3D(0.59507304, -1.3769126, 0, 1.3769126, 0.59507304, 0, 0, 0, 1.5, -0.018451989, -0.418135, 5.9604645e-08)
 visible = false
 
-[node name="Scissors" parent="." unique_id=400729504 instance=ExtResource("7_66iod")]
+[node name="scissors" parent="." unique_id=400729504 instance=ExtResource("7_66iod")]
 unique_name_in_owner = true
 transform = Transform3D(-0.10063386, 1.4675608, -0.2934932, -1.3150513, -0.22714114, -0.6848702, -0.71450186, 0.21135831, 1.3018503, -0.20819272, 0.09585893, 0)
 visible = false
 
-[node name="OmniLight3D3" type="OmniLight3D" parent="Scissors" unique_id=421844759]
+[node name="OmniLight3D3" type="OmniLight3D" parent="scissors" unique_id=421844759]
 transform = Transform3D(-0.044726115, -0.5844671, -0.3175564, 0.65224916, -0.10095157, 0.09393706, -0.13044143, -0.3043867, 0.57860017, -0.066131964, 0.14901465, 0.049021497)
 layers = 2
 light_cull_mask = 4294967294
