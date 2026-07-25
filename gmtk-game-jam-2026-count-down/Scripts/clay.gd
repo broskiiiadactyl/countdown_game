@@ -4,7 +4,7 @@ var is_mouse_over : bool = false
 
 
 var resource := "res://Dialogue/clay.dialogue"
-
+var dialogue_sprite:= "res://Dialogue/dog.jpg"
 
 func _ready() -> void:
 	DialogueManager.dialogue_ended.connect(test)

@@ -49,7 +49,7 @@ while CharacterGlobals.characters["Clay"].has_met == false:
 	=> timesegments
 - Count down once.
 	Clay: I'm counting down.
-	do Globals.count_down(1)
+	do Globals.count_down(1, "count_down_once")
 	=> nuetral
 - That's all.
 	=> END
