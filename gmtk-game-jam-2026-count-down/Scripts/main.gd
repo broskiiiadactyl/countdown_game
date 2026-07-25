@@ -46,9 +46,9 @@ func _ready() -> void:
 	Globals.set_active_state(Globals.gamestate.MOVE)
 	
 	cookie.talk_anim()
-	#clay.talk_anim()
-	#jerry.talk_anim()
-	#mike.talk_anim()
+	clay.talk_anim()
+	jerry.talk_anim()
+	mike.talk_anim()
 	#count.talk_anim()
 	
 
@@ -339,9 +339,11 @@ func change_camera_state(state):
 			camera.process_mode = Node.PROCESS_MODE_ALWAYS
 			Input.warp_mouse(mouse_pos)
 		"Speak":
+			Input.set_custom_mouse_cursor(Globals.arrow)
 			camera.process_mode = Node.PROCESS_MODE_DISABLED
 			mouse_pos = get_viewport().get_mouse_position()
 		"Menu":
+			Input.set_custom_mouse_cursor(Globals.arrow)
 			mouse_pos = $PlayerCamera/Journal.get_node("%ExitIMG").global_position
 
 func toggle_characters(character):

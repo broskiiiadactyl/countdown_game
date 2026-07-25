@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bnguf5auu6xmu"]
+
+[ext_resource type="PackedScene" uid="uid://b87skm4twq7pd" path="res://Assets/Items/readablenet.glb" id="1_gqe7f"]
+
+[node name="net" unique_id=1237615001 instance=ExtResource("1_gqe7f")]
+
+[node name="g Sphere001" parent="." index="0" unique_id=259012504]
+layers = 3

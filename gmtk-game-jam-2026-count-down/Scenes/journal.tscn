@@ -82,9 +82,6 @@ unique_name_in_owner = true
 unique_name_in_owner = true
 shape = SubResource("BoxShape3D_x6005")
 
-[node name="SubViewport" type="SubViewport" parent="." unique_id=1826495985]
-transparent_bg = true
-
 [node name="JMenu" type="Control" parent="." unique_id=64371072]
 unique_name_in_owner = true
 layout_mode = 3
@@ -175,6 +172,7 @@ theme = SubResource("Theme_4xnl1")
 
 [node name="ItemsTitle" type="Label" parent="JMenu/RPage" unique_id=1506389701]
 layout_mode = 2
+theme_override_font_sizes/font_size = 40
 text = "Items"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -241,6 +239,7 @@ vertical_alignment = 1
 [node name="HBoxContainer2" type="HBoxContainer" parent="JMenu/RPage/VBoxContainer" unique_id=941379916]
 custom_minimum_size = Vector2(300, 200)
 layout_mode = 2
+theme_override_constants/separation = 10
 alignment = 1
 
 [node name="Item3" type="MarginContainer" parent="JMenu/RPage/VBoxContainer/HBoxContainer2" unique_id=472208216]

@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://60q0vm5qilok" path="res://Assets/Items/gloves/gloves.tscn" id="3_66iod"]
 [ext_resource type="PackedScene" uid="uid://qoobrt8rqvu3" path="res://Assets/Items/cleaver/cleaver.tscn" id="5_66iod"]
 [ext_resource type="PackedScene" uid="uid://b832a5o8xlkx2" path="res://Assets/Items/net/net.tscn" id="6_66iod"]
+[ext_resource type="PackedScene" uid="uid://bnguf5auu6xmu" path="res://Assets/Items/net/net_piece.tscn" id="6_jmixh"]
 [ext_resource type="PackedScene" uid="uid://bp3b1jfcdicdg" path="res://Assets/Items/scissors/scissors.tscn" id="7_66iod"]
 [ext_resource type="PackedScene" uid="uid://bwbitjwkoi71k" path="res://Assets/Items/flower/nightshade.tscn" id="7_jrdc7"]
 
@@ -37,7 +38,12 @@ unique_name_in_owner = true
 transform = Transform3D(0.09330976, -1.4954253, -0.07068591, -1.2677063, -0.11659862, 0.7933004, -0.7963756, 0.010390867, -1.2710932, 0.32986802, 0.11956234, -0.012184769)
 visible = false
 
-[node name="nets" parent="." unique_id=1332337027 instance=ExtResource("6_66iod")]
+[node name="nets" parent="." unique_id=123876727 instance=ExtResource("6_jmixh")]
+unique_name_in_owner = true
+transform = Transform3D(-0.70232093, -0.53955233, 0.46435833, -0.63523215, 0.769433, -0.06673193, -0.3212873, -0.3418427, -0.88312984, 0.14109358, 0.083018884, 0.12509231)
+visible = false
+
+[node name="old" parent="." unique_id=1332337027 instance=ExtResource("6_66iod")]
 unique_name_in_owner = true
 transform = Transform3D(0.59507304, -1.3769126, 0, 1.3769126, 0.59507304, 0, 0, 0, 1.5, -0.018451989, -0.418135, 5.9604645e-08)
 visible = false

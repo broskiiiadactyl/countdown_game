@@ -11,7 +11,7 @@ var resource := "res://Dialogue/clay.dialogue"
 func _ready() -> void:
 	DialogueManager.dialogue_ended.connect(test)
 	
-	anim_player.play("Clay/Action")
+	anim_player.play("ArmatureAction_005")
 
 
 func _process(_delta: float) -> void:
@@ -25,6 +25,8 @@ func _unhandled_input(event: InputEvent) -> void:
 		#spawn in dialogue position
 		DialogueManager.show_example_dialogue_balloon(load(resource), "start")
 
+func talk_anim() -> void:
+	anim_player.play("clay/ClayTalkPose")
 
 func _on_mouse_entered() -> void:
 	is_mouse_over = true
