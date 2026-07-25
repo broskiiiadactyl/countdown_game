@@ -25,6 +25,7 @@ signal characters(character)
 
 #Info blocks
 var blocks : Array = []
+signal update_blocks()
 
 #shit jeff added
 var inventory = [] #player's inventory relative to what they collected

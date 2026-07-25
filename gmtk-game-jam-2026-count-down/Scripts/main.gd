@@ -54,6 +54,7 @@ func _process(_delta: float) -> void:
 
 #handle literal movement between rooms
 func transition_to_room(room : String) -> void:
+	%Catch.mouse_filter = Control.MOUSE_FILTER_STOP
 	var target : Node3D
 	
 	#find correct node based on room name
@@ -108,6 +109,8 @@ func transition_to_room(room : String) -> void:
 	
 	#set target room as active room
 	active_room = target
+	
+	%Catch.mouse_filter = Control.MOUSE_FILTER_IGNORE
 
 #init the murder
 func down_count() -> bool:
@@ -323,7 +326,7 @@ func change_camera_state(state):
 			camera.process_mode = Node.PROCESS_MODE_DISABLED
 			mouse_pos = get_viewport().get_mouse_position()
 		"Menu":
-			pass
+			mouse_pos = $PlayerCamera/Journal.get_node("%ExitIMG").global_position
 
 func toggle_characters(character):
 	match character:

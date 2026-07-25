@@ -1,6 +1,6 @@
 extends Node3D
 
-var is_door_mouse_over : bool = true
+var is_door_mouse_over : bool = false
 var door : String
 
 @onready var camera_pos : Vector3 = %CameraPos.global_position

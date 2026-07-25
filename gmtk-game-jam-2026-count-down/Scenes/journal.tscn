@@ -20,6 +20,9 @@ size = Vector2(0.05, 0.05)
 [sub_resource type="BoxShape3D" id="BoxShape3D_x6005"]
 size = Vector3(0.044677734, 0.04321289, 0.001)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4xnl1"]
+size = Vector2(97.49951, 102.00001)
+
 [node name="Journal" type="Node3D" unique_id=1851798099]
 script = ExtResource("1_civ5d")
 
@@ -46,6 +49,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="BGColor" type="ColorRect" parent="JMenu" unique_id=1041960575]
 unique_name_in_owner = true
@@ -55,6 +59,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0.47843137, 0.27058825, 0.30588236, 0.75686276)
 
 [node name="Book" type="TextureRect" parent="JMenu" unique_id=1250343317]
@@ -72,10 +77,12 @@ offset_right = 508.0
 offset_bottom = 281.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("3_4xnl1")
 expand_mode = 1
 
 [node name="Label" type="Label" parent="JMenu" unique_id=1952981530]
+visible = false
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -86,11 +93,13 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="LPage" type="VBoxContainer" parent="JMenu" unique_id=144834416]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 222.0
 offset_top = 126.0
 offset_right = 518.0
 offset_bottom = 488.0
+mouse_filter = 2
 
 [node name="CluesTitle" type="Label" parent="JMenu/LPage" unique_id=1271017074]
 layout_mode = 2
@@ -107,6 +116,7 @@ offset_left = 645.0
 offset_top = 126.0
 offset_right = 941.0
 offset_bottom = 488.0
+mouse_filter = 2
 
 [node name="ItemsTitle" type="Label" parent="JMenu/RPage" unique_id=1341718535]
 layout_mode = 2
@@ -117,11 +127,27 @@ vertical_alignment = 1
 [node name="BUFFER" type="Label" parent="JMenu/RPage" unique_id=1995597237]
 layout_mode = 2
 
-[node name="IconCross" type="Sprite2D" parent="JMenu" unique_id=1557053452]
+[node name="Exit" type="Control" parent="JMenu" unique_id=2046026006]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ExitIMG" type="Sprite2D" parent="JMenu/Exit" unique_id=1557053452]
 unique_name_in_owner = true
 position = Vector2(1087.0001, 57)
 scale = Vector2(0.6666667, 0.6666667)
 texture = ExtResource("4_x6005")
 
+[node name="ExitArea" type="Area2D" parent="JMenu/Exit/ExitIMG" unique_id=765902895]
+scale = Vector2(0.9999999, 0.9999999)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="JMenu/Exit/ExitIMG/ExitArea" unique_id=32211110]
+position = Vector2(-0.75, 1.5)
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("RectangleShape2D_4xnl1")
+
 [connection signal="mouse_entered" from="Icon/IconArea" to="." method="_on_jornal_area_mouse_entered"]
 [connection signal="mouse_exited" from="Icon/IconArea" to="." method="_on_jornal_area_mouse_exited"]
+[connection signal="mouse_entered" from="JMenu/Exit/ExitIMG/ExitArea" to="." method="_on_exit_area_mouse_entered"]
+[connection signal="mouse_exited" from="JMenu/Exit/ExitIMG/ExitArea" to="." method="_on_exit_area_mouse_exited"]
