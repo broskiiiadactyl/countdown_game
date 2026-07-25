@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://d0e2531eoc82p"
+path="res://.godot/imported/jerry.dialogue-aff4b75ce9348cad76cc490a585234e4.tres"
+
+[deps]
+
+source_file="res://Dialogue/jerry.dialogue"
+dest_files=["res://.godot/imported/jerry.dialogue-aff4b75ce9348cad76cc490a585234e4.tres"]
+
+[params]
+
+defaults=true
