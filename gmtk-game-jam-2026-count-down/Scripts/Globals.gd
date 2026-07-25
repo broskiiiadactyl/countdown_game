@@ -23,6 +23,9 @@ signal trans(target: String)
 signal states(state)
 signal characters(character)
 
+#Info blocks
+var blocks : Array = []
+
 #shit jeff added
 var inventory = [] #player's inventory relative to what they collected
 var item1 = ""

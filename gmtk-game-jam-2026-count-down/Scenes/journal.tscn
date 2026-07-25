@@ -117,7 +117,7 @@ vertical_alignment = 1
 [node name="BUFFER" type="Label" parent="JMenu/RPage" unique_id=1995597237]
 layout_mode = 2
 
-[node name="IconCross" type="Sprite2D" parent="." unique_id=1557053452]
+[node name="IconCross" type="Sprite2D" parent="JMenu" unique_id=1557053452]
 unique_name_in_owner = true
 position = Vector2(1087.0001, 57)
 scale = Vector2(0.6666667, 0.6666667)
