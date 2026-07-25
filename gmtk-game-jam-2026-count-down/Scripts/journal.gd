@@ -10,9 +10,10 @@ func _ready() -> void:
 	Globals.states.connect(set_state)
 	Globals.update_blocks.connect(populate_journal)
 	
-	Globals.blocks.append("test1")
-	Globals.blocks.append("test2")
-	Globals.update_blocks.emit()
+	#Globals.blocks.append("test1")
+	#Globals.blocks.append("test2")
+	#Globals.update_blocks.emit()
+	#commented the above for testing as it was seemingly adding test1 + test2 on all additions
 	
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -41,6 +42,13 @@ func set_state(state) -> void:
 
 func populate_journal() -> void:
 	var journal_blocks : Array = Globals.blocks
+	
+	var firstLoop = true
+	for child in %LPage.get_children():
+		if firstLoop == true:
+			firstLoop = false
+			continue
+		child.queue_free()
 	
 	for block in journal_blocks:
 		var new_label = Label.new()
