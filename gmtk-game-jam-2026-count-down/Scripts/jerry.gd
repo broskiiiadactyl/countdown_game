@@ -3,7 +3,7 @@ extends StaticBody3D
 var is_mouse_over : bool = false
 
 
-var resource := "res://Dialogue/clay.dialogue"
+var resource := "res://Dialogue/jerry.dialogue"
 
 @onready var anim_player : AnimationPlayer = %Model.get_node("%AnimationPlayer")
 

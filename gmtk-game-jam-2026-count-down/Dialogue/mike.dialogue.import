@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dgfssi0xkgjl3"
+path="res://.godot/imported/mike.dialogue-b41bc85fcf12888572e243c4d280ca4d.tres"
+
+[deps]
+
+source_file="res://Dialogue/mike.dialogue"
+dest_files=["res://.godot/imported/mike.dialogue-b41bc85fcf12888572e243c4d280ca4d.tres"]
+
+[params]
+
+defaults=true

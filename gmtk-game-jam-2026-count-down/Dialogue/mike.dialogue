@@ -1,0 +1,153 @@
+#  [if SomeGlobal.some_property == true /] ,- check for variables
+# use % to create a random percentage they say something
+# ~ to make a cue, => to jump to a cue
+
+~ start
+while CharacterGlobals.characters["Mike"].has_met == false:
+	Mike: [wave amp=50.0 freq=5.0 connected=1]Oh my god it's so nice to meet you![/wave]
+	Mike: You're the detective, right? My name is Mike and I think you may have solved the case of my[br]new[br]best[br]friend.
+	set CharacterGlobals.characters["Mike"].has_met = true
+~ nuetral
+% Mike: [rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Honk Honk![/rainbow]
+% Mike: Murder? I hardly know her.[br][font_size=12]Is that anything?[/font_size] 
+% Mike: When will the suffering end?
+- Who do you think did it?
+	Mike: Maybe he did it to himself?
+	Mike: I don't know, everyone here seems so nice I can't imagine anyone doing anything bad basically ever.
+	=> nuetral
+- Tell me about yourself.
+	Mike: Where do I even begin? [wave amp=50.0 freq=5.0 connected=1]Literally.[/wave]
+	Mike: I have WAY too much to tell you as my new best friend.
+	Mike: Let's just say someone did this whole murder thing and go for drinks. [wave amp=50.0 freq=5.0 connected=1]My treat![/wave]
+	=> nuetral
+- Do you recognize this item?
+	=> items
+- What were you doing today?
+	match CharacterGlobals.characters["Mike"].activity:
+		when "Fishing"
+			Mike: [color=crimson]Fishing[/color]. I'm like, [wave amp=50.0 freq=5.0 connected=1]really good[/wave].
+			Mike: I hold the records for the most fish ever stacked on top of eachother [wave amp=50.0 freq=5.0 connected=1]TO THIS DAY[/wave].
+		when "Cooking"
+			Mike: [color=crimson]Cooking[/color], or at least I would call it cooking...[br]What would you call making and eating the same sandwich for several hours?
+		when "Gardening"
+			Mike: You have [wave amp=50.0 freq=5.0 connected=1]NO IDEA[/wave] how long I was [color=crimson]gardening[/color]!
+			Mike: I like to stare at the worms and try to imagine what jobs they would have if they were people.
+		when "Dressing up"
+			 Mike: [color=crimson]Dressing up![/color] I must have tried a thousand new hairstyles today. [wave amp=50.0 freq=5.0 connected=1]Who even knows[/wave].
+		when ""
+			Mike: Looks like initialization didn't assign me anything.
+			Mike: So nothing, apparently. [rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Honk Honk![/rainbow]
+	=> nuetral
+- Where were you...
+	=> timesegments
+- Count down once.
+	Mike: I'm counting down.
+	do Globals.count_down(1)
+	=> nuetral
+- That's all. (Leave)
+	=> END
+
+~ timesegments
+- Morning
+	Mike: I greeted the wonderful morning in my [wave amp=50.0 freq=5.0 connected=1]favorite [/wave] place in the Manor, the [color=crimson]{{CharacterGlobals.characters["Mike"].morning}}[/color].
+	do Globals.count_down(1, "Mike_morning")
+	=> nuetral
+- Afternoon
+	Mike: When it gets hot I like to make my way to the [color=crimson]{{CharacterGlobals.characters["Mike"].noon}}[/color]. It really gets the [wave amp=50.0 freq=5.0 connected=1]juices[/wave] flowing.
+	do Globals.count_down(1, "Mike_noon")
+	=> nuetral
+- Evening
+	Mike: [wave amp=50.0 freq=5.0 connected=1]OH MY G O D[/wave]! Have you seen the [color=crimson]{{CharacterGlobals.characters["Mike"].night}}[/color] at night? It's not just good, it's also PRETTY good!
+	do Globals.count_down(1, "Mike_night")
+	=> nuetral
+- Nevermind
+	=> nuetral
+
+~ items
+#check the size of the inventory array and use a match case
+#did you know toby fox used one giant match case for the entirety of the homsetuck dialogue wow
+match Globals.inventory.size()
+	when 0
+		You don't have anything. Maybe there are things to find in the Manor...?
+		- Go back
+			=> nuetral
+
+	when 1
+		- {{Globals.item1}}
+			=> checkitem1
+		- No Item [if Globals.item1==""]
+		- No Item [if Globals.item1==""]
+		- No Item [if Globals.item1==""]
+		- Go back
+			=> nuetral
+
+	when 2
+		- {{Globals.item1}}
+			=> checkitem1
+		- {{Globals.item2}}
+			=> checkitem2
+		- No Item [if Globals.item1==""]
+		- No Item [if Globals.item1==""]
+		- Go back
+			=> nuetral
+
+	when 3
+		- {{Globals.item1}}
+			=> checkitem1
+		- {{Globals.item2}}
+			=> checkitem2
+		- {{Globals.item3}}
+			=> checkitem3
+		- No Item [if Globals.item1==""]
+		- Go back
+			=> nuetral
+
+	when 4
+		- {{Globals.item1}}
+			=> checkitem1
+		- {{Globals.item2}}
+			=> checkitem2
+		- {{Globals.item3}}
+			=> checkitem3
+		- {{Globals.item4}}
+			=> checkitem4
+		- Go back
+			=> nuetral
+
+=> nuetral
+
+~ checkitem1
+if Globals.item1 == CharacterGlobals.characters["Mike"].item:
+	Mike: Oh my god, [wave amp=50.0 freq=5.0 connected=1]YES[/wave]! I've been looking for it everywhere. Thaaaaaaaanks~
+	do Globals.blocks.append("The "+Globals.item1+" belongs to Mike.")
+	$> Globals.update_blocks.emit()
+else
+	Mike: Whomp Whomp. Huge loser moment! Not even close!
+=> nuetral
+
+~ checkitem2
+if Globals.item2 == CharacterGlobals.characters["Mike"].item:
+	Mike: Oh my god, [wave amp=50.0 freq=5.0 connected=1]YES[/wave]! I've been looking for it everywhere. Thaaaaaaaanks~
+	do Globals.blocks.append("The "+Globals.item2+" belongs to Mike.")
+	$> Globals.update_blocks.emit()
+else
+	Mike:[wave amp=50.0 freq=5.0 connected=1]Uhhh...[/wave]Yeeeees? I mean... it isn't. I have no idea what that is. But if I say it's mine, will that help?
+=> nuetral
+
+~ checkitem3
+if Globals.item3 == CharacterGlobals.characters["Mike"].item:
+	Mike: Oh my god, [wave amp=50.0 freq=5.0 connected=1]YES[/wave]! I've been looking for it everywhere. Thaaaaaaaanks~
+	do Globals.blocks.append("The "+Globals.item3+" belongs to Mike.")
+	$> Globals.update_blocks.emit()
+else
+	Mike: [wave amp=50.0 freq=5.0 connected=1]Uhhh...[/wave]Yeeeees? I mean... it isn't. I have no idea what that is. But if I say it's mine, will that help?
+=> nuetral
+
+~ checkitem4
+if Globals.item4 == CharacterGlobals.characters["Mike"].item:
+	Mike: Oh my god, [wave amp=50.0 freq=5.0 connected=1]YES[/wave]! I've been looking for it everywhere. Thaaaaaaaanks~
+	do Globals.blocks.append("The "+Globals.item4+" belongs to Mike.")
+	$> Globals.update_blocks.emit()
+else
+	Mike:[wave amp=50.0 freq=5.0 connected=1]Uhhh...[/wave]Yeeeees? I mean... it isn't. I have no idea what that is. But if I say it's mine, will that help?
+=> nuetral
