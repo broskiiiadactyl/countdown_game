@@ -87,6 +87,7 @@ transparent_bg = true
 
 [node name="JMenu" type="Control" parent="." unique_id=64371072]
 unique_name_in_owner = true
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
