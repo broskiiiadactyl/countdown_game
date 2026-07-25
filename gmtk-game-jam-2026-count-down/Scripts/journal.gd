@@ -17,6 +17,13 @@ func _ready() -> void:
 	Globals.update_blocks.connect(populate_journal)
 	Globals.items.connect(add_item)
 	
+	item1.turn_off_lights()
+	item2.turn_off_lights()
+	item3.turn_off_lights()
+	item4.turn_off_lights()
+	
+	journal_menu.visible = false
+	
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("LMB"):
@@ -45,6 +52,13 @@ func set_state(state) -> void:
 func populate_journal() -> void:
 	print("JOURNAL")
 	var journal_blocks : Array = Globals.blocks
+	var cleaned_journal : Array = []
+	
+	for entry in journal_blocks:
+		if not cleaned_journal.has(entry):
+			cleaned_journal.append(entry)
+	
+	journal_blocks = cleaned_journal
 	
 	#skip title and buffer
 	var x = 2
@@ -92,7 +106,6 @@ func add_item(item) -> void:
 			pass
 	
 	items_added += 1
-	
 
 
 #SIGNALS

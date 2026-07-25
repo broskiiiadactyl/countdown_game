@@ -17,6 +17,7 @@ var is_talking : bool = false
 #time management
 const MAX_TIME : int = 16
 var current_time : int = MAX_TIME
+var time_IDs : Array = []
 
 #signals
 signal trans(target: String)
@@ -41,15 +42,16 @@ func dm_print( p ): #print function so I can print from the dialogue manager
 func _ready() -> void:
 	pass 
 
-
 func transition_to_room(target: String) -> void:
 	trans.emit(target)
 
 func count_down(blocks : int, ID : String) -> void:
-	#logic to count down time blocks
-	current_time -= blocks
-	print(current_time, "/", MAX_TIME)
-	pass
+	if time_IDs.has(ID):
+		return
+	else:
+		time_IDs.append(ID)
+		current_time -= blocks
+		print(current_time, "/", MAX_TIME)
 
 func set_active_state(state : gamestate) -> void:
 	match state:

@@ -70,3 +70,8 @@ func take_item() -> void:
 		Globals.item3 = item_name
 	elif Globals.item4 == "":
 		Globals.item4 = item_name
+
+func turn_off_lights() -> void:
+	%Light3.visible = false
+	%Light1.visible = false
+	%Light2.visible = false
