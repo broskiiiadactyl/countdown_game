@@ -21,6 +21,7 @@ var current_time : int = MAX_TIME
 #signals
 signal trans(target: String)
 signal states(state)
+signal characters(character)
 
 #shit jeff added
 var inventory = [] #player's inventory relative to what they collected
@@ -59,3 +60,18 @@ func set_active_state(state : gamestate) -> void:
 			can_move = false
 			is_talking = true
 			states.emit("Speak")
+
+func toggle_characters(character: String):
+	match character:
+		"Cookie":
+			characters.emit(character)
+		"Mike":
+			characters.emit(character)
+		"Jerry":
+			characters.emit(character)
+		"Clay":
+			characters.emit(character)
+		"The Count":
+			characters.emit(character)
+		_:
+			pass

@@ -25,10 +25,14 @@ var trans_time : float = 0.25
 var target_room : Node3D
 var mouse_pos : Vector2 = Vector2.ZERO
 
+#store talk models
+@onready var cookie : Node3D = %CookiePOSE
+
 func _ready() -> void:
 	#connect signals
 	Globals.trans.connect(transition_to_room)
 	Globals.states.connect(change_camera_state)
+	Globals.characters.connect(toggle_characters)
 	
 	#init start scenario
 	Input.set_custom_mouse_cursor(Globals.arrow)
@@ -319,4 +323,19 @@ func change_camera_state(state):
 			camera.process_mode = Node.PROCESS_MODE_DISABLED
 			mouse_pos = get_viewport().get_mouse_position()
 		"Menu":
+			pass
+
+func toggle_characters(character):
+	match character:
+		"Cookie":
+			cookie.visible = !cookie.visible
+		"Mike":
+			pass
+		"Jerry":
+			pass
+		"Clay":
+			pass
+		"The Count":
+			pass
+		_:
 			pass
