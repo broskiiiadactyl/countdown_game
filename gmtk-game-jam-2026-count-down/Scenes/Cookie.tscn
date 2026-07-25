@@ -1,30 +1,33 @@
 [gd_scene format=3 uid="uid://djmr3d6f1dgit"]
 
 [ext_resource type="Script" uid="uid://dkxpq4nm4qqnp" path="res://Scripts/cookie.gd" id="1_ix3f7"]
-[ext_resource type="Texture2D" uid="uid://bk26j6whqsfec" path="res://Assets/Test/PngItem_247356.png" id="2_3nnyp"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e0j01"]
-transparency = 1
-albedo_texture = ExtResource("2_3nnyp")
-billboard_mode = 2
-
-[sub_resource type="QuadMesh" id="QuadMesh_vifax"]
-material = SubResource("StandardMaterial3D_e0j01")
+[ext_resource type="PackedScene" uid="uid://b38mc8j61d05d" path="res://Assets/Characters/Cookie/Cookie_CutandMerged.glb" id="2_sonkf"]
+[ext_resource type="Animation" uid="uid://dthis8kr23xuj" path="res://Assets/Characters/Cookie/Action.res" id="3_kw0iv"]
+[ext_resource type="Animation" uid="uid://w2v1vlcygx4d" path="res://Assets/Characters/Cookie/ArmatureAction_006.res" id="4_pp861"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_e0j01"]
-height = 0.9321289
-radius = 0.26708984
+height = 1.2850342
+radius = 0.19140625
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oea3r"]
+_data = {
+&"Action": ExtResource("3_kw0iv"),
+&"ArmatureAction_006": ExtResource("4_pp861")
+}
 
 [node name="Cookie" type="StaticBody3D" unique_id=531970119]
 script = ExtResource("1_ix3f7")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1452014896]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5017682, 0)
-mesh = SubResource("QuadMesh_vifax")
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1572774374]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.46845514, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6449078, 0)
 shape = SubResource("CylinderShape3D_e0j01")
+
+[node name="Cookie_CutandMerged" parent="." unique_id=131736974 instance=ExtResource("2_sonkf")]
+transform = Transform3D(-0.9, 0, -7.86805e-08, 0, 0.9, 0, 7.86805e-08, 0, -0.9, 0, 0, 0)
+
+[node name="Player" type="AnimationPlayer" parent="Cookie_CutandMerged" unique_id=595630108]
+unique_name_in_owner = true
+libraries/Cookie = SubResource("AnimationLibrary_oea3r")
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

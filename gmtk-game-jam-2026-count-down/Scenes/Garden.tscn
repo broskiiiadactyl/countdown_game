@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dfkp5nmmtgg0p" path="res://Assets/Enviros/Garden/outdoors_merged-extendedfloor.glb" id="2_m3i3o"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gxaye"]
-size = Vector3(0.06530762, 1.9335022, 0.65965843)
+size = Vector3(0.06530762, 1.498024, 0.65965843)
 
 [node name="Garden" type="Node3D" unique_id=225874475]
 script = ExtResource("1_m3i3o")
@@ -17,7 +17,7 @@ unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.850956, 0.39291382, -0.21381769)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DoorL" unique_id=101067387]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.57723045, 0.53886414, -0.08990955)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.57723045, 0.75660324, -0.08990955)
 shape = SubResource("BoxShape3D_gxaye")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1606891305]

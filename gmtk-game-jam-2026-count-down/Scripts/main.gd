@@ -267,11 +267,15 @@ func place_things() -> void:
 	for nodes in characters:
 		var room_name : String = "%" + CharacterGlobals.characters[nodes.name].in_room
 		var room_node : Node3D = get_node(room_name)
+		var looking : Vector3 = room_node.camera_pos
+		looking.y = 0
 		
 		if room_node.is_placed:
 			nodes.global_position = room_node.char_pos2
+			nodes.look_at(looking)
 		else:
 			nodes.global_position = room_node.char_pos1
+			nodes.look_at(looking)
 			room_node.is_placed = true
 		
 		nodes.reparent(room_node)
@@ -279,8 +283,11 @@ func place_things() -> void:
 	#Place Body
 	var room_name2 : String = "%" + CharacterGlobals.victim.in_room
 	var room_node2 : Node3D = get_node(room_name2)
+	var looking2 : Vector3 = room_node2.camera_pos
+	looking2.y = 0
 	
 	body.global_position = room_node2.body_pos
+	body.look_at(looking2)
 	
 	transition_to_room(CharacterGlobals.victim.in_room)
 	

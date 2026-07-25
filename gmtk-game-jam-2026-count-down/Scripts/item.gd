@@ -10,9 +10,10 @@ func _ready() -> void:
 	pass
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("LMB") and is_mouse_over:
-		Globals.set_active_state(Globals.gamestate.SPEAK)
-		self.visible = false
+	pass
+	#if event.is_action_pressed("LMB") and is_mouse_over:
+		#Globals.set_active_state(Globals.gamestate.SPEAK)
+		#self.visible = false
 		#TODO: spawn in dialogue position
 		#DialogueManager.show_example_dialogue_balloon(load(resource), "start")
 

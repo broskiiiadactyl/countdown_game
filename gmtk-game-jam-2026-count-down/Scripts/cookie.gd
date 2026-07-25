@@ -5,9 +5,13 @@ var is_mouse_over : bool = false
 
 var resource := "res://Dialogue/clay.dialogue"
 
+@onready var anim_player : AnimationPlayer = %Player
+
 
 func _ready() -> void:
 	DialogueManager.dialogue_ended.connect(test)
+	
+	anim_player.play("Cookie/Action")
 
 
 func _process(_delta: float) -> void:
