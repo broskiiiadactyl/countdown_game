@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://csn7rb8wfcmmd"
-path="res://.godot/imported/message_square.png-cf328059a1c5aae715ad5763631e0b34.ctex"
+uid="uid://cx7rnp8i5hjhl"
+path="res://.godot/imported/progress_CW_25.png-fb8872ab67bb6538b072ce73dc7727c2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Test/message_square.png"
-dest_files=["res://.godot/imported/message_square.png-cf328059a1c5aae715ad5763631e0b34.ctex"]
+source_file="res://Assets/Test/timers/progress_CW_25.png"
+dest_files=["res://.godot/imported/progress_CW_25.png-fb8872ab67bb6538b072ce73dc7727c2.ctex"]
 
 [params]
 

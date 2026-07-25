@@ -320,4 +320,3 @@ func change_camera_state(state):
 			mouse_pos = get_viewport().get_mouse_position()
 		"Menu":
 			pass
-	

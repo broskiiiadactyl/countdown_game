@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://csn7rb8wfcmmd"
-path="res://.godot/imported/message_square.png-cf328059a1c5aae715ad5763631e0b34.ctex"
+uid="uid://cbqrtgudiy2mu"
+path="res://.godot/imported/icon_arrow_curved.png-dc630469fb1b590922cf5ca95184e753.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Test/message_square.png"
-dest_files=["res://.godot/imported/message_square.png-cf328059a1c5aae715ad5763631e0b34.ctex"]
+source_file="res://Assets/Test/icon_arrow_curved.png"
+dest_files=["res://.godot/imported/icon_arrow_curved.png-dc630469fb1b590922cf5ca95184e753.ctex"]
 
 [params]
 

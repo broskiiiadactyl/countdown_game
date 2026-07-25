@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://csn7rb8wfcmmd"
-path="res://.godot/imported/message_square.png-cf328059a1c5aae715ad5763631e0b34.ctex"
+uid="uid://g2doseq4wchv"
+path="res://.godot/imported/spellbook.png-13f8ad0bf76fd953811ab097da66e6f6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Test/message_square.png"
-dest_files=["res://.godot/imported/message_square.png-cf328059a1c5aae715ad5763631e0b34.ctex"]
+source_file="res://Assets/Test/spellbook.png"
+dest_files=["res://.godot/imported/spellbook.png-13f8ad0bf76fd953811ab097da66e6f6.ctex"]
 
 [params]
 

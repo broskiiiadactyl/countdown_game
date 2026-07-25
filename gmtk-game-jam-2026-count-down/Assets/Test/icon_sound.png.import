@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://csn7rb8wfcmmd"
-path="res://.godot/imported/message_square.png-cf328059a1c5aae715ad5763631e0b34.ctex"
+uid="uid://b6oia788c38gu"
+path="res://.godot/imported/icon_sound.png-c88fe6d0d4312e32919204957504d6ea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Test/message_square.png"
-dest_files=["res://.godot/imported/message_square.png-cf328059a1c5aae715ad5763631e0b34.ctex"]
+source_file="res://Assets/Test/icon_sound.png"
+dest_files=["res://.godot/imported/icon_sound.png-c88fe6d0d4312e32919204957504d6ea.ctex"]
 
 [params]
 

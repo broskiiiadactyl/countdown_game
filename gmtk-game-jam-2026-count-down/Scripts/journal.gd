@@ -1,23 +1,34 @@
 extends Node3D
 
 @onready var collision := $"."
-var is_mouse_over := false
+@onready var icon : MeshInstance3D = %Icon
+var is_journal_mouse_over := false
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	Globals.states.connect(set_state)
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _unhandled_input(event: InputEvent) -> void:	
+	if event.is_action_pressed("LMB") and is_journal_mouse_over:
+		open_journal()
 	pass
 
-
 func _on_jornal_area_mouse_entered() -> void:
-	is_mouse_over = true
+	is_journal_mouse_over = true
 	Input.set_custom_mouse_cursor(Globals.look)
 
-
 func _on_jornal_area_mouse_exited() -> void:
-	is_mouse_over = false
+	is_journal_mouse_over = false
 	Input.set_custom_mouse_cursor(Globals.arrow)
+
+func open_journal():
+	Globals.set_active_state(Globals.gamestate.MENU)
+	pass
+
+func set_state(state):
+	match state:
+		"Move":
+			icon.visible = true
+		"Speak":
+			icon.visible = false
+		"Menu":
+			icon.visible = false
