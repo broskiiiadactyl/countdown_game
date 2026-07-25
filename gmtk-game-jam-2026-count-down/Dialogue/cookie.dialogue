@@ -1,0 +1,145 @@
+#  [if SomeGlobal.some_property == true /] ,- check for variables
+# use % to create a random percentage they say something
+# ~ to make a cue, => to jump to a cue
+
+~ start
+while CharacterGlobals.characters["Cookie"].has_met == false:
+	Cookie: [rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Honk![/rainbow] Nice to meet you![br]
+	Cookie: I'm Cookie the Clown, but you can just call me Cookie!
+	Cookie: It has been a very long time since I have felt relaxation in a meaningful way.
+	set CharacterGlobals.characters["Cookie"].has_met = true
+~ nuetral
+% Cookie: [rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Honk Honk![/rainbow]
+% Cookie: I think Sartre liked clowns.
+% Cookie: When will the suffering end?
+- Who do you think did it?
+	Cookie: Maybe it was a cabal?[br]I swear everywhere I look there's cars with 6, sometimes 7 people gettin' out of em.
+	Cookie: This world has horrors beyond even my comprehension.
+	=> nuetral
+- Tell me about yourself.
+	Cookie: I no longer feel safe in online spaces. [rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Honk![/rainbow]
+	=> nuetral
+- Do you recognize this item?
+	=> items
+- What were you doing today?
+	match CharacterGlobals.characters["Cookie"].activity:
+		when "Fishing"
+			Cookie: Well I was [color=crimson]fishing[/color], of course! [rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Honk Honk![/rainbow]
+			Cookie: Holding their life in my hands makes me feel powerful.
+		when "Cooking"
+			Cookie: [color=crimson]Cooking[/color]! [rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Honk Honk![/rainbow][br]It is an essential skill for all clown kind.
+		when "Gardening"
+			Cookie: [color=crimson]Gardening[/color]! [rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Honk Honk![/rainbow]
+			Cookie: Watching things grow serves as a reminder that I too will wilt.
+		when "Dressing up"
+			Cookie: [color=crimson]Dressing up![/color] [rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Honk Honk![/rainbow] Or rather, dressing down.
+			Cookie: I weep for the day when I am no longer the clown.
+		when ""
+			Cookie: Looks like initialization didn't assign me anything.
+			Cookie: So nothing, apparently. [rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Honk Honk![/rainbow]
+	=> nuetral
+- Where were you...
+	=> timesegments
+- Count down once.
+	Cookie: I'm counting down.
+	do Globals.count_down(1)
+	=> nuetral
+- That's all.
+	=> END
+
+~ timesegments
+- Morning
+	Cookie: Goofing around in the [color=crimson]{{CharacterGlobals.characters["Cookie"].morning}}[/color].[br]It's the only way to start the day!
+	do Globals.count_down(1, "Cookie_morning")
+	=> nuetral
+- Afternoon
+	Cookie: Noon is the silliest time! [rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Honk Honk![/rainbow][br] Sorry, that ws out of line. I was in the [color=crimson]{{CharacterGlobals.characters["Cookie"].noon}}[/color].
+	do Globals.count_down(1, "Cookie_noon")
+	=> nuetral
+- Evening
+	Cookie: Sleep is sort of like the cousin of death when you look at it like a clown![br]I was in the [color=crimson]{{CharacterGlobals.characters["Cookie"].night}}[/color].
+	do Globals.count_down(1, "Cookie_night")
+	=> nuetral
+- Nevermind
+	=> nuetral
+
+~ items
+#check the size of the inventory array and use a match case
+#did you know toby fox used one giant match case for the entirety of the homsetuck dialogue wow
+match Globals.inventory.size()
+	when 0
+		You don't have anything. Maybe there are things to find in the Manor...?
+		- Go back
+			=> nuetral
+
+	when 1
+		- {{Globals.item1}}
+			=> checkitem1
+		- No Item [if Globals.item1==""]
+		- No Item [if Globals.item1==""]
+		- No Item [if Globals.item1==""]
+		- Go back
+			=> nuetral
+
+	when 2
+		- {{Globals.item1}}
+			=> checkitem1
+		- {{Globals.item2}}
+			=> checkitem2
+		- No Item [if Globals.item1==""]
+		- No Item [if Globals.item1==""]
+		- Go back
+			=> nuetral
+
+	when 3
+		- {{Globals.item1}}
+			=> checkitem1
+		- {{Globals.item2}}
+			=> checkitem2
+		- {{Globals.item3}}
+			=> checkitem3
+		- No Item [if Globals.item1==""]
+		- Go back
+			=> nuetral
+
+	when 4
+		- {{Globals.item1}}
+			=> checkitem1
+		- {{Globals.item2}}
+			=> checkitem2
+		- {{Globals.item3}}
+			=> checkitem3
+		- {{Globals.item4}}
+			=> checkitem4
+		- Go back
+			=> nuetral
+
+=> nuetral
+
+~ checkitem1
+if Globals.item1 == CharacterGlobals.characters["Cookie"].item:
+	Cookie: What even is ownership? [rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Honk Honk![/rainbow][br]Yes, that's mine.
+else
+	Cookie: Whomp Whomp. Huge loser moment! Not even close!
+=> nuetral
+
+~ checkitem2
+if Globals.item2 == CharacterGlobals.characters["Cookie"].item:
+	Cookie: What even is ownership? [rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Honk Honk![/rainbow][br]Yes, that's mine.
+else
+	Cookie: Whomp Whomp. Huge loser moment! Not even close!
+=> nuetral
+
+~ checkitem3
+if Globals.item3 == CharacterGlobals.characters["Cookie"].item:
+	Cookie: What even is ownership? [rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Honk Honk![/rainbow][br]Yes, that's mine.
+else
+	Cookie: Whomp Whomp. Huge loser moment! Not even close!
+=> nuetral
+
+~ checkitem4
+if Globals.item4 == CharacterGlobals.characters["Cookie"].item:
+	Cookie: What even is ownership? [rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Honk Honk![/rainbow][br]Yes, that's mine.
+else
+	Cookie: Whomp Whomp. Huge loser moment! Not even close!
+=> nuetral

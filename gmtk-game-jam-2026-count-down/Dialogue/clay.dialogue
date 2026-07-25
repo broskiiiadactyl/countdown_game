@@ -125,28 +125,28 @@ match Globals.inventory.size()
 
 ~ checkitem1
 if Globals.item1 == CharacterGlobals.characters["Clay"].item:
-	Yup, I reckon that's mine. How did I lose it 'gain...
+	Clay: Yup, I reckon that's mine. How did I lose it 'gain...
 else
-	Nope. Never seen it' fore.
+	Clay: Nope. Never seen it' fore.
 => nuetral
 
 ~ checkitem2
 if Globals.item2 == CharacterGlobals.characters["Clay"].item:
-	Yup, I reckon that's mine. How did I lose it 'gain...
+	Clay: Yup, I reckon that's mine. How did I lose it 'gain...
 else
-	Nope. Never seen it' fore.
+	Clay: Nope. Never seen it' fore.
 => nuetral
 
 ~ checkitem3
 if Globals.item3 == CharacterGlobals.characters["Clay"].item:
-	Yup, I reckon that's mine. How did I lose it 'gain...
+	Clay: Yup, I reckon that's mine. How did I lose it 'gain...
 else
-	Nope. Never seen it' fore.
+	Clay: Nope. Never seen it' fore.
 => nuetral
 
 ~ checkitem4
 if Globals.item4 == CharacterGlobals.characters["Clay"].item:
-	Yup, I reckon that's mine. How did I lose it 'gain...
+	Clay: Yup, I reckon that's mine. How did I lose it 'gain...
 else
-	Nope. Never seen it' fore.
+	Clay: Nope. Never seen it' fore.
 => nuetral

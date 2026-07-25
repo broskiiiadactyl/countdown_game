@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://d0y2pnm66t7c5"
+path="res://.godot/imported/cookie.dialogue-069e308f1ab1244ab9e3db88736f578e.tres"
+
+[deps]
+
+source_file="res://Dialogue/cookie.dialogue"
+dest_files=["res://.godot/imported/cookie.dialogue-069e308f1ab1244ab9e3db88736f578e.tres"]
+
+[params]
+
+defaults=true
