@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bwbitjwkoi71k"]
+
+[ext_resource type="PackedScene" uid="uid://bj23xcnusuln0" path="res://Assets/Items/nightshade.glb" id="1_88t4x"]
+
+[node name="nightshade" unique_id=1879796683 instance=ExtResource("1_88t4x")]
+
+[node name="Flower_4_Group" parent="." index="0" unique_id=934608298]
+layers = 3

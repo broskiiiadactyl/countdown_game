@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bly3baf4361ar"]
+
+[ext_resource type="Texture2D" uid="uid://cge6vjtrdgxqp" path="res://Assets/Items/Cleaver_knife_cleaver_w_hole.png" id="1_cegx3"]
+
+[resource]
+resource_name = "Solid.132"
+cull_mode = 2
+albedo_texture = ExtResource("1_cegx3")
+roughness = 0.52565837
+uv1_offset = Vector3(0.151, 0, 0)

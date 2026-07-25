@@ -5,7 +5,7 @@ var is_mouse_over : bool = false
 
 var resource := "res://Dialogue/cookie.dialogue"
 
-@onready var anim_player : AnimationPlayer = %Player
+@onready var anim_player : AnimationPlayer = %Model.get_node("%AnimationPlayer")
 
 
 func _ready() -> void:

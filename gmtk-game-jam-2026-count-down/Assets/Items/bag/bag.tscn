@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bewmoaviak3wi"]
+
+[ext_resource type="PackedScene" uid="uid://cnf8uinp3ssqu" path="res://Assets/Items/bag.glb" id="1_mi0d5"]
+
+[node name="bag" unique_id=2123464301 instance=ExtResource("1_mi0d5")]
+
+[node name="group104413426" parent="." index="0" unique_id=203874782]
+layers = 3

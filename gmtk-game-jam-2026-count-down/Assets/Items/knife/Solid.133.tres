@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://sf5k70sghey1"]
+
+[ext_resource type="Texture2D" uid="uid://d4f7v5do2ivrr" path="res://Assets/Items/Knife_knife_filleting_knife.png" id="1_4u1wt"]
+
+[resource]
+resource_name = "Solid.133"
+cull_mode = 2
+albedo_texture = ExtResource("1_4u1wt")
+roughness = 0.52565837

@@ -33,7 +33,7 @@ Label/constants/outline_size = 0
 Label/constants/shadow_offset_x = 0
 Label/constants/shadow_offset_y = 0
 Label/constants/shadow_outline_size = 0
-Label/font_sizes/font_size = 30
+Label/font_sizes/font_size = 28
 Label/fonts/font = ExtResource("4_nv2gc")
 Label/styles/focus = null
 Label/styles/normal = null
@@ -76,6 +76,7 @@ transparent_bg = true
 
 [node name="JMenu" type="Control" parent="." unique_id=64371072]
 unique_name_in_owner = true
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

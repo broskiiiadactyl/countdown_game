@@ -45,7 +45,7 @@ environment = SubResource("Environment_cm0pq")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1782394225]
 transform = Transform3D(1, 0, 0, 0, 0.5, 0.86602545, 0, -0.86602545, 0.5, 0, 22.68754, 0)
-light_energy = 0.1
+light_energy = 0.01
 shadow_enabled = true
 
 [node name="Fade" type="ColorRect" parent="." unique_id=580776017]
@@ -74,10 +74,34 @@ visible = false
 collision_layer = 0
 collision_mask = 0
 
+[node name="ClayPOSE" parent="PlayerCamera" unique_id=531970119 instance=ExtResource("2_r0du0")]
+unique_name_in_owner = true
+transform = Transform3D(-0.86602545, 0, 0.4999999, 0, 1, 0, -0.4999999, 0, -0.86602545, 0.4860928, -1.0051299, -0.8301408)
+visible = false
+
+[node name="JerryPOSE" parent="PlayerCamera" unique_id=1713542954 instance=ExtResource("9_c6i3y")]
+unique_name_in_owner = true
+transform = Transform3D(-0.86602545, 0, 0.4999999, 0, 1, 0, -0.4999999, 0, -0.86602545, 0.42950726, -1.0051299, -0.8301408)
+visible = false
+
+[node name="MikePOSE" parent="PlayerCamera" unique_id=974993175 instance=ExtResource("10_c2ibq")]
+unique_name_in_owner = true
+transform = Transform3D(-0.5931661, 0, 0.8050802, 0, 1, 0, -0.8050802, 0, -0.5931661, 0.46968806, -1.0051299, -0.8301408)
+visible = false
+
+[node name="BodyPOSE" parent="PlayerCamera" unique_id=1410984591 instance=ExtResource("7_c6i3y")]
+unique_name_in_owner = true
+transform = Transform3D(0.37559357, 0, -0.9267846, -0.3157171, 0.9401871, -0.12794916, 0.8713509, 0.34065852, 0.35312822, 0.6484262, -0.32217443, -0.86066127)
+visible = false
+
 [node name="Rooms" type="Node3D" parent="." unique_id=1488119261]
 
 [node name="Foyer" parent="Rooms" unique_id=225874475 instance=ExtResource("1_uu6xs")]
 unique_name_in_owner = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Rooms/Foyer" unique_id=742726102]
+transform = Transform3D(15, 0, 0, 0, -4.0367465e-07, -1.862, 0, 9.235, -8.13906e-08, 0.32621002, 6.3639, -2.1022356)
+mesh = SubResource("QuadMesh_03owx")
 
 [node name="Garden" parent="Rooms" unique_id=1939298819 instance=ExtResource("4_trn2v")]
 unique_name_in_owner = true
@@ -89,15 +113,21 @@ visible = false
 unique_name_in_owner = true
 process_mode = 4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 0)
-visible = false
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Rooms/Kitchen" unique_id=908791063]
+transform = Transform3D(10, 0, 0, 0, -4.0367465e-07, -1.862, 0, 9.235, -8.13906e-08, 0.039297104, 6.3639, -2.1022358)
+mesh = SubResource("QuadMesh_03owx")
 
 [node name="Library" parent="Rooms" unique_id=1309834914 instance=ExtResource("6_03owx")]
 unique_name_in_owner = true
 process_mode = 4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, 0)
-visible = false
 
-[node name="Body" parent="." unique_id=531970119 instance=ExtResource("7_c6i3y")]
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Rooms/Library" unique_id=2052934912]
+transform = Transform3D(10, 0, 0, 0, -4.0367465e-07, -1.862, 0, 9.235, -8.13906e-08, -0.2591858, 6.3639, -2.1022358)
+mesh = SubResource("QuadMesh_03owx")
+
+[node name="Body" parent="." unique_id=563562572 instance=ExtResource("7_c6i3y")]
 unique_name_in_owner = true
 
 [node name="Characters" type="Node3D" parent="." unique_id=2007826507]
@@ -135,10 +165,6 @@ text = "LEFT"
 [node name="Fr" type="Label3D" parent="Debug" unique_id=1207946291]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.070867, -15.398583)
 text = "FRONT"
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=742726102]
-transform = Transform3D(44.545776, 0, 0, 0, -4.036672e-07, -1.8620415, 0, 9.234829, -8.139242e-08, 0.32621002, 6.3639, -2.1022356)
-mesh = SubResource("QuadMesh_03owx")
 
 [node name="Items" type="Node3D" parent="." unique_id=1840380233]
 unique_name_in_owner = true

@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://60q0vm5qilok"]
+
+[ext_resource type="PackedScene" uid="uid://bfb2v38c0hj6r" path="res://Assets/Items/gloves.glb" id="1_cjest"]
+
+[node name="gloves" unique_id=243178703 instance=ExtResource("1_cjest")]
+transform = Transform3D(0.57414365, -0.5945687, 0.5628918, 0.73762727, 0.6739956, -0.040447026, -0.35533804, 0.4384267, 0.82554036, 0.0597955, -0.0531912, -0.059795476)
+
+[node name="Glove" parent="." index="0" unique_id=1699890374]
+layers = 3
+
+[node name="Glove_001" parent="." index="1" unique_id=258712155]
+layers = 3

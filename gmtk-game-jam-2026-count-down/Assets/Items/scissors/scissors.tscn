@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bp3b1jfcdicdg"]
+
+[ext_resource type="PackedScene" uid="uid://ccxor200q8rmc" path="res://Assets/Items/Scissors.glb" id="1_86kse"]
+
+[node name="Scissors" unique_id=400729504 instance=ExtResource("1_86kse")]
+transform = Transform3D(-0.13707748, 0.9631061, -0.23159544, -0.86851317, -0.22928652, -0.43944582, -0.47633466, 0.14090556, 0.8679003, -0.14995395, 0.08977601, 0)
+
+[node name="Scissors1" parent="." index="0" unique_id=1105805000]
+layers = 3

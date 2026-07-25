@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://coxgg4qq8j338"]
+
+[ext_resource type="Texture2D" uid="uid://ca47pig3thggb" path="res://Assets/Items/nightshade_Leaves.png" id="1_mj7lx"]
+
+[resource]
+resource_name = "Leaves.008"
+transparency = 4
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_mj7lx")
+metallic = 0.4
+emission = Color(3.128499e-07, 0.49803168, 0.29160097, 1)

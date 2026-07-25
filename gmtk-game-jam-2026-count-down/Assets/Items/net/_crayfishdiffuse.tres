@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dmgi3jnisj6qh"]
+
+[resource]
+resource_name = "_crayfishdiffuse"
+cull_mode = 2
+albedo_color = Color(0.14997104, 0.14997104, 0.14997104, 1)
+roughness = 0.5

@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://b832a5o8xlkx2"]
+
+[ext_resource type="PackedScene" uid="uid://bjok01q00p4gt" path="res://Assets/Items/net.glb" id="1_84gc5"]
+
+[node name="net" unique_id=1332337027 instance=ExtResource("1_84gc5")]
+transform = Transform3D(0.39671537, -0.9179417, 0, 0.9179417, 0.39671537, 0, 0, 0, 1, -0.018451989, -0.28162366, 5.9604645e-08)
+
+[node name="g Sphere001" parent="." index="0" unique_id=1665244165]
+layers = 3

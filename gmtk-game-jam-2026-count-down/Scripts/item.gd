@@ -3,7 +3,15 @@ extends StaticBody3D
 var is_mouse_over : bool = false
 
 var item_name : String = "Hefty Knife"
+
 #var resource := "res://Dialogue/items.dialogue"
+
+@onready var bag = %bag
+@onready var gloves = %gloves
+@onready var knife = %knife
+@onready var net = %net
+@onready var nightshade = %nightshade
+@onready var scissors = %Scissors
 
 func _ready() -> void:
 	#DialogueManager.dialogue_ended.connect(test)
@@ -35,13 +43,19 @@ func set_item(naem: String):
 	
 	match naem:
 		"Hefty Knife":
-			$MeshInstance3D2.visible = true
+			knife.visible = true
 		"Ripped Nets":
-			$MeshInstance3D3.visible = true
+			net.visible = true
 		"Gallon Bag":
-			$MeshInstance3D4.visible = true
+			bag.visible = true
+		"Rubber Gloves":
+			gloves.visible = true
+		"Nightshade":
+			nightshade.visible = true
+		"Large Scissors":
+			scissors.visible = true
 		_:
-			$MeshInstance3D.visible = true
+			push_error("OOPS")
 			
 
 func take_item() -> void:

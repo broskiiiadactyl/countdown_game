@@ -1,54 +1,69 @@
 [gd_scene format=3 uid="uid://dto8xuuar0ffb"]
 
 [ext_resource type="Script" uid="uid://wh2o4d6bbhm" path="res://Scripts/item.gd" id="1_ys0gr"]
+[ext_resource type="PackedScene" uid="uid://bewmoaviak3wi" path="res://Assets/Items/bag/bag.tscn" id="2_66iod"]
+[ext_resource type="PackedScene" uid="uid://60q0vm5qilok" path="res://Assets/Items/gloves/gloves.tscn" id="3_66iod"]
+[ext_resource type="PackedScene" uid="uid://qoobrt8rqvu3" path="res://Assets/Items/cleaver/cleaver.tscn" id="5_66iod"]
+[ext_resource type="PackedScene" uid="uid://b832a5o8xlkx2" path="res://Assets/Items/net/net.tscn" id="6_66iod"]
+[ext_resource type="PackedScene" uid="uid://bp3b1jfcdicdg" path="res://Assets/Items/scissors/scissors.tscn" id="7_66iod"]
+[ext_resource type="PackedScene" uid="uid://bwbitjwkoi71k" path="res://Assets/Items/flower/nightshade.tscn" id="7_jrdc7"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5705d"]
-shading_mode = 0
-albedo_color = Color(0.24313726, 1, 1, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_5705d"]
-material = SubResource("StandardMaterial3D_5705d")
-size = Vector3(0.25, 0.1, 0.1)
-
-[sub_resource type="SphereMesh" id="SphereMesh_ys0gr"]
-radius = 0.1
-height = 0.1
-
-[sub_resource type="TorusMesh" id="TorusMesh_76mu4"]
-inner_radius = 0.05
-outer_radius = 0.1
-
-[sub_resource type="PrismMesh" id="PrismMesh_u06aw"]
-size = Vector3(0.25, 0.1, 0.1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_ys0gr"]
-size = Vector3(0.31640625, 0.16854858, 0.1640625)
+[sub_resource type="SphereShape3D" id="SphereShape3D_66iod"]
+radius = 0.15988892
 
 [node name="Item" type="StaticBody3D" unique_id=376145413]
 script = ExtResource("1_ys0gr")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=413685302]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.050175242, 0)
-mesh = SubResource("BoxMesh_5705d")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=210670570]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.050175242, 0)
-visible = false
-mesh = SubResource("SphereMesh_ys0gr")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=737648677]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.050175242, 0)
-visible = false
-mesh = SubResource("TorusMesh_76mu4")
-
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=986835321]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.050175242, 0)
-visible = false
-mesh = SubResource("PrismMesh_u06aw")
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2119494630]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.012094259, 0.08361888, 0.0029296875)
-shape = SubResource("BoxShape3D_ys0gr")
+transform = Transform3D(1.0000001, -2.9802322e-08, 0, 2.9802322e-08, 1.0000001, 0, 0, 0, 1, -0.012094244, 0.099992186, 0.0029296875)
+shape = SubResource("SphereShape3D_66iod")
+
+[node name="bag" parent="." unique_id=2123464301 instance=ExtResource("2_66iod")]
+unique_name_in_owner = true
+transform = Transform3D(0.46140808, 0.887188, 0, -0.887188, 0.46140808, 0, 0, 0, 1, -0.20786981, 0, 0)
+visible = false
+
+[node name="gloves" parent="." unique_id=243178703 instance=ExtResource("3_66iod")]
+unique_name_in_owner = true
+visible = false
+
+[node name="nightshade" parent="." unique_id=1879796683 instance=ExtResource("7_jrdc7")]
+unique_name_in_owner = true
+transform = Transform3D(0.40700948, 0, -1.4437255, 0, 1.5, 0, 1.4437255, 0, 0.40700948, -0.014004044, -0.02542179, -0.05320442)
+visible = false
+
+[node name="knife" parent="." unique_id=291411274 instance=ExtResource("5_66iod")]
+unique_name_in_owner = true
+transform = Transform3D(0.09330976, -1.4954253, -0.07068591, -1.2677063, -0.11659862, 0.7933004, -0.7963756, 0.010390867, -1.2710932, 0.32986802, 0.11956234, -0.012184769)
+visible = false
+
+[node name="net" parent="." unique_id=1332337027 instance=ExtResource("6_66iod")]
+unique_name_in_owner = true
+transform = Transform3D(0.59507304, -1.3769126, 0, 1.3769126, 0.59507304, 0, 0, 0, 1.5, -0.018451989, -0.418135, 5.9604645e-08)
+visible = false
+
+[node name="Scissors" parent="." unique_id=400729504 instance=ExtResource("7_66iod")]
+unique_name_in_owner = true
+transform = Transform3D(-0.10063386, 1.4675608, -0.2934932, -1.3150513, -0.22714114, -0.6848702, -0.71450186, 0.21135831, 1.3018503, -0.20819272, 0.09585893, 0)
+visible = false
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="Scissors" unique_id=421844759]
+transform = Transform3D(-0.044726115, -0.5844671, -0.3175564, 0.65224916, -0.10095157, 0.09393706, -0.13044143, -0.3043867, 0.57860017, -0.066131964, 0.14901465, 0.049021497)
+layers = 2
+light_cull_mask = 4294967294
+omni_attenuation = 0.1
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=217925278]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0027631223, 0.20460165, 0.3145658)
+layers = 2
+light_cull_mask = 4294967294
+omni_attenuation = 0.1
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=1071997110]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0027631223, 0.43634605, -0.41550067)
+layers = 2
+light_cull_mask = 4294967294
+omni_attenuation = 0.1
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://qoobrt8rqvu3"]
+
+[ext_resource type="PackedScene" uid="uid://dvfejiemct8ay" path="res://Assets/Items/Cleaver.glb" id="1_cofld"]
+
+[node name="Cleaver" unique_id=291411274 instance=ExtResource("1_cofld")]
+
+[node name="knife_cleaver_w_hole_Cube_006" parent="." index="0" unique_id=1633660164]
+layers = 3

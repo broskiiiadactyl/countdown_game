@@ -1,30 +1,22 @@
 [gd_scene format=3 uid="uid://dun3be2mqshyu"]
 
 [ext_resource type="Script" uid="uid://bmct3v26mu42r" path="res://Scripts/mike.gd" id="1_8qnxm"]
-[ext_resource type="Texture2D" uid="uid://bk26j6whqsfec" path="res://Assets/Test/PngItem_247356.png" id="2_56und"]
+[ext_resource type="PackedScene" uid="uid://xgidspc2aq83" path="res://Assets/Characters/Mike/mike_model.tscn" id="2_56und"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e0j01"]
-transparency = 1
-albedo_texture = ExtResource("2_56und")
-billboard_mode = 2
-
-[sub_resource type="QuadMesh" id="QuadMesh_vifax"]
-material = SubResource("StandardMaterial3D_e0j01")
-
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_e0j01"]
-height = 0.9321289
-radius = 0.26708984
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_n3gy5"]
+height = 1.2850342
+radius = 0.19140625
 
 [node name="Mike" type="StaticBody3D" unique_id=531970119]
 script = ExtResource("1_8qnxm")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1452014896]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5017682, 0)
-mesh = SubResource("QuadMesh_vifax")
+[node name="Model" parent="." unique_id=950788744 instance=ExtResource("2_56und")]
+unique_name_in_owner = true
+transform = Transform3D(-0.9, 0, -7.86805e-08, 0, 0.9, 0, 7.86805e-08, 0, -0.9, 0, 0, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1572774374]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.46845514, 0)
-shape = SubResource("CylinderShape3D_e0j01")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1195279141]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6449078, 0)
+shape = SubResource("CylinderShape3D_n3gy5")
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

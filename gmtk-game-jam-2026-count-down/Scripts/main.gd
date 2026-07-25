@@ -27,6 +27,10 @@ var mouse_pos : Vector2 = Vector2.ZERO
 
 #store talk models
 @onready var cookie : Node3D = %CookiePOSE
+@onready var clay : Node3D = %ClayPOSE
+@onready var jerry : Node3D = %JerryPOSE
+@onready var mike : Node3D = %MikePOSE
+@onready var count : Node3D = %BodyPOSE
 
 func _ready() -> void:
 	#connect signals
@@ -315,6 +319,8 @@ func place_things() -> void:
 
 		item.set_item(item_name)
 		item.global_position = room_node3.item_pos
+		if clean_room_name == "Garden":
+			item.rotation.y = 90
 		
 		i += 1
 	
@@ -336,12 +342,12 @@ func toggle_characters(character):
 		"Cookie":
 			cookie.visible = !cookie.visible
 		"Mike":
-			pass
+			mike.visible = !mike.visible
 		"Jerry":
-			pass
+			jerry.visible = !jerry.visible
 		"Clay":
-			pass
+			clay.visible = !clay.visible
 		"The Count":
-			pass
+			count.visible = !count.visible
 		_:
 			pass

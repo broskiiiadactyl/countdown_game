@@ -1,19 +1,11 @@
 [gd_scene format=3 uid="uid://djmr3d6f1dgit"]
 
 [ext_resource type="Script" uid="uid://dkxpq4nm4qqnp" path="res://Scripts/cookie.gd" id="1_ix3f7"]
-[ext_resource type="PackedScene" uid="uid://b38mc8j61d05d" path="res://Assets/Characters/Cookie/Cookie_CutandMerged.glb" id="2_sonkf"]
-[ext_resource type="Animation" uid="uid://banmr43entskc" path="res://Assets/Characters/Cookie/Action.res" id="3_kw0iv"]
-[ext_resource type="Animation" uid="uid://pceo64matpmh" path="res://Assets/Characters/Cookie/ArmatureAction_006.res" id="4_pp861"]
+[ext_resource type="PackedScene" uid="uid://ckqaxm6vvjucr" path="res://Assets/Characters/Cookie/cookie_model.tscn" id="2_ix3f7"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_e0j01"]
 height = 1.2850342
 radius = 0.19140625
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_oea3r"]
-_data = {
-&"Action": ExtResource("3_kw0iv"),
-&"ArmatureAction_006": ExtResource("4_pp861")
-}
 
 [node name="Cookie" type="StaticBody3D" unique_id=531970119]
 script = ExtResource("1_ix3f7")
@@ -22,12 +14,9 @@ script = ExtResource("1_ix3f7")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6449078, 0)
 shape = SubResource("CylinderShape3D_e0j01")
 
-[node name="Cookie_CutandMerged" parent="." unique_id=131736974 instance=ExtResource("2_sonkf")]
-transform = Transform3D(-0.9, 0, -7.86805e-08, 0, 0.9, 0, 7.86805e-08, 0, -0.9, 0, 0, 0)
-
-[node name="Player" type="AnimationPlayer" parent="Cookie_CutandMerged" unique_id=595630108]
+[node name="Model" parent="." unique_id=1845951402 instance=ExtResource("2_ix3f7")]
 unique_name_in_owner = true
-libraries/Cookie = SubResource("AnimationLibrary_oea3r")
+transform = Transform3D(-0.9, 0, -7.86805e-08, 0, 0.9, 0, 7.86805e-08, 0, -0.9, 0, 0, 0)
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

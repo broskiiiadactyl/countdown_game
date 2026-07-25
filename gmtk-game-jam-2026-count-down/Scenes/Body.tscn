@@ -1,27 +1,21 @@
 [gd_scene format=3 uid="uid://om0os628vkyh"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qvvqg"]
-shading_mode = 0
-albedo_color = Color(1, 0.34509805, 1, 1)
-
-[sub_resource type="TextMesh" id="TextMesh_qvvqg"]
-material = SubResource("StandardMaterial3D_qvvqg")
-text = "O.o"
-font_size = 64
+[ext_resource type="Script" uid="uid://p1dmihttue8n" path="res://Scripts/body.gd" id="1_dd84e"]
+[ext_resource type="PackedScene" uid="uid://rxqe4n0gcoh4" path="res://Assets/Characters/The Count/count.tscn" id="2_dd84e"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_e0j01"]
-height = 0.3770752
-radius = 0.4189453
+height = 1.021759
+radius = 0.18652344
 
 [node name="Body" type="StaticBody3D" unique_id=531970119]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1452014896]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25711042, 0)
-mesh = SubResource("TextMesh_qvvqg")
+script = ExtResource("1_dd84e")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1572774374]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.19092828, 0)
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -0.10902405, 0.11373128, 0.09406766)
 shape = SubResource("CylinderShape3D_e0j01")
+
+[node name="Model" parent="." unique_id=1749459867 instance=ExtResource("2_dd84e")]
+unique_name_in_owner = true
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

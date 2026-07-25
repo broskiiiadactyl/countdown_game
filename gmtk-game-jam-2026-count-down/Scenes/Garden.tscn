@@ -1,34 +1,34 @@
 [gd_scene format=3 uid="uid://cedc7tdt05uw0"]
 
 [ext_resource type="Script" uid="uid://byuc3pyowx7me" path="res://Scripts/Garden.gd" id="1_m3i3o"]
-[ext_resource type="PackedScene" uid="uid://dfkp5nmmtgg0p" path="res://Assets/Enviros/Garden/outdoors_merged-extendedfloor.glb" id="2_m3i3o"]
+[ext_resource type="PackedScene" uid="uid://buot7twbs7wip" path="res://Assets/Enviros/Garden/outdoors_merged_biggerhouse.glb" id="2_m3i3o"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gxaye"]
-size = Vector3(0.06530762, 1.498024, 0.65965843)
+size = Vector3(0.06530762, 1.8956184, 1.6015625)
 
 [node name="Garden" type="Node3D" unique_id=225874475]
 script = ExtResource("1_m3i3o")
 
-[node name="Garden Model" parent="." unique_id=588562749 instance=ExtResource("2_m3i3o")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 1.7299204)
+[node name="Garden Model" parent="." unique_id=1060858174 instance=ExtResource("2_m3i3o")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 1.740757)
 
 [node name="DoorL" type="Area3D" parent="." unique_id=725154496]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.850956, 0.39291382, -0.21381769)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DoorL" unique_id=101067387]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.57723045, 0.75660324, -0.08990955)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07064772, 0.95540047, 0.06048107)
 shape = SubResource("BoxShape3D_gxaye")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1606891305]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8490505, 0.60239935, 1.0995806)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5872034, 0.60239935, 1.3015655)
 light_energy = 0.25
 omni_range = 10.0
 omni_attenuation = 0.5
 
 [node name="CameraPos" type="Marker3D" parent="." unique_id=2010800436]
 unique_name_in_owner = true
-transform = Transform3D(0.9659258, 0, 0.25881904, 0, 1, 0, -0.25881904, 0, 0.9659258, 1.3427877, 1.3, 2.6325788)
+transform = Transform3D(0.9659258, 0, 0.25881904, 0, 1, 0, -0.25881904, 0, 0.9659258, 0.6352632, 1.3, 2.6325788)
 
 [node name="BodyPos" type="Marker3D" parent="." unique_id=11819031]
 unique_name_in_owner = true

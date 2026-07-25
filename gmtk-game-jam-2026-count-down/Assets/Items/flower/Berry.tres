@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ct6t4vrtqvma2"]
+
+[resource]
+resource_name = "Berry"
+cull_mode = 2
+albedo_color = Color(0.061029375, 0.0098021105, 0.1392322, 1)
+roughness = 0.5

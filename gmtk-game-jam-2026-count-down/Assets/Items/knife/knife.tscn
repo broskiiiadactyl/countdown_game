@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dtucgcc4c1jpa"]
+
+[ext_resource type="PackedScene" uid="uid://frd8rc4avg13" path="res://Assets/Items/Knife.glb" id="1_7p5p5"]
+
+[node name="Knife" unique_id=103996302 instance=ExtResource("1_7p5p5")]
+
+[node name="knife_filleting_knife_Cube_007" parent="." index="0" unique_id=497376129]
+transform = Transform3D(0.086383015, -0.94498557, -0.3154998, -0.9562615, -0.16748185, 0.23982006, -0.279467, 0.28098398, -0.918121, 0.12778497, 0.0685716, -0.052696444)
+layers = 3
