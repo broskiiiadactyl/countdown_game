@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dwxf8qw7m2a7r"
-path="res://.godot/imported/Mike3_IdlePoseandAnimation_TalkPose.glb-8809f33c0090b3087148fa247fc8e6e7.scn"
+uid="uid://cts6jcrmy2sf"
+path="res://.godot/imported/Clay4_TalkAnimation_IdleAnimation.glb-3ae16f2b853e4577e158ba9922f58348.scn"
 
 [deps]
 
-source_file="res://Assets/Characters/Mike/Mike3_IdlePoseandAnimation_TalkPose.glb"
-dest_files=["res://.godot/imported/Mike3_IdlePoseandAnimation_TalkPose.glb-8809f33c0090b3087148fa247fc8e6e7.scn"]
+source_file="res://Assets/Characters/Clay/Clay4_TalkAnimation_IdleAnimation.glb"
+dest_files=["res://.godot/imported/Clay4_TalkAnimation_IdleAnimation.glb-3ae16f2b853e4577e158ba9922f58348.scn"]
 
 [params]
 
@@ -39,11 +39,11 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "animations": {
-"MikeIdleAnimation": {
+"ClayIdlesAnimation": {
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://Assets/Characters/Mike/MikeIdleAnimation.res",
+"save_to_file/fallback_path": "res://Assets/Characters/Clay/ClayIdlesAnimation.res",
 "save_to_file/keep_custom_tracks": "",
-"save_to_file/path": "uid://brnt4xykuk71q",
+"save_to_file/path": "uid://c3o4a13p8dd0g",
 "settings/loop_mode": 0,
 "slice_1/end_frame": 0,
 "slice_1/loop_mode": 0,
@@ -2095,11 +2095,11 @@ _subresources={
 "slice_99/start_frame": 0,
 "slices/amount": 0
 },
-"MikeTalkPose": {
+"ClayIdlesAnimation_001": {
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://Assets/Characters/Mike/MikeTalkPose.res",
+"save_to_file/fallback_path": "res://Assets/Characters/Clay/ClayIdlesAnimation_001.res",
 "save_to_file/keep_custom_tracks": "",
-"save_to_file/path": "uid://cp2whpqs3ossl",
+"save_to_file/path": "uid://bf1m2mpjsedpf",
 "settings/loop_mode": 0,
 "slice_1/end_frame": 0,
 "slice_1/loop_mode": 0,
@@ -4153,7 +4153,7 @@ _subresources={
 }
 },
 "nodes": {
-"PATH:MikeSkel/Skeleton3D": {
+"PATH:ClaySkele/Skeleton3D": {
 "retarget/bone_map": Object(BoneMap,"resource_local_to_scene":false,"resource_name":"","profile":Object(SkeletonProfileHumanoid,"resource_local_to_scene":false,"resource_name":"","root_bone":&"Root","scale_base_bone":&"Hips","group_size":4,"bone_size":56,"script":null)
 ,"bonemap":null,"bone_map/Root":&"Root","bone_map/Hips":&"Spine3","bone_map/Spine":&"Spine2","bone_map/Chest":&"Spine1","bone_map/UpperChest":&"","bone_map/Neck":&"Neck","bone_map/Head":&"Head","bone_map/LeftEye":&"","bone_map/RightEye":&"","bone_map/Jaw":&"","bone_map/LeftShoulder":&"L.Shoulder","bone_map/LeftUpperArm":&"L.UpperArm","bone_map/LeftLowerArm":&"L.LowerArm","bone_map/LeftHand":&"L.Hand","bone_map/LeftThumbMetacarpal":&"","bone_map/LeftThumbProximal":&"","bone_map/LeftThumbDistal":&"","bone_map/LeftIndexProximal":&"","bone_map/LeftIndexIntermediate":&"","bone_map/LeftIndexDistal":&"","bone_map/LeftMiddleProximal":&"","bone_map/LeftMiddleIntermediate":&"","bone_map/LeftMiddleDistal":&"","bone_map/LeftRingProximal":&"","bone_map/LeftRingIntermediate":&"","bone_map/LeftRingDistal":&"","bone_map/LeftLittleProximal":&"","bone_map/LeftLittleIntermediate":&"","bone_map/LeftLittleDistal":&"","bone_map/RightShoulder":&"R.Shoulder","bone_map/RightUpperArm":&"R.UpperArm","bone_map/RightLowerArm":&"R.LowerArm","bone_map/RightHand":&"R.Hand","bone_map/RightThumbMetacarpal":&"","bone_map/RightThumbProximal":&"","bone_map/RightThumbDistal":&"","bone_map/RightIndexProximal":&"","bone_map/RightIndexIntermediate":&"","bone_map/RightIndexDistal":&"","bone_map/RightMiddleProximal":&"","bone_map/RightMiddleIntermediate":&"","bone_map/RightMiddleDistal":&"","bone_map/RightRingProximal":&"","bone_map/RightRingIntermediate":&"","bone_map/RightRingDistal":&"","bone_map/RightLittleProximal":&"","bone_map/RightLittleIntermediate":&"","bone_map/RightLittleDistal":&"","bone_map/LeftUpperLeg":&"L.UpperLeg","bone_map/LeftLowerLeg":&"L.LowerLeg","bone_map/LeftFoot":&"L.Foot","bone_map/LeftToes":&"L.Toes","bone_map/RightUpperLeg":&"R.UpperLeg","bone_map/RightLowerLeg":&"R.LowerLeg","bone_map/RightFoot":&"R.Foot","bone_map/RightToes":&"R.Toes","script":null)
 

@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dji7fhwakca0u"
-path.s3tc="res://.godot/imported/Clay3_CutandMerged_TalkPose_IdlePose_clayfaceplaceholder.png-5132a24c63fae6f7b3037915c4c388f6.s3tc.ctex"
+uid="uid://bjunsq6lkxbfu"
+path.s3tc="res://.godot/imported/Clay4_TalkAnimation_IdleAnimation_clayfaceplaceholder.png-c2b545c8856bfcc1ac92a0f2c64bf3f4.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Assets/Characters/Clay/Clay3_CutandMerged_TalkPose_IdlePose_clayfaceplaceholder.png"
-dest_files=["res://.godot/imported/Clay3_CutandMerged_TalkPose_IdlePose_clayfaceplaceholder.png-5132a24c63fae6f7b3037915c4c388f6.s3tc.ctex"]
+source_file="res://Assets/Characters/Clay/Clay4_TalkAnimation_IdleAnimation_clayfaceplaceholder.png"
+dest_files=["res://.godot/imported/Clay4_TalkAnimation_IdleAnimation_clayfaceplaceholder.png-c2b545c8856bfcc1ac92a0f2c64bf3f4.s3tc.ctex"]
 
 [params]
 

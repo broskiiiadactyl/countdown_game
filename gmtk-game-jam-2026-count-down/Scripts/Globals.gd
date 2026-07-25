@@ -23,6 +23,7 @@ var time_IDs : Array = []
 signal trans(target: String)
 signal states(state)
 signal characters(character)
+signal hint(hour)
 
 #Info blocks
 var blocks : Array = []
@@ -45,13 +46,30 @@ func _ready() -> void:
 func transition_to_room(target: String) -> void:
 	trans.emit(target)
 
-func count_down(blocks : int, ID : String) -> void:
+func count_down(num : int, ID : String) -> void:
 	if time_IDs.has(ID):
 		return
 	else:
 		time_IDs.append(ID)
-		current_time -= blocks
+		current_time -= num
 		print(current_time, "/", MAX_TIME)
+	
+	if current_time <= 0:
+		force_end()
+	elif current_time <= 4: 
+		play_hint(3)
+	elif current_time <= 8:
+		play_hint(2)
+	elif current_time <= 12:
+		play_hint(1)
+
+func play_hint(num : int) -> void:
+	set_active_state(gamestate.MENU)
+	hint.emit(num)
+	pass
+
+func force_end() -> void:
+	pass
 
 func set_active_state(state : gamestate) -> void:
 	match state:

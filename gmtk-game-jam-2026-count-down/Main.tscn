@@ -69,7 +69,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12039691, -0.05464959, -0.1
 
 [node name="CookiePOSE" parent="PlayerCamera" unique_id=860907361 instance=ExtResource("8_5vvyt")]
 unique_name_in_owner = true
-transform = Transform3D(-0.86602545, 0, 0.4999999, 0, 1, 0, -0.4999999, 0, -0.86602545, 0.43260935, -1.0051299, -0.95290446)
+transform = Transform3D(-0.86602545, 0, 0.4999999, 0, 1, 0, -0.4999999, 0, -0.86602545, 0.51314795, -1.0051299, -0.95290446)
 visible = false
 collision_layer = 0
 collision_mask = 0
@@ -113,6 +113,7 @@ visible = false
 unique_name_in_owner = true
 process_mode = 4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 0)
+visible = false
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Rooms/Kitchen" unique_id=908791063]
 transform = Transform3D(10, 0, 0, 0, -4.0367465e-07, -1.862, 0, 9.235, -8.13906e-08, 0.039297104, 6.3639, -2.1022358)
@@ -122,6 +123,7 @@ mesh = SubResource("QuadMesh_03owx")
 unique_name_in_owner = true
 process_mode = 4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, 0)
+visible = false
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="Rooms/Library" unique_id=2052934912]
 transform = Transform3D(10, 0, 0, 0, -4.0367465e-07, -1.862, 0, 9.235, -8.13906e-08, -0.2591858, 6.3639, -2.1022358)

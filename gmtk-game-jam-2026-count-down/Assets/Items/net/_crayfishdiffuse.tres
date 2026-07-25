@@ -3,5 +3,5 @@
 [resource]
 resource_name = "_crayfishdiffuse"
 cull_mode = 2
-albedo_color = Color(0.42963588, 0.21884793, 0.20053369, 1)
+albedo_color = Color(0.14997104, 0.14997104, 0.14997104, 1)
 roughness = 0.5

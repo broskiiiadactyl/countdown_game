@@ -25,7 +25,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		DialogueManager.show_example_dialogue_balloon(load(resource), "start")
 
 func talk_anim() -> void:
-	anim_player.play("cookie/TalkPose")
+	anim_player.play("cookie/TalkAnim")
 
 
 func _on_mouse_entered() -> void:

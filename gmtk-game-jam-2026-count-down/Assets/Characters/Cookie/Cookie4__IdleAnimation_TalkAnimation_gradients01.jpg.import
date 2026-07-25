@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxl46lpvcdw43"
-path.s3tc="res://.godot/imported/Jerry3_IdlePoseandAnimation_TalkPose_gradients01.jpg-68e63edfd9ff8daed9a6f02be227b0dd.s3tc.ctex"
+uid="uid://3epxy1cgcyww"
+path.s3tc="res://.godot/imported/Cookie4__IdleAnimation_TalkAnimation_gradients01.jpg-b820fb4173fd68120f4bd7a538e56738.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "47e965e98f8cea5e1663852d959aecf8"
+"md5": "d8da72747800f7dc3d9b873e22c7d226"
 }
 
 [deps]
 
-source_file="res://Assets/Characters/Jerry/Jerry3_IdlePoseandAnimation_TalkPose_gradients01.jpg"
-dest_files=["res://.godot/imported/Jerry3_IdlePoseandAnimation_TalkPose_gradients01.jpg-68e63edfd9ff8daed9a6f02be227b0dd.s3tc.ctex"]
+source_file="res://Assets/Characters/Cookie/Cookie4__IdleAnimation_TalkAnimation_gradients01.jpg"
+dest_files=["res://.godot/imported/Cookie4__IdleAnimation_TalkAnimation_gradients01.jpg-b820fb4173fd68120f4bd7a538e56738.s3tc.ctex"]
 
 [params]
 

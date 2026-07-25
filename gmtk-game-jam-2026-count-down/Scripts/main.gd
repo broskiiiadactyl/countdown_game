@@ -51,17 +51,11 @@ func _ready() -> void:
 	mike.talk_anim()
 	#count.talk_anim()
 	
+	%Catch.mouse_filter = Control.MOUSE_FILTER_IGNORE
 
-#I don't think this block is needed at all, probably delete
-func _process(_delta: float) -> void:
-	#match active_state:
-		#gamestate.MENU:
-			#pass
-		#gamestate.MOVE:
-			#pass
-		#gamestate.SPEAK:
-			#pass
-	pass
+func _process(delta: float) -> void:
+	if Globals.can_move == false:
+		Input.set_custom_mouse_cursor(Globals.arrow)
 
 #handle literal movement between rooms
 func transition_to_room(room : String) -> void:
@@ -336,11 +330,9 @@ func place_things() -> void:
 func change_camera_state(state):
 	match state:
 		"Move":
-			camera.process_mode = Node.PROCESS_MODE_ALWAYS
 			Input.warp_mouse(mouse_pos)
 		"Speak":
 			Input.set_custom_mouse_cursor(Globals.arrow)
-			camera.process_mode = Node.PROCESS_MODE_DISABLED
 			mouse_pos = get_viewport().get_mouse_position()
 		"Menu":
 			Input.set_custom_mouse_cursor(Globals.arrow)

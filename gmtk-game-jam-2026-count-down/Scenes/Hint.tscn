@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://dg3bra6k3717k"]
+
+[ext_resource type="Theme" uid="uid://df22axcv83ry" path="res://text theme.tres" id="1_bc60j"]
+[ext_resource type="Script" uid="uid://og8ye0euyh1m" path="res://Scripts/hint.gd" id="1_emsjw"]
+
+[node name="Hint" type="Node3D" unique_id=1902753225]
+script = ExtResource("1_emsjw")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1492079116]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=697301893]
+size = Vector2i(1152, 648)
+
+[node name="Control" type="Control" parent="SubViewportContainer/SubViewport" unique_id=96713456]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_bc60j")
+
+[node name="ColorRect" type="ColorRect" parent="SubViewportContainer/SubViewport/Control" unique_id=675123367]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SubViewportContainer/SubViewport/Control" unique_id=455238581]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Hour" type="RichTextLabel" parent="SubViewportContainer/SubViewport/Control/HBoxContainer" unique_id=362211409]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(1000, 500)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 85
+theme_override_font_sizes/bold_font_size = 85
+theme_override_font_sizes/bold_italics_font_size = 85
+theme_override_font_sizes/italics_font_size = 85
+theme_override_font_sizes/mono_font_size = 85
+bbcode_enabled = true
+text = "The clock strikes a new hour.
+3 hours remain."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Hint" type="RichTextLabel" parent="SubViewportContainer/SubViewport/Control/HBoxContainer" unique_id=1074710762]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1000, 500)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 85
+theme_override_font_sizes/bold_font_size = 85
+theme_override_font_sizes/bold_italics_font_size = 85
+theme_override_font_sizes/italics_font_size = 85
+theme_override_font_sizes/mono_font_size = 85
+bbcode_enabled = true
+text = "PLACEHOLDER"
+horizontal_alignment = 1
+vertical_alignment = 1

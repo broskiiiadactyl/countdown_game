@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dx1dlge2yf81s"
-path.s3tc="res://.godot/imported/Mike3_IdlePoseandAnimation_TalkPose_gradients01.png-3bec50664fb7871b5ee9a796929d00b8.s3tc.ctex"
+uid="uid://cviecmgclhwav"
+path.s3tc="res://.godot/imported/Clay4_TalkAnimation_IdleAnimation_gradients01.jpg-e6a2de8c15a2e39a488ea36dcca041f3.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "0f3ffbbc9dd358007940054e50923c6b"
+"md5": "d8da72747800f7dc3d9b873e22c7d226"
 }
 
 [deps]
 
-source_file="res://Assets/Characters/Mike/Mike3_IdlePoseandAnimation_TalkPose_gradients01.png"
-dest_files=["res://.godot/imported/Mike3_IdlePoseandAnimation_TalkPose_gradients01.png-3bec50664fb7871b5ee9a796929d00b8.s3tc.ctex"]
+source_file="res://Assets/Characters/Clay/Clay4_TalkAnimation_IdleAnimation_gradients01.jpg"
+dest_files=["res://.godot/imported/Clay4_TalkAnimation_IdleAnimation_gradients01.jpg-e6a2de8c15a2e39a488ea36dcca041f3.s3tc.ctex"]
 
 [params]
 
