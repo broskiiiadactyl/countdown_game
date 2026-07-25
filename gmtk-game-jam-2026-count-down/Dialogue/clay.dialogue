@@ -4,10 +4,10 @@
 
 ~ start
 while CharacterGlobals.characters["Clay"].has_met == false:
-	#Suspiciously Buff Tiger: Howdy.
-	#Clay: Name's Clay.[br]'Fore you ask, Yes.
-	#Clay: I am a cowboy catboy.
-	#Clay: Now that that's out the way, you the detective they called for?[br]You a little tender aintcha?
+	Svelte Feline Individual: Howdy.
+	Clay: Name's Clay.[br]'Fore you ask, Yes.
+	Clay: I am a cowboy catboy.
+	Clay: Now that that's out the way, you the detective they called for?[br]You a little tender aintcha?
 	Clay: Well, whatever.
 	set CharacterGlobals.characters["Clay"].has_met = true
 ~ nuetral
@@ -51,7 +51,7 @@ while CharacterGlobals.characters["Clay"].has_met == false:
 	Clay: I'm counting down.
 	do Globals.count_down(1, "count_down_once")
 	=> nuetral
-- That's all.
+- That's all. (Leave)
 	=> END
 
 ~ timesegments
