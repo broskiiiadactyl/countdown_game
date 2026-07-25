@@ -39,3 +39,4 @@ func test(x : Resource) -> void:
 	if x.resource_path == resource:
 		self.visible = true
 		Globals.set_active_state(Globals.gamestate.MOVE)
+		Globals.toggle_characters("Cookie")
