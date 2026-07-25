@@ -66,7 +66,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.847201, 2.2017374, -2.7341
 
 [node name="ItemPos" type="Marker3D" parent="." unique_id=458273599]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.88497424, 0.47645074, 0.25132787)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.88497424, 0.47511947, 0.25132787)
 
 [connection signal="mouse_entered" from="DoorL" to="." method="_on_door_l_mouse_entered"]
 [connection signal="mouse_exited" from="DoorL" to="." method="_on_door_l_mouse_exited"]

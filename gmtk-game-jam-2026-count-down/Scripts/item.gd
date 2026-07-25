@@ -20,7 +20,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _on_mouse_entered() -> void:
 	is_mouse_over = true
-	Input.set_custom_mouse_cursor(Globals.talk)
+	Input.set_custom_mouse_cursor(Globals.grab)
 
 
 func _on_mouse_exited() -> void:

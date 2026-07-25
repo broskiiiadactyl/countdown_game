@@ -21,8 +21,8 @@ outer_radius = 0.1
 [sub_resource type="PrismMesh" id="PrismMesh_u06aw"]
 size = Vector3(0.25, 0.1, 0.1)
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_5705d"]
-points = PackedVector3Array(0.125, 0.05, 0.05, 0.125, 0.05, -0.05, -0.125, 0.05, 0.05, 0.125, -0.05, 0.05, 0.125, -0.05, -0.05, -0.125, 0.05, -0.05, -0.125, -0.05, 0.05, -0.125, -0.05, -0.05)
+[sub_resource type="BoxShape3D" id="BoxShape3D_ys0gr"]
+size = Vector3(0.31640625, 0.16854858, 0.1640625)
 
 [node name="Item" type="StaticBody3D" unique_id=376145413]
 script = ExtResource("1_ys0gr")
@@ -48,8 +48,8 @@ visible = false
 mesh = SubResource("PrismMesh_u06aw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2119494630]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.050175242, 0)
-shape = SubResource("ConvexPolygonShape3D_5705d")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.012094259, 0.08361888, 0.0029296875)
+shape = SubResource("BoxShape3D_ys0gr")
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

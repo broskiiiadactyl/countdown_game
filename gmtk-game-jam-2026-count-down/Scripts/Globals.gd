@@ -5,6 +5,7 @@ var arrow = load("res://Assets/Test/gauntlet_default.png")
 var talk = load("res://Assets/Test/message_dots_round.png")
 var look = load("res://Assets/Test/look_c.png")
 var door = load("res://Assets/Test/door_enter.png")
+var grab = load("res://Assets/Test/gauntlet_open.png")
 
 #game state management
 enum gamestate {MENU, MOVE, SPEAK}
