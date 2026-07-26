@@ -15,8 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://dnlv4ds13wkxx" path="res://Scenes/Jerry.tscn" id="9_c6i3y"]
 [ext_resource type="PackedScene" uid="uid://dun3be2mqshyu" path="res://Scenes/Mike.tscn" id="10_c2ibq"]
 [ext_resource type="PackedScene" uid="uid://dto8xuuar0ffb" path="res://Scenes/item.tscn" id="14_c2ibq"]
-[ext_resource type="AudioStream" uid="uid://biayopnexkj2i" path="res://Assets/sounds/Three Red Hearts - Puzzle Pieces.ogg" id="16_fpfj3"]
 [ext_resource type="PackedScene" uid="uid://84xnf1jf31b5" path="res://Scenes/Start.tscn" id="17_sc1dx"]
+[ext_resource type="AudioStream" uid="uid://ragfnfavs36q" path="res://Assets/sounds/Azureflux - Pocket Mirror Main Theme.mp3" id="18_5tuhn"]
 [ext_resource type="PackedScene" uid="uid://dg3bra6k3717k" path="res://Scenes/Hint.tscn" id="18_kjvhd"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_cm0pq"]
@@ -210,6 +210,7 @@ mouse_filter = 2
 color = Color(1, 1, 1, 0)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1592129687]
-stream = ExtResource("16_fpfj3")
+stream = ExtResource("18_5tuhn")
 volume_db = -20.0
 autoplay = true
+parameters/looping = true
