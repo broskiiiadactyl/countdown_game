@@ -136,8 +136,10 @@ if Globals.item1 == CharacterGlobals.characters["Clay"].item:
 	Clay: Yup, I reckon that's mine. I was usin' it earlier... How did I lose it 'gain...
 	do Globals.blocks.append("The "+Globals.item1+" belongs to Clay.")
 	$> Globals.update_blocks.emit()
+	do Globals.count_down(1, "clay_item")
 else
 	Clay: Nope. Never seen it' fore.
+	do Globals.count_down(1, "clay_false4")
 => nuetral
 
 ~ checkitem2
@@ -145,8 +147,10 @@ if Globals.item2 == CharacterGlobals.characters["Clay"].item:
 	Clay: Yup, I reckon that's mine. I was usin' it earlier... How did I lose it 'gain...
 	do Globals.blocks.append("The "+Globals.item2+" belongs to Clay.")
 	$> Globals.update_blocks.emit()
+	do Globals.count_down(1, "clay_item")
 else
 	Clay: Nope. Never seen it' fore.
+	do Globals.count_down(1, "clay_false4")
 => nuetral
 
 ~ checkitem3
@@ -154,8 +158,10 @@ if Globals.item3 == CharacterGlobals.characters["Clay"].item:
 	Clay: Yup, I reckon that's mine. I was usin' it earlier... How did I lose it 'gain...
 	do Globals.blocks.append("The "+Globals.item3+" belongs to Clay.")
 	$> Globals.update_blocks.emit()
+	do Globals.count_down(1, "clay_item")
 else
 	Clay: Nope. Never seen it' fore.
+	do Globals.count_down(1, "clay_false4")
 => nuetral
 
 ~ checkitem4
@@ -163,6 +169,8 @@ if Globals.item4 == CharacterGlobals.characters["Clay"].item:
 	Clay: Yup, I reckon that's mine. I was usin' it earlier... How did I lose it 'gain...
 	do Globals.blocks.append("The "+Globals.item4+" belongs to Clay.")
 	$> Globals.update_blocks.emit()
+	do Globals.count_down(1, "clay_item")
 else
 	Clay: Nope. Never seen it' fore.
+	do Globals.count_down(1, "clay_false4")
 => nuetral

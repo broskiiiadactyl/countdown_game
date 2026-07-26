@@ -127,6 +127,8 @@ if Globals.item1 == CharacterGlobals.characters["Jerry"].item:
 	Jerry: Why, yes. I do. I was using it earlier today. Thank you for finding it.
 	do Globals.blocks.append("The "+Globals.item1+" belongs to Jerry.")
 	$> Globals.update_blocks.emit()
+	do Globals.count_down(1, "jerry_item")
+	do Globals.count_down(1, "jerry_false1")
 else
 	Jerry: Unfortunately, no. You will have to continue your journey elsewhere.
 => nuetral
@@ -136,6 +138,8 @@ if Globals.item2 == CharacterGlobals.characters["Jerry"].item:
 	Jerry: Why, yes. I do. I was using it earlier today. Thank you for finding it.
 	do Globals.blocks.append("The "+Globals.item2+" belongs to Jerry.")
 	$> Globals.update_blocks.emit()
+	do Globals.count_down(1, "jerry_item")
+	do Globals.count_down(1, "jerry_false2")
 else
 	Jerry: Unfortunately, no. You will have to continue your journey elsewhere.
 => nuetral
@@ -145,8 +149,10 @@ if Globals.item3 == CharacterGlobals.characters["Jerry"].item:
 	Jerry: Why, yes. I do. I was using it earlier today. Thank you for finding it.
 	do Globals.blocks.append("The "+Globals.item3+" belongs to Jerry.")
 	$> Globals.update_blocks.emit()
+	do Globals.count_down(1, "jerry_item")
 else
 	Jerry: Unfortunately, no. You will have to continue your journey elsewhere.
+	do Globals.count_down(1, "jerry_false3")
 => nuetral
 
 ~ checkitem4
@@ -154,6 +160,8 @@ if Globals.item4 == CharacterGlobals.characters["Jerry"].item:
 	Jerry: Why, yes. I do. I was using it earlier today. Thank you for finding it.
 	do Globals.blocks.append("The "+Globals.item4+" belongs to Jerry.")
 	$> Globals.update_blocks.emit()
+	do Globals.count_down(1, "jerry_item")
 else
 	Jerry: Unfortunately, no. You will have to continue your journey elsewhere.
+	do Globals.count_down(1, "jerry_false4")
 => nuetral

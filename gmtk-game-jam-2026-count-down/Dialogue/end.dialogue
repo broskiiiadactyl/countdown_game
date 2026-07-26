@@ -1,0 +1,14 @@
+#  [if SomeGlobal.some_property == true /] ,- check for variables
+# use % to create a random percentage they say something
+# ~ to make a cue, => to jump to a cue
+
+~ start
+[color=crimson][shake]You are out of time.[/shake][br]Name the murderer.
+- Clay
+	do Globals.game_end("Clay")
+- Cookie
+	do Globals.game_end("Cookie")
+- Mike
+	do Globals.game_end("Mike")
+- Jerry
+	do Globals.game_end("Jerry")
