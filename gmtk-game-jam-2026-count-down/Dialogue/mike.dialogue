@@ -22,7 +22,7 @@ while CharacterGlobals.characters["Mike"].has_met == false:
 	=> nuetral
 - Do you recognize this item?
 	=> items
-- What were you doing today?
+- What were you doing today? ⏱
 	match CharacterGlobals.characters["Mike"].activity:
 		when "Fishing"
 			Mike: [color=crimson]Fishing[/color]. I'm like, [wave amp=50.0 freq=5.0 connected=1]really good[/wave].
@@ -37,7 +37,8 @@ while CharacterGlobals.characters["Mike"].has_met == false:
 		when ""
 			Mike: Looks like initialization didn't assign me anything.
 			Mike: So nothing, apparently. [rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Honk Honk![/rainbow]
-	do Globals.blocks.append("Jerry spent the day "+CharacterGlobals.characters["Clay"].activity)
+	do Globals.blocks.append("Mike spent the day "+CharacterGlobals.characters["Mike"].activity)
+	do Globals.count_down(1, "Mike_+activity")
 	$> Globals.update_blocks.emit()
 	=> nuetral
 - Where were you...
@@ -46,19 +47,19 @@ while CharacterGlobals.characters["Mike"].has_met == false:
 	=> END
 
 ~ timesegments
-- Morning
+- Morning ⏱
 	Mike: I greeted the wonderful morning in my [wave amp=50.0 freq=5.0 connected=1]favorite [/wave] place in the Manor, the [color=crimson]{{CharacterGlobals.characters["Mike"].morning}}[/color].
 	do Globals.count_down(1, "Mike_morning")
 	do Globals.blocks.append("Mike was in the "+CharacterGlobals.characters["Mike"].morning+" in the Morning.")
 	$> Globals.update_blocks.emit()
 	=> nuetral
-- Afternoon
+- Afternoon ⏱
 	Mike: When it gets hot I like to make my way to the [color=crimson]{{CharacterGlobals.characters["Mike"].noon}}[/color]. It really gets the [wave amp=50.0 freq=5.0 connected=1]juices[/wave] flowing.
 	do Globals.count_down(1, "Mike_noon")
 	do Globals.blocks.append("Mike was in the "+CharacterGlobals.characters["Mike"].noon+" in the Aftenoon.")
 	$> Globals.update_blocks.emit()
 	=> nuetral
-- Evening
+- Evening ⏱
 	Mike: [wave amp=50.0 freq=5.0 connected=1]OH MY G O D[/wave]! Have you seen the [color=crimson]{{CharacterGlobals.characters["Mike"].night}}[/color] at night? It's not just good, it's also PRETTY good!
 	do Globals.count_down(1, "Mike_night")
 	do Globals.blocks.append("Mike was in the "+CharacterGlobals.characters["Mike"].night+" in the Evening.")
@@ -77,7 +78,7 @@ match Globals.inventory.size()
 			=> nuetral
 
 	when 1
-		- {{Globals.item1}}
+		- {{Globals.item1}} ⏱
 			=> checkitem1
 		- No Item [if Globals.item1==""]
 		- No Item [if Globals.item1==""]
@@ -86,9 +87,9 @@ match Globals.inventory.size()
 			=> nuetral
 
 	when 2
-		- {{Globals.item1}}
+		- {{Globals.item1}} ⏱
 			=> checkitem1
-		- {{Globals.item2}}
+		- {{Globals.item2}} ⏱
 			=> checkitem2
 		- No Item [if Globals.item1==""]
 		- No Item [if Globals.item1==""]
@@ -96,24 +97,24 @@ match Globals.inventory.size()
 			=> nuetral
 
 	when 3
-		- {{Globals.item1}}
+		- {{Globals.item1}} ⏱
 			=> checkitem1
-		- {{Globals.item2}}
+		- {{Globals.item2}} ⏱
 			=> checkitem2
-		- {{Globals.item3}}
+		- {{Globals.item3}} ⏱
 			=> checkitem3
 		- No Item [if Globals.item1==""]
 		- Go back
 			=> nuetral
 
 	when 4
-		- {{Globals.item1}}
+		- {{Globals.item1}} ⏱
 			=> checkitem1
-		- {{Globals.item2}}
+		- {{Globals.item2}} ⏱
 			=> checkitem2
-		- {{Globals.item3}}
+		- {{Globals.item3}} ⏱
 			=> checkitem3
-		- {{Globals.item4}}
+		- {{Globals.item4}} ⏱
 			=> checkitem4
 		- Go back
 			=> nuetral

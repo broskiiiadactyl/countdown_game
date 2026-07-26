@@ -21,7 +21,7 @@ while CharacterGlobals.characters["Cookie"].has_met == false:
 	=> nuetral
 - Do you recognize this item?
 	=> items
-- What were you doing today?
+- What were you doing today? ⏱
 	match CharacterGlobals.characters["Cookie"].activity:
 		when "Fishing"
 			Cookie: Well I was [color=crimson]fishing[/color], of course! [rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Honk Honk![/rainbow]
@@ -31,13 +31,14 @@ while CharacterGlobals.characters["Cookie"].has_met == false:
 		when "Gardening"
 			Cookie: [color=crimson]Gardening[/color]! [rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Honk Honk![/rainbow]
 			Cookie: Watching things grow serves as a reminder that I too will wilt.
-		when "Dressing up"
+		when "Dressing up" 
 			Cookie: [color=crimson]Dressing up![/color] [rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Honk Honk![/rainbow] Or rather, dressing down.
 			Cookie: I weep for the day when I am no longer the clown.
 		when ""
 			Cookie: Looks like initialization didn't assign me anything.
 			Cookie: So nothing, apparently. [rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Honk Honk![/rainbow]
-	do Globals.blocks.append("Cookie spent the day "+CharacterGlobals.characters["Clay"].activity)
+	do Globals.blocks.append("Cookie spent the day "+CharacterGlobals.characters["Cookie"].activity)
+	do Globals.count_down(1, "Cookie_morning")
 	$> Globals.update_blocks.emit()
 	=> nuetral
 - Where were you...
@@ -46,19 +47,19 @@ while CharacterGlobals.characters["Cookie"].has_met == false:
 	=> END
 
 ~ timesegments
-- Morning
+- Morning ⏱
 	Cookie: Goofing around in the [color=crimson]{{CharacterGlobals.characters["Cookie"].morning}}[/color].[br]It's the only way to start the day!
 	do Globals.count_down(1, "Cookie_morning")
 	do Globals.blocks.append("Cookie was in the "+CharacterGlobals.characters["Cookie"].morning+" in the Morning.")
 	$> Globals.update_blocks.emit()
 	=> nuetral
-- Afternoon
+- Afternoon ⏱
 	Cookie: Noon is the silliest time! [rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Honk Honk![/rainbow][br] Sorry, that ws out of line. I was in the [color=crimson]{{CharacterGlobals.characters["Cookie"].noon}}[/color].
 	do Globals.count_down(1, "Cookie_noon")
 	do Globals.blocks.append("Cookie was in the "+CharacterGlobals.characters["Cookie"].noon+" in the Aftenoon.")
 	$> Globals.update_blocks.emit()
 	=> nuetral
-- Evening
+- Evening ⏱
 	Cookie: Sleep is sort of like the cousin of death when you look at it like a clown![br]I was in the [color=crimson]{{CharacterGlobals.characters["Cookie"].night}}[/color].
 	do Globals.count_down(1, "Cookie_night")
 	do Globals.blocks.append("Cookie was in the "+CharacterGlobals.characters["Cookie"].noon+" in the Aftenoon.")
@@ -77,7 +78,7 @@ match Globals.inventory.size()
 			=> nuetral
 
 	when 1
-		- {{Globals.item1}}
+		- {{Globals.item1}} ⏱
 			=> checkitem1
 		- No Item [if Globals.item1==""]
 		- No Item [if Globals.item1==""]
@@ -86,9 +87,9 @@ match Globals.inventory.size()
 			=> nuetral
 
 	when 2
-		- {{Globals.item1}}
+		- {{Globals.item1}} ⏱
 			=> checkitem1
-		- {{Globals.item2}}
+		- {{Globals.item2}} ⏱
 			=> checkitem2
 		- No Item [if Globals.item1==""]
 		- No Item [if Globals.item1==""]
@@ -96,24 +97,24 @@ match Globals.inventory.size()
 			=> nuetral
 
 	when 3
-		- {{Globals.item1}}
+		- {{Globals.item1}} ⏱
 			=> checkitem1
-		- {{Globals.item2}}
+		- {{Globals.item2}} ⏱
 			=> checkitem2
-		- {{Globals.item3}}
+		- {{Globals.item3}} ⏱
 			=> checkitem3
 		- No Item [if Globals.item1==""]
 		- Go back
 			=> nuetral
 
 	when 4
-		- {{Globals.item1}}
+		- {{Globals.item1}} ⏱
 			=> checkitem1
-		- {{Globals.item2}}
+		- {{Globals.item2}} ⏱
 			=> checkitem2
-		- {{Globals.item3}}
+		- {{Globals.item3}} ⏱
 			=> checkitem3
-		- {{Globals.item4}}
+		- {{Globals.item4}} ⏱
 			=> checkitem4
 		- Go back
 			=> nuetral
