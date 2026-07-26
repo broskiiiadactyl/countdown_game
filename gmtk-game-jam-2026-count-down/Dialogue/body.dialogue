@@ -12,7 +12,7 @@ while CharacterGlobals.victim.has_met == false:
 % You wonder what kind of person this used to be.
 % A life complete and incomplete.
 % You find comfort in it's truth.
-- What do you remember?
+- What do you remember? ⏱
 	if CharacterGlobals.victim.murder_weapon == "Hefty Knife":
 		The Count: [color=crimson]A flash of steel.[/color]
 		do Globals.blocks.append("The Count remembers 'A flash of steel'.")
@@ -38,7 +38,7 @@ while CharacterGlobals.victim.has_met == false:
 - What should I do?
 	[color=sky_blue]As always, the body does not tell you how to do your job.[/color]
 	=> nuetral
-- When did you die?
+- When did you die? ⏱
 	if CharacterGlobals.victim.time_of_death == "morning":
 		The Count: [color=crimson]As I began to wander the world.[/color][br]My expectations unmet and my flowers unwatered.
 		do Globals.blocks.append("The Count died 'As I began to wander the world'.")
