@@ -11,7 +11,7 @@ var hour = Globals.current_time
 var hour_text : String = "The clock strikes a new hour."
 var hour_remain : String = ""
 
-var hint1 : String = "You can accuse a murderer at the body at any time."
+var hint1 : String = "Each (-) dialogue option only counts down time once"
 var hint2 : String = ""
 var hint3 : String = ""
 
