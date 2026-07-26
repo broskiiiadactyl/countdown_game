@@ -9,25 +9,53 @@ while CharacterGlobals.victim.has_met == false:
 	It never gets easier.
 	set CharacterGlobals.victim.has_met = true
 ~ nuetral
-% What kind of person were you, exactly?
-% It lies still ready to answer.
-% What can you tell me?
-- (Leave)
-	=> END
+% You wonder what kind of person this used to be.
+% It lies still, ready to answer.
+% You find comfort in it's truth.
 - What do you remember?
-	Nothing atm.
+	if CharacterGlobals.victim.murder_weapon == "Hefty Knife":
+		The Count: A flash of steel.
+		do Globals.blocks.append("The Count remembers 'A flash of steel'.")
+		$> Globals.update_blocks.emit()
+	if CharacterGlobals.victim.murder_weapon == "Ripped Nets":
+		The Count: Too many threads.
+		do Globals.blocks.append("The Count remembers 'Too many threads'.")
+		$> Globals.update_blocks.emit()
+	if CharacterGlobals.victim.murder_weapon == "Gallon Bag":
+		The Count: Black all around.
+		do Globals.blocks.append("The Count remembers 'Black all around'.")
+		$> Globals.update_blocks.emit()
+	if CharacterGlobals.victim.murder_weapon == "Rubber Gloves":
+		The Count: The hands were wrong.
+		do Globals.blocks.append("The Count remembers 'The hands were wrong'.")
+		$> Globals.update_blocks.emit()
+	if CharacterGlobals.victim.murder_weapon == "Nightshade":
+		The Count: A shade of green.
+		do Globals.blocks.append("The Count remembers 'A shade of green'.")
+		$> Globals.update_blocks.emit()
+	if CharacterGlobals.victim.murder_weapon == "Large Scissors":
+		The Count: Safe no longer.
+		do Globals.blocks.append("The Count remembers 'Safe no longer'.")
+		$> Globals.update_blocks.emit()
+	do Globals.count_down(1, "body_remember")
+	$> Globals.update_blocks.emit()
+	=> nuetral
+- What should I do?
+	As always, the body does not tell you how to do your job.
 	=> nuetral
 - When did you die?
 	A shiver runs through you.
-if CharacterGlobals.victim.time_of_death == "morning":
-	The Count: As I began to wander the world.[br]My expectations unmet and my flowers unwatered.
-	do Globals.blocks.append("The Count died 'As I began to wander the world'.")
-if CharacterGlobals.victim.time_of_death == "noon":
-	At the peak of my life.[br]With the sun above my head and ground below my feet.
-	do Globals.blocks.append("The Count died 'At the peak'.")
-if CharacterGlobals.victim.time_of_death == "night":
-	As the dust settled down.[br]My demons left to rest and my ambitions realized.
+	if CharacterGlobals.victim.time_of_death == "morning":
+		The Count: As I began to wander the world.[br]My expectations unmet and my flowers unwatered.
+		do Globals.blocks.append("The Count died 'As I began to wander the world'.")
+	if CharacterGlobals.victim.time_of_death == "noon":
+		The Count: At the peak of my life.[br]With the sun above my head and ground below my feet.
+		do Globals.blocks.append("The Count died 'At the peak'.")
+	if CharacterGlobals.victim.time_of_death == "night":
+		The Count: As the dust settled down.[br]My demons left to rest and my ambitions realized.
 	do Globals.blocks.append("The Count died 'As the dust settled down'.")
-do Globals.count_down(1, "body_remember")
-$> Globals.update_blocks.emit()
+	do Globals.count_down(1, "body_die")
+	$> Globals.update_blocks.emit()
+- (Leave)
+	=> END
 => nuetral
