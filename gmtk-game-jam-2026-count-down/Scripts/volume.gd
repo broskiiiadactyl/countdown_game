@@ -17,5 +17,8 @@ func _process(_delta: float) -> void:
 		add_theme_icon_override("grabber", grabber_on)
 		add_theme_icon_override("grabber_highlight", grabber_on)
 
+func check_vol() -> void:
+	value = db_to_linear(AudioServer.get_bus_volume_db(bus_index))
+
 func _on_value_changed(new_value: float) -> void:
 	AudioServer.set_bus_volume_db(bus_index, linear_to_db(new_value))

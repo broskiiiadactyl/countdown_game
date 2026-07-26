@@ -186,6 +186,7 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="Volume" type="HSlider" parent="JMenu/MarginContainer/LPage" unique_id=1998662015]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(500, 100)
 layout_mode = 2
 size_flags_horizontal = 4

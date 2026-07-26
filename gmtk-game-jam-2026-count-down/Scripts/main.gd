@@ -61,6 +61,7 @@ func _process(_delta: float) -> void:
 
 #handle literal movement between rooms
 func transition_to_room(room : String) -> void:
+	active_room.process_mode = Node.PROCESS_MODE_DISABLED
 	%Catch.mouse_filter = Control.MOUSE_FILTER_STOP
 	var target : Node3D
 	
@@ -84,7 +85,7 @@ func transition_to_room(room : String) -> void:
 	#if is already in the target room do nothing. failsafe and ideally should never be called
 	#after much testing, this is called all the time....... at least it works.....
 	if target == active_room:
-		#print("Error assigning target room.")
+		active_room.process_mode = Node.PROCESS_MODE_ALWAYS
 		return
 	
 	#move camera in the direction of the room
@@ -105,7 +106,6 @@ func transition_to_room(room : String) -> void:
 	camera.global_position = target.camera_pos
 	camera.start_basis = target.camera_basis
 	active_room.visible = false
-	active_room.process_mode = Node.PROCESS_MODE_DISABLED
 	
 	#fade out black overlay
 	await get_tree().create_timer(trans_time).timeout
@@ -332,13 +332,14 @@ func place_things() -> void:
 func change_camera_state(state):
 	match state:
 		"Move":
-			Input.warp_mouse(mouse_pos)
+			%Catch.mouse_filter = Control.MOUSE_FILTER_IGNORE
+			if Globals.last_state == Globals.gamestate.SPEAK:
+				Input.warp_mouse(mouse_pos)
 		"Speak":
 			Input.set_custom_mouse_cursor(Globals.arrow)
 			mouse_pos = get_viewport().get_mouse_position()
 		"Menu":
 			Input.set_custom_mouse_cursor(Globals.arrow)
-			mouse_pos = get_viewport().get_mouse_position()
 		"STOP":
 			await get_tree().create_timer(0.1).timeout
 			Globals.can_move = false

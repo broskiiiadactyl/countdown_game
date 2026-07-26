@@ -23,6 +23,5 @@ func turn_off() -> void:
 	var tween = create_tween()
 	tween.tween_property(pause_menu, "modulate", Color(0,0,0,0), 0.25)
 	await tween.finished
-	print("tweened")
 	pause_menu.visible = false
 	self.process_mode = Node.PROCESS_MODE_DISABLED

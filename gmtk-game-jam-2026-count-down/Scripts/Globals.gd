@@ -12,11 +12,15 @@ enum gamestate {MENU, MOVE, SPEAK, STOP}
 var active_state : gamestate = gamestate.MOVE
 #I think these vars can probably be removed
 var can_move : bool = false
+var last_state : gamestate
 
 #time management
 const MAX_TIME : int = 16
 var current_time : int = MAX_TIME
 var time_IDs : Array = []
+var hint1_played = false
+var hint2_played = false
+var hint3_played = false
 
 #signals
 signal trans(target: String)
@@ -58,12 +62,15 @@ func count_down(num : int, ID : String) -> void:
 	
 	if current_time <= 0:
 		force_end()
-	elif current_time <= 4: 
+	elif current_time <= 4 and not hint3_played: 
 		play_hint(3)
-	elif current_time <= 8:
+		hint3_played = true
+	elif current_time <= 8 and not hint2_played:
 		play_hint(2)
-	elif current_time <= 12:
+		hint2_played = true
+	elif current_time <= 12 and not hint1_played:
 		play_hint(1)
+		hint1_played = true
 
 func play_hint(num : int) -> void:
 	await states_finished
@@ -71,7 +78,7 @@ func play_hint(num : int) -> void:
 	print("Hint ", num)
 	set_active_state(gamestate.STOP)
 	hint.emit(num)
-	await get_tree().create_timer(1.0).timeout
+	await game_ready
 	set_active_state(gamestate.MOVE)
 	print("done")
 	pass
@@ -80,6 +87,7 @@ func force_end() -> void:
 	pass
 
 func set_active_state(state : gamestate) -> void:
+	last_state = active_state
 	match state:
 		gamestate.MENU:
 			can_move = false
