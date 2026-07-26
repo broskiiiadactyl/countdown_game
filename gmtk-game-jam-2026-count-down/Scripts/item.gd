@@ -18,7 +18,7 @@ func _ready() -> void:
 	pass
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("LMB") and is_mouse_over:
+	if event.is_action_pressed("LMB") and is_mouse_over and Globals.can_move:
 		#Globals.set_active_state(Globals.gamestate.SPEAK)
 		take_item()
 		#DialogueManager.show_example_dialogue_balloon(load(resource), "start")

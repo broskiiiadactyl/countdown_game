@@ -336,7 +336,11 @@ func change_camera_state(state):
 			mouse_pos = get_viewport().get_mouse_position()
 		"Menu":
 			Input.set_custom_mouse_cursor(Globals.arrow)
-			mouse_pos = $PlayerCamera/Journal.get_node("%ExitIMG").global_position
+			mouse_pos = get_viewport().get_mouse_position()
+		"STOP":
+			await get_tree().create_timer(0.1).timeout
+			Globals.can_move = false
+	Globals.states_finished.emit()
 
 func toggle_characters(character):
 	match character:

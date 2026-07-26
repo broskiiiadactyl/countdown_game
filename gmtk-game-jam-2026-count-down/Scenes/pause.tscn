@@ -1,0 +1,225 @@
+[gd_scene format=3 uid="uid://bae5obpixdshh"]
+
+[ext_resource type="Script" uid="uid://dfyrs0el7uq6g" path="res://Scripts/pause.gd" id="1_0pswh"]
+[ext_resource type="Texture2D" uid="uid://dmwn4bfx1xq01" path="res://Assets/Test/icon_pause.png" id="2_0pswh"]
+[ext_resource type="Texture2D" uid="uid://c26mjbwwn2ohh" path="res://Assets/Test/smaller/icon_sound.png" id="4_3fojq"]
+[ext_resource type="FontFile" uid="uid://brnnt80mky7j6" path="res://Assets/Test/NanumPenScript-Regular.ttf" id="5_2vhw8"]
+[ext_resource type="Script" uid="uid://cjjydw0rsgksj" path="res://Scripts/volume.gd" id="5_nsogc"]
+[ext_resource type="Texture2D" uid="uid://bl0c15e4cu0mg" path="res://Assets/Test/icon_cross.png" id="6_r7l8j"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_okafp"]
+resource_local_to_scene = true
+transparency = 1
+shading_mode = 0
+albedo_color = Color(1, 1, 1, 0.50980395)
+albedo_texture = ExtResource("2_0pswh")
+texture_repeat = false
+billboard_mode = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_4xnl1"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_okafp")
+size = Vector2(0.05, 0.05)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x6005"]
+size = Vector3(0.044677734, 0.04321289, 0.001)
+
+[sub_resource type="DPITexture" id="DPITexture_nsogc"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><circle cx=\"8\" cy=\"8\" r=\"7\" fill=\"#fefefe\" fill-opacity=\".75\"/></svg>
+"
+
+[sub_resource type="DPITexture" id="DPITexture_0pswh"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><circle cx=\"8\" cy=\"8\" r=\"7\" fill=\"#fefefe\" fill-opacity=\".37\"/></svg>
+"
+
+[sub_resource type="DPITexture" id="DPITexture_54e2h"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><circle cx=\"8\" cy=\"8\" r=\"7\" fill=\"#fefefe\"/></svg>
+"
+
+[sub_resource type="DPITexture" id="DPITexture_vfiib"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"4\" height=\"8\"><path fill=\"#fff\" fill-opacity=\".25\" d=\"M1 0h2v16H1z\"/></svg>
+"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qoltt"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.4)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2vhw8"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.75)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r7l8j"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.5649617, 0.5649616, 0.5649616, 0.6)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 6
+
+[sub_resource type="Theme" id="Theme_e0jm0"]
+default_font = ExtResource("5_2vhw8")
+default_font_size = 64
+HSlider/constants/center_grabber = 0
+HSlider/constants/grabber_offset = 0
+HSlider/constants/tick_offset = 0
+HSlider/icons/grabber = SubResource("DPITexture_nsogc")
+HSlider/icons/grabber_disabled = SubResource("DPITexture_0pswh")
+HSlider/icons/grabber_highlight = SubResource("DPITexture_54e2h")
+HSlider/icons/tick = SubResource("DPITexture_vfiib")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_qoltt")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_2vhw8")
+HSlider/styles/slider = SubResource("StyleBoxFlat_r7l8j")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4xnl1"]
+size = Vector2(97.49951, 102.00001)
+
+[node name="PauseMenu" type="Node3D" unique_id=1851798099]
+script = ExtResource("1_0pswh")
+
+[node name="Icon" type="MeshInstance3D" parent="." unique_id=1206285594]
+unique_name_in_owner = true
+mesh = SubResource("QuadMesh_4xnl1")
+
+[node name="IconArea" type="Area3D" parent="Icon" unique_id=840845887]
+unique_name_in_owner = true
+
+[node name="IconColl" type="CollisionShape3D" parent="Icon/IconArea" unique_id=1534128127]
+unique_name_in_owner = true
+shape = SubResource("BoxShape3D_x6005")
+
+[node name="JMenu" type="Control" parent="." unique_id=64371072]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = SubResource("Theme_e0jm0")
+
+[node name="BGColor" type="ColorRect" parent="JMenu" unique_id=1041960575]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.75686276)
+
+[node name="Label" type="Label" parent="JMenu" unique_id=1952981530]
+visible = false
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 58.0
+grow_horizontal = 2
+text = "Journal"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="JMenu" unique_id=804615254]
+custom_minimum_size = Vector2(1000, 500)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -250.0
+offset_right = 576.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LPage" type="VBoxContainer" parent="JMenu/MarginContainer" unique_id=144834416]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+
+[node name="BUFFER" type="Label" parent="JMenu/MarginContainer/LPage" unique_id=395847593]
+visible = false
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CluesTitle" type="Label" parent="JMenu/MarginContainer/LPage" unique_id=1271017074]
+layout_mode = 2
+text = "Paused"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="JMenu/MarginContainer/LPage" unique_id=1980529122]
+custom_minimum_size = Vector2(0, 350)
+layout_mode = 2
+
+[node name="FirstHint" type="Label" parent="JMenu/MarginContainer/LPage/MarginContainer" unique_id=1162005031]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Play hints will go here... probably"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Volume" type="HSlider" parent="JMenu/MarginContainer/LPage" unique_id=1998662015]
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_icons/grabber = ExtResource("4_3fojq")
+theme_override_icons/grabber_highlight = ExtResource("4_3fojq")
+max_value = 1.0
+step = 0.01
+value = 1.0
+script = ExtResource("5_nsogc")
+
+[node name="Exit" type="Control" parent="JMenu" unique_id=2046026006]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = -44.0
+offset_top = 11.0
+offset_right = -4.0
+offset_bottom = 51.0
+
+[node name="ExitIMG" type="Sprite2D" parent="JMenu/Exit" unique_id=1557053452]
+unique_name_in_owner = true
+position = Vector2(1087.0001, 57)
+scale = Vector2(0.6666667, 0.6666667)
+texture = ExtResource("6_r7l8j")
+
+[node name="ExitArea" type="Area2D" parent="JMenu/Exit/ExitIMG" unique_id=765902895]
+scale = Vector2(0.9999999, 0.9999999)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="JMenu/Exit/ExitIMG/ExitArea" unique_id=32211110]
+position = Vector2(-0.75, 1.5)
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("RectangleShape2D_4xnl1")
+
+[connection signal="mouse_entered" from="Icon/IconArea" to="." method="_on_pause_area_mouse_entered"]
+[connection signal="mouse_exited" from="Icon/IconArea" to="." method="_on_pause_area_mouse_exited"]
+[connection signal="value_changed" from="JMenu/MarginContainer/LPage/Volume" to="JMenu/MarginContainer/LPage/Volume" method="_on_value_changed"]
+[connection signal="mouse_entered" from="JMenu/Exit/ExitIMG/ExitArea" to="." method="_on_exit_area_mouse_entered"]
+[connection signal="mouse_exited" from="JMenu/Exit/ExitIMG/ExitArea" to="." method="_on_exit_area_mouse_exited"]

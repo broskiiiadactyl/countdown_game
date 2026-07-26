@@ -8,11 +8,10 @@ var door = load("res://Assets/Test/door_enter.png")
 var grab = load("res://Assets/Test/gauntlet_open.png")
 
 #game state management
-enum gamestate {MENU, MOVE, SPEAK}
+enum gamestate {MENU, MOVE, SPEAK, STOP}
 var active_state : gamestate = gamestate.MOVE
 #I think these vars can probably be removed
 var can_move : bool = false
-var is_talking : bool = false
 
 #time management
 const MAX_TIME : int = 16
@@ -22,6 +21,7 @@ var time_IDs : Array = []
 #signals
 signal trans(target: String)
 signal states(state)
+signal states_finished()
 signal characters(character)
 signal hint(hour)
 
@@ -64,8 +64,14 @@ func count_down(num : int, ID : String) -> void:
 		play_hint(1)
 
 func play_hint(num : int) -> void:
-	set_active_state(gamestate.MENU)
+	await states_finished
+	can_move = false
+	print("Hint ", num)
+	set_active_state(gamestate.STOP)
 	hint.emit(num)
+	await get_tree().create_timer(1.0).timeout
+	set_active_state(gamestate.MOVE)
+	print("done")
 	pass
 
 func force_end() -> void:
@@ -75,16 +81,16 @@ func set_active_state(state : gamestate) -> void:
 	match state:
 		gamestate.MENU:
 			can_move = false
-			is_talking = false
 			states.emit("Menu")
 		gamestate.MOVE:
 			can_move = true
-			is_talking = false
 			states.emit("Move")
 		gamestate.SPEAK:
 			can_move = false
-			is_talking = true
 			states.emit("Speak")
+		gamestate.STOP:
+			can_move = false
+			states.emit("STOP")
 
 func toggle_characters(character: String):
 	match character:
