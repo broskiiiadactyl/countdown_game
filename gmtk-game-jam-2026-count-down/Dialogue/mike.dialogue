@@ -118,16 +118,16 @@ match Globals.inventory.size()
 
 ~ checkitem1
 if Globals.item1 == CharacterGlobals.characters["Mike"].item:
-	Mike: Oh my god, [wave amp=50.0 freq=5.0 connected=1]YES[/wave]! I've been looking for it everywhere. Thaaaaaaaanks~
+	Mike: Oh my god, [wave amp=50.0 freq=5.0 connected=1]YES[/wave]! I had it with me earlier! I've been looking for it everywhere. Thaaaaaaaanks~
 	do Globals.blocks.append("The "+Globals.item1+" belongs to Mike.")
 	$> Globals.update_blocks.emit()
 else
-	Mike: Whomp Whomp. Huge loser moment! Not even close!
+	Mike:[wave amp=50.0 freq=5.0 connected=1]Uhhh...[/wave]Yeeeees? I mean... it isn't. I have no idea what that is. But if I say it's mine, will that help?
 => nuetral
 
 ~ checkitem2
 if Globals.item2 == CharacterGlobals.characters["Mike"].item:
-	Mike: Oh my god, [wave amp=50.0 freq=5.0 connected=1]YES[/wave]! I've been looking for it everywhere. Thaaaaaaaanks~
+	Mike: Oh my god, [wave amp=50.0 freq=5.0 connected=1]YES[/wave]! I had it with me earlier! I've been looking for it everywhere. Thaaaaaaaanks~
 	do Globals.blocks.append("The "+Globals.item2+" belongs to Mike.")
 	$> Globals.update_blocks.emit()
 else
@@ -136,7 +136,7 @@ else
 
 ~ checkitem3
 if Globals.item3 == CharacterGlobals.characters["Mike"].item:
-	Mike: Oh my god, [wave amp=50.0 freq=5.0 connected=1]YES[/wave]! I've been looking for it everywhere. Thaaaaaaaanks~
+	Mike: Oh my god, [wave amp=50.0 freq=5.0 connected=1]YES[/wave]! I had it with me earlier! I've been looking for it everywhere. Thaaaaaaaanks~
 	do Globals.blocks.append("The "+Globals.item3+" belongs to Mike.")
 	$> Globals.update_blocks.emit()
 else
@@ -145,7 +145,7 @@ else
 
 ~ checkitem4
 if Globals.item4 == CharacterGlobals.characters["Mike"].item:
-	Mike: Oh my god, [wave amp=50.0 freq=5.0 connected=1]YES[/wave]! I've been looking for it everywhere. Thaaaaaaaanks~
+	Mike: Oh my god, [wave amp=50.0 freq=5.0 connected=1]YES[/wave]! I had it with me earlier! I've been looking for it everywhere. Thaaaaaaaanks~
 	do Globals.blocks.append("The "+Globals.item4+" belongs to Mike.")
 	$> Globals.update_blocks.emit()
 else
