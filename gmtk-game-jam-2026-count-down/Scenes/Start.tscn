@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c0fvq4ex1wf40" path="res://Scripts/Start.gd" id="1_lmkek"]
 [ext_resource type="FontFile" uid="uid://brnnt80mky7j6" path="res://Assets/Test/NanumPenScript-Regular.ttf" id="3_7aetl"]
 [ext_resource type="Texture2D" uid="uid://c26mjbwwn2ohh" path="res://Assets/Test/smaller/icon_sound.png" id="4_27w08"]
+[ext_resource type="Theme" uid="uid://df22axcv83ry" path="res://text theme.tres" id="5_37b1d"]
 [ext_resource type="Script" uid="uid://cjjydw0rsgksj" path="res://Scripts/volume.gd" id="5_45hv8"]
 
 [sub_resource type="DPITexture" id="DPITexture_nsogc"]
@@ -73,6 +74,76 @@ HSlider/styles/slider = SubResource("StyleBoxFlat_r7l8j")
 
 [node name="StartMenu" type="Node3D" unique_id=1851798099]
 script = ExtResource("1_lmkek")
+
+[node name="HintScreen" type="Control" parent="." unique_id=930130834]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("5_37b1d")
+
+[node name="BG" type="ColorRect" parent="HintScreen" unique_id=1153273224]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Text" type="HBoxContainer" parent="HintScreen" unique_id=845709669]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Hint" type="RichTextLabel" parent="HintScreen/Text" unique_id=1078931959]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(1000, 500)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 85
+theme_override_font_sizes/bold_font_size = 85
+theme_override_font_sizes/bold_italics_font_size = 85
+theme_override_font_sizes/italics_font_size = 85
+theme_override_font_sizes/mono_font_size = 85
+bbcode_enabled = true
+text = "FIND THE [color=red]MURDERER[/color]."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Text2" type="HBoxContainer" parent="HintScreen" unique_id=155754014]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Hint2" type="RichTextLabel" parent="HintScreen/Text2" unique_id=1444205358]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(1000, 500)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 85
+theme_override_font_sizes/bold_font_size = 85
+theme_override_font_sizes/bold_italics_font_size = 85
+theme_override_font_sizes/italics_font_size = 85
+theme_override_font_sizes/mono_font_size = 85
+bbcode_enabled = true
+text = "4 HOURS REMAIN."
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="JMenu" type="Control" parent="." unique_id=64371072]
 unique_name_in_owner = true
