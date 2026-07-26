@@ -26,15 +26,15 @@ func it_begins(answer) -> void:
 	
 	#calculate all the results
 	if Globals.hint1_played == true:
-		grade = "[color=green]A[color]"
-		snark = "[wave]Whoa! You're a real life Columbo! Next time I lose the remote, I'll make sure to give you a call! I wonder if ANYONE can do better...[/wave]"
+		grade = "[color=green]A[/color]"
+		snark = "[wave]Whoa! You're a real life Columbo! I wonder if there's an ever higher grade...[/wave]"
 	
 	if Globals.hint2_played == true:
-		grade = "[color=green]B[color]"
-		snark = "[wave]Solid detective work, but we BOTH know you can do it better.[/wave]"
+		grade = "[color=green]B[/color]"
+		snark = "[wave]Solid detective work, but we both know you can do it better.[/wave]"
 		
 	if Globals.hint3_played == true:
-		grade = "[color=green]C[color]"
+		grade = "[color=green]C[/color]"
 		snark = "[wave]C's get degrees! Maybe next time put it together a little faster. Be careful though, it won't be the same person![/wave]"
 		
 	if answer != murderer:
