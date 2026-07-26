@@ -55,6 +55,8 @@ func play_hint(num : int) -> void:
 	await tween3.finished
 	hour_lab.visible = false
 	
+	Globals.timer_down.emit()
+	
 	hint_lab.visible = true
 	var tween4 = create_tween()
 	tween4.tween_property(hint_lab, "modulate", Color(1,1,1,1.0), 0.25)

@@ -28,6 +28,7 @@ signal states(state)
 signal states_finished()
 signal characters(character)
 signal hint(hour)
+signal timer_down()
 signal start()
 signal game_ready()
 signal it_begins()
@@ -59,6 +60,7 @@ func count_down(num : int, ID : String) -> void:
 	else:
 		time_IDs.append(ID)
 		current_time -= num
+		timer_down.emit()
 		print(current_time, "/", MAX_TIME)
 	
 	if current_time <= 0:

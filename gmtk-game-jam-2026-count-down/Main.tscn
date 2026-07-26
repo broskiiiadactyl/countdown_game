@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://djmr3d6f1dgit" path="res://Scenes/Cookie.tscn" id="8_5vvyt"]
 [ext_resource type="PackedScene" uid="uid://dnlv4ds13wkxx" path="res://Scenes/Jerry.tscn" id="9_c6i3y"]
 [ext_resource type="PackedScene" uid="uid://dun3be2mqshyu" path="res://Scenes/Mike.tscn" id="10_c2ibq"]
+[ext_resource type="PackedScene" uid="uid://dpy1itm060s8t" path="res://Scenes/timer.tscn" id="13_2gh4u"]
 [ext_resource type="PackedScene" uid="uid://dto8xuuar0ffb" path="res://Scenes/item.tscn" id="14_c2ibq"]
 [ext_resource type="PackedScene" uid="uid://84xnf1jf31b5" path="res://Scenes/Start.tscn" id="17_sc1dx"]
 [ext_resource type="PackedScene" uid="uid://c6xqo37bensuo" path="res://Scenes/end.tscn" id="18_2gh4u"]
@@ -110,6 +111,9 @@ visible = false
 [node name="StartMenu" parent="PlayerCamera" unique_id=2104439559 instance=ExtResource("17_sc1dx")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.3, -4.5)
+
+[node name="Timer" parent="PlayerCamera" unique_id=675693404 instance=ExtResource("13_2gh4u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29670563, 0.15446508, -0.41008186)
 
 [node name="Rooms" type="Node3D" parent="." unique_id=1488119261]
 

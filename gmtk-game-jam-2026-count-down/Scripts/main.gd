@@ -86,6 +86,7 @@ func transition_to_room(room : String) -> void:
 	#after much testing, this is called all the time....... at least it works.....
 	if target == active_room:
 		active_room.process_mode = Node.PROCESS_MODE_ALWAYS
+		active_room.visible = true
 		return
 	
 	#move camera in the direction of the room
@@ -121,6 +122,15 @@ func transition_to_room(room : String) -> void:
 
 #init the murder
 func down_count() -> void:
+	foyer.visible = true
+	garden.visible = true
+	kitchen.visible = true
+	library.visible = true
+	foyer.visible = false
+	garden.visible = false
+	kitchen.visible = false
+	library.visible = false
+	
 	assign_things()
 	
 	#pick random character to mark as culprit
