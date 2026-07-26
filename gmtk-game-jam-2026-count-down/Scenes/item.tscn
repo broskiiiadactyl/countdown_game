@@ -8,9 +8,18 @@
 [ext_resource type="PackedScene" uid="uid://bnguf5auu6xmu" path="res://Assets/Items/net/net_piece.tscn" id="6_jmixh"]
 [ext_resource type="PackedScene" uid="uid://bp3b1jfcdicdg" path="res://Assets/Items/scissors/scissors.tscn" id="7_66iod"]
 [ext_resource type="PackedScene" uid="uid://bwbitjwkoi71k" path="res://Assets/Items/flower/nightshade.tscn" id="7_jrdc7"]
+[ext_resource type="AudioStream" uid="uid://bo0yh8mpexi2w" path="res://Assets/sounds/SFX/Pick Up 01 - 817551__silverdubloons__pickupcard05.wav" id="9_hnyqs"]
+[ext_resource type="AudioStream" uid="uid://cs7tm73d6fq16" path="res://Assets/sounds/SFX/Pick Up 02 - 667271__alegemaate__cloth-grab.wav" id="10_jrdc7"]
+[ext_resource type="AudioStream" uid="uid://b666o5blslis3" path="res://Assets/sounds/SFX/Pick Up 03 - 817926__jriches1__picking-up-a-pistol.mp3" id="11_cr6d1"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_66iod"]
 radius = 0.18952137
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_iu5vn"]
+streams_count = 3
+stream_0/stream = ExtResource("9_hnyqs")
+stream_1/stream = ExtResource("10_jrdc7")
+stream_2/stream = ExtResource("11_cr6d1")
 
 [node name="Item" type="StaticBody3D" unique_id=376145413]
 script = ExtResource("1_ys0gr")
@@ -73,6 +82,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0027631223, 0.43634605, -0.
 layers = 2
 light_cull_mask = 4294967294
 omni_attenuation = 0.1
+
+[node name="Take" type="AudioStreamPlayer3D" parent="." unique_id=455379672]
+unique_name_in_owner = true
+stream = SubResource("AudioStreamRandomizer_iu5vn")
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

@@ -20,6 +20,8 @@
 [ext_resource type="PackedScene" uid="uid://c6xqo37bensuo" path="res://Scenes/end.tscn" id="18_2gh4u"]
 [ext_resource type="AudioStream" uid="uid://ragfnfavs36q" path="res://Assets/sounds/Azureflux - Pocket Mirror Main Theme.mp3" id="18_5tuhn"]
 [ext_resource type="PackedScene" uid="uid://dg3bra6k3717k" path="res://Scenes/Hint.tscn" id="18_kjvhd"]
+[ext_resource type="AudioStream" uid="uid://bryoju2qo5xcv" path="res://Assets/sounds/SFX/Door 02 - 842178__aardsreal__dooropen-free.wav" id="21_3b0ty"]
+[ext_resource type="AudioStream" uid="uid://crokfxvjxhcws" path="res://Assets/sounds/SFX/Door 03 - 848686__al3x-k__sfx_door_open.wav" id="22_bg4s2"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_cm0pq"]
 panorama = ExtResource("1_r0du0")
@@ -42,6 +44,11 @@ fog_depth_begin = 0.0
 fog_depth_end = 0.1
 
 [sub_resource type="QuadMesh" id="QuadMesh_03owx"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_hhcpw"]
+streams_count = 2
+stream_0/stream = ExtResource("21_3b0ty")
+stream_1/stream = ExtResource("22_bg4s2")
 
 [node name="Main" type="Node3D" unique_id=544896189]
 script = ExtResource("1_fos0i")
@@ -216,8 +223,12 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(1, 1, 1, 0)
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1592129687]
+[node name="BGM" type="AudioStreamPlayer" parent="." unique_id=1592129687]
 stream = ExtResource("18_5tuhn")
 volume_db = -10.0
 autoplay = true
 parameters/looping = true
+
+[node name="Door" type="AudioStreamPlayer" parent="." unique_id=199721925]
+unique_name_in_owner = true
+stream = SubResource("AudioStreamRandomizer_hhcpw")

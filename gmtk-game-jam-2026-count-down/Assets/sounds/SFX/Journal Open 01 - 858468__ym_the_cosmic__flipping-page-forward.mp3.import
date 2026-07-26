@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c27v5wt3pp25"
+path="res://.godot/imported/Journal Open 01 - 858468__ym_the_cosmic__flipping-page-forward.mp3-9f5f9cfae13cc17d4f7155ddf3e2454b.mp3str"
+
+[deps]
+
+source_file="res://Assets/sounds/SFX/Journal Open 01 - 858468__ym_the_cosmic__flipping-page-forward.mp3"
+dest_files=["res://.godot/imported/Journal Open 01 - 858468__ym_the_cosmic__flipping-page-forward.mp3-9f5f9cfae13cc17d4f7155ddf3e2454b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

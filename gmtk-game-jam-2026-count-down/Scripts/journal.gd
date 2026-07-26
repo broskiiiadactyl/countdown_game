@@ -35,10 +35,12 @@ func _unhandled_input(event: InputEvent) -> void:
 func open_journal() -> void:
 	Globals.set_active_state(Globals.gamestate.MENU)
 	journal_menu.visible = true
+	%Shuffle.play()
 
 func close_journal() -> void:
 	Globals.set_active_state(Globals.gamestate.MOVE)
 	journal_menu.visible = false
+	%Shuffle.play()
 
 func set_state(state) -> void:
 	match state:

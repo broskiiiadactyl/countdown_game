@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bmct3v26mu42r" path="res://Scripts/mike.gd" id="1_8qnxm"]
 [ext_resource type="PackedScene" uid="uid://xgidspc2aq83" path="res://Assets/Characters/Mike/mike_model.tscn" id="2_56und"]
+[ext_resource type="AudioStream" uid="uid://rt72qwblqivd" path="res://Assets/sounds/SFX/mumbling2.wav" id="3_vt87a"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_n3gy5"]
 height = 1.2850342
@@ -17,6 +18,11 @@ transform = Transform3D(-0.9, 0, -7.86805e-08, 0, 0.9, 0, 7.86805e-08, 0, -0.9, 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1195279141]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6449078, 0)
 shape = SubResource("CylinderShape3D_n3gy5")
+
+[node name="Talk" type="AudioStreamPlayer3D" parent="." unique_id=1831240666]
+unique_name_in_owner = true
+stream = ExtResource("3_vt87a")
+pitch_scale = 1.5
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

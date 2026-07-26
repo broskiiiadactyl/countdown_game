@@ -10,12 +10,10 @@ var resource := "res://Dialogue/body.dialogue"
 
 func _ready() -> void:
 	DialogueManager.dialogue_ended.connect(test)
+	Globals.end_done.connect(end_it)
 	
 	anim_player.play("ArmatureAction_005")
 
-
-func _process(_delta: float) -> void:
-	pass
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("LMB") and is_mouse_over and Globals.can_move:
@@ -24,6 +22,12 @@ func _unhandled_input(event: InputEvent) -> void:
 		Globals.toggle_characters("The Count")
 		#spawn in dialogue position
 		DialogueManager.show_example_dialogue_balloon(load(resource), "start")
+
+func end_it() -> void:
+	Globals.set_active_state(Globals.gamestate.SPEAK)
+	self.visible = false
+	Globals.toggle_characters("The Count")
+	DialogueManager.show_example_dialogue_balloon(load("res://Dialogue/end.dialogue"), "start")
 
 
 func _on_mouse_entered() -> void:

@@ -2,12 +2,13 @@
 
 [ext_resource type="Theme" uid="uid://df22axcv83ry" path="res://text theme.tres" id="1_bc60j"]
 [ext_resource type="Script" uid="uid://og8ye0euyh1m" path="res://Scripts/hint.gd" id="1_emsjw"]
+[ext_resource type="AudioStream" uid="uid://diqv1eecl70a7" path="res://Assets/sounds/SFX/ClockChime 01 - 724058__chungus43a__prague-metro-line-a-chime.wav" id="3_2sfyw"]
+[ext_resource type="Texture2D" uid="uid://bol1eqx7ok4io" path="res://Assets/Characters/images/cat.png" id="3_pcpks"]
 
 [node name="Hint" type="Node3D" unique_id=1902753225]
 script = ExtResource("1_emsjw")
 
 [node name="HintScreen" type="Control" parent="." unique_id=96713456]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -56,7 +57,6 @@ vertical_alignment = 1
 
 [node name="Hint" type="RichTextLabel" parent="HintScreen/Text" unique_id=1074710762]
 unique_name_in_owner = true
-visible = false
 modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(1000, 500)
 layout_mode = 2
@@ -69,3 +69,13 @@ bbcode_enabled = true
 text = "PLACEHOLDER"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Cat" type="Sprite2D" parent="HintScreen/Text/Hint" unique_id=879795046]
+position = Vector2(521, 672)
+scale = Vector2(0.6064389, 0.60643893)
+texture = ExtResource("3_pcpks")
+
+[node name="Chime" type="AudioStreamPlayer3D" parent="." unique_id=475756294]
+unique_name_in_owner = true
+stream = ExtResource("3_2sfyw")
+volume_db = -10.0

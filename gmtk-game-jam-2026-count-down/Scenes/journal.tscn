@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://bv4vwbytww5q1" path="res://Assets/Test/spellbookBGECrawl.png" id="4_wnnew"]
 [ext_resource type="Texture2D" uid="uid://bl0c15e4cu0mg" path="res://Assets/Test/icon_cross.png" id="4_x6005"]
 [ext_resource type="PackedScene" uid="uid://dto8xuuar0ffb" path="res://Scenes/item.tscn" id="6_nv2gc"]
+[ext_resource type="AudioStream" uid="uid://c27v5wt3pp25" path="res://Assets/sounds/SFX/Journal Open 01 - 858468__ym_the_cosmic__flipping-page-forward.mp3" id="9_q37xc"]
+[ext_resource type="AudioStream" uid="uid://dlb6gx2l8ojdl" path="res://Assets/sounds/SFX/Journal Open 02 - 828802__onlyoz__paper-page-flip.wav" id="10_3thhg"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_okafp"]
 resource_local_to_scene = true
@@ -55,6 +57,12 @@ viewport_path = NodePath("Cameras/Item4")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4xnl1"]
 size = Vector2(97.49951, 102.00001)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_417ab"]
+random_pitch = 1.2599211
+streams_count = 2
+stream_0/stream = ExtResource("9_q37xc")
+stream_1/stream = ExtResource("10_3thhg")
 
 [node name="Journal" type="Node3D" unique_id=1851798099]
 script = ExtResource("1_civ5d")
@@ -394,6 +402,10 @@ transform = Transform3D(-0.6899606, 0.5118373, -0.5118368, -0.723847, -0.4878758
 spot_range = 4.336
 spot_attenuation = 5.0
 spot_angle = 20.31
+
+[node name="Shuffle" type="AudioStreamPlayer3D" parent="." unique_id=1500911373]
+unique_name_in_owner = true
+stream = SubResource("AudioStreamRandomizer_417ab")
 
 [connection signal="mouse_entered" from="Icon/IconArea" to="." method="_on_jornal_area_mouse_entered"]
 [connection signal="mouse_exited" from="Icon/IconArea" to="." method="_on_jornal_area_mouse_exited"]

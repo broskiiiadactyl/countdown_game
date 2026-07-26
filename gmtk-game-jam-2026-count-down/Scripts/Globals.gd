@@ -16,7 +16,7 @@ var last_state : gamestate
 
 #time management
 const MAX_TIME : int = 16
-var current_time : int = MAX_TIME
+var current_time : int = 1
 var time_IDs : Array = []
 var hint1_played = false
 var hint2_played = false
@@ -34,6 +34,8 @@ signal game_ready()
 signal it_begins()
 signal shake()
 signal shake_done()
+signal end(room)
+signal end_done()
 
 #Info blocks
 var blocks : Array = []
@@ -89,7 +91,10 @@ func play_hint(num : int) -> void:
 	pass
 
 func force_end() -> void:
-	pass
+	await states_finished
+	can_move = false
+	end.emit(CharacterGlobals.victim.in_room)
+	
 
 func set_active_state(state : gamestate) -> void:
 	last_state = active_state

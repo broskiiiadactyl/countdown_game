@@ -24,6 +24,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		Globals.toggle_characters("Jerry")
 		#spawn in dialogue position
 		DialogueManager.show_example_dialogue_balloon(load(resource), "start")
+		%Talk.play()
 
 func talk_anim() -> void:
 	anim_player.play("jerry/TalkAnim")

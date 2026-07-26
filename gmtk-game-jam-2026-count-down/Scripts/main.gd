@@ -38,6 +38,7 @@ func _ready() -> void:
 	Globals.trans.connect(transition_to_room)
 	Globals.states.connect(change_camera_state)
 	Globals.characters.connect(toggle_characters)
+	Globals.end.connect(end)
 	
 	#init start scenario
 	Input.set_custom_mouse_cursor(Globals.arrow)
@@ -95,6 +96,7 @@ func transition_to_room(room : String) -> void:
 	tween0.tween_property(camera, "global_position", target.camera_pos, trans_speed)
 	
 	await get_tree().create_timer(trans_time).timeout
+	%Door.play()
 	
 	var tween = create_tween()
 	tween.tween_property(fade, "color", Color(0.0, 0.0, 0.0, 1.0), trans_time)
@@ -369,3 +371,8 @@ func toggle_characters(character):
 			count.visible = !count.visible
 		_:
 			pass
+
+func end(room) -> void:
+	await transition_to_room(room)
+	await get_tree().create_timer(0.1).timeout
+	Globals.end_done.emit()

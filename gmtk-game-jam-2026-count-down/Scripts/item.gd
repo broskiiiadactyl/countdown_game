@@ -54,6 +54,7 @@ func set_item(naem: String):
 			
 
 func take_item() -> void:
+	%Take.play()
 	self.visible = false
 	Globals.inventory.append(item_name)
 	Globals.items.emit(item_name)
