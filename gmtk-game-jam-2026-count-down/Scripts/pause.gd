@@ -29,6 +29,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			close_pause()
 
 func open_pause() -> void:
+	%Volume.check_vol()
 	Globals.set_active_state(Globals.gamestate.MENU)
 	pause_menu.visible = true
 
