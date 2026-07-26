@@ -133,7 +133,7 @@ match Globals.inventory.size()
 
 ~ checkitem1
 if Globals.item1 == CharacterGlobals.characters["Clay"].item:
-	Clay: Yup, I reckon that's mine. How did I lose it 'gain...
+	Clay: Yup, I reckon that's mine. I was usin' it earlier... How did I lose it 'gain...
 	do Globals.blocks.append("The "+Globals.item1+" belongs to Clay.")
 	$> Globals.update_blocks.emit()
 else
@@ -142,7 +142,7 @@ else
 
 ~ checkitem2
 if Globals.item2 == CharacterGlobals.characters["Clay"].item:
-	Clay: Yup, I reckon that's mine. How did I lose it 'gain...
+	Clay: Yup, I reckon that's mine. I was usin' it earlier... How did I lose it 'gain...
 	do Globals.blocks.append("The "+Globals.item2+" belongs to Clay.")
 	$> Globals.update_blocks.emit()
 else
@@ -151,7 +151,7 @@ else
 
 ~ checkitem3
 if Globals.item3 == CharacterGlobals.characters["Clay"].item:
-	Clay: Yup, I reckon that's mine. How did I lose it 'gain...
+	Clay: Yup, I reckon that's mine. I was usin' it earlier... How did I lose it 'gain...
 	do Globals.blocks.append("The "+Globals.item3+" belongs to Clay.")
 	$> Globals.update_blocks.emit()
 else
@@ -160,7 +160,7 @@ else
 
 ~ checkitem4
 if Globals.item4 == CharacterGlobals.characters["Clay"].item:
-	Clay: Yup, I reckon that's mine. How did I lose it 'gain...
+	Clay: Yup, I reckon that's mine. I was usin' it earlier... How did I lose it 'gain...
 	do Globals.blocks.append("The "+Globals.item4+" belongs to Clay.")
 	$> Globals.update_blocks.emit()
 else
