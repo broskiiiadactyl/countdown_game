@@ -128,7 +128,7 @@ if Globals.item1 == CharacterGlobals.characters["Mike"].item:
 	$> Globals.update_blocks.emit()
 	do Globals.count_down(1, "jerry_item")
 else
-	Mike:[wave amp=50.0 freq=5.0 connected=1]Uhhh...[/wave]Yeeeees? I mean... it isn't. I have no idea what that is. But if I say it's mine, will that help?
+	Mike:[wave amp=50.0 freq=5.0 connected=1] Uhhh...[/wave]Yeeeees? I mean... it isn't. I have no idea what that is. But if I say it's mine, will that help?
 	do Globals.count_down(1, "jerry_false1")
 => nuetral
 
