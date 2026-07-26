@@ -144,10 +144,10 @@ vertical_alignment = 1
 [node name="LPage" type="VBoxContainer" parent="JMenu" unique_id=144834416]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 148.0
-offset_top = 77.0
+offset_left = 141.0
+offset_top = 57.0
 offset_right = 534.0
-offset_bottom = 573.0
+offset_bottom = 588.0
 mouse_filter = 2
 theme = ExtResource("4_jqjty")
 
@@ -162,7 +162,7 @@ vertical_alignment = 1
 visible = false
 layout_mode = 2
 
-[node name="FirstHint" type="Label" parent="JMenu/LPage" unique_id=1162005031]
+[node name="FirstHint1" type="Label" parent="JMenu/LPage" unique_id=1162005031]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Lorem ipsum dolor sit amet"

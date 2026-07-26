@@ -34,18 +34,32 @@ func play_hint(num : int) -> void:
 			pass
 	
 	hint_screen.visible = true
+	hour_lab.visible = true
 	var tween = create_tween()
 	tween.tween_property(bg, "modulate", Color(0,0,0,1.0), 0.25)
-	tween.parallel().tween_property(text, "modulate", Color(1,1,1,1.0), 0.25)
 	await tween.finished
+	
+	var tween5 = create_tween()
+	tween5.tween_property(hour_lab, "modulate", Color(1,1,1,1.0), 0.5)
 	
 	await get_tree().create_timer(2.0).timeout
 	
-	hint_screen.visible = true
+	var tween3 = create_tween()
+	tween3.tween_property(hour_lab, "modulate", Color(0,0,0,0.0), 0.25)
+	await tween3.finished
+	hour_lab.visible = false
+	
+	hint_lab.visible = true
+	var tween4 = create_tween()
+	tween4.tween_property(hint_lab, "modulate", Color(1,1,1,1.0), 0.25)
+	await tween4.finished
+	
+	await get_tree().create_timer(2.0).timeout
 	
 	var tween2 = create_tween()
-	tween2.tween_property(bg, "modulate", Color(0,0,0,1.0), 0.25)
-	tween2.parallel().tween_property(text, "modulate", Color(1,1,1,0.0), 0.25)
+	tween2.tween_property(bg, "modulate", Color(0,0,0,1.0), 0.5)
+	tween2.parallel().tween_property(hint_lab, "modulate", Color(1,1,1,0.0), 0.25)
 	Globals.game_ready.emit()
 	await tween2.finished
 	hint_screen.visible = false
+	hint_lab.visible = false
