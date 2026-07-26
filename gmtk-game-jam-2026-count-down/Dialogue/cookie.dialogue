@@ -49,19 +49,22 @@ while CharacterGlobals.characters["Cookie"].has_met == false:
 
 ~ timesegments
 - Morning (-)
-	Cookie: Goofing around in the [color=crimson]{{CharacterGlobals.characters["Cookie"].morning}}[/color].[br]It's the only way to start the day!
+	Cookie: Goofing around in the [color=crimson]{{CharacterGlobals.characters["Cookie"].morning}}[/color].
+	Cookie: It's the only way to start the day!
 	do Globals.count_down(1, "Cookie_morning")
 	do Globals.blocks.append("Cookie was in the "+CharacterGlobals.characters["Cookie"].morning+" in the Morning.")
 	$> Globals.update_blocks.emit()
 	=> nuetral
 - Afternoon (-)
-	Cookie: Noon is the silliest time! [rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Honk Honk![/rainbow][br] Sorry, that ws out of line. I was in the [color=crimson]{{CharacterGlobals.characters["Cookie"].noon}}[/color].
+	Cookie: Noon is the silliest time! [rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Honk Honk![/rainbow]
+	Cookie: Sorry, that ws out of line. I was in the [color=crimson]{{CharacterGlobals.characters["Cookie"].noon}}[/color].
 	do Globals.count_down(1, "Cookie_noon")
 	do Globals.blocks.append("Cookie was in the "+CharacterGlobals.characters["Cookie"].noon+" in the Aftenoon.")
 	$> Globals.update_blocks.emit()
 	=> nuetral
 - Evening (-)
-	Cookie: Sleep is sort of like the cousin of death when you look at it like a clown![br]I was in the [color=crimson]{{CharacterGlobals.characters["Cookie"].night}}[/color].
+	Cookie: Sleep is sort of like the cousin of death when you look at it like a clown!
+	Cookie: I was in the [color=crimson]{{CharacterGlobals.characters["Cookie"].night}}[/color].
 	do Globals.count_down(1, "Cookie_night")
 	do Globals.blocks.append("Cookie was in the "+CharacterGlobals.characters["Cookie"].noon+" in the Aftenoon.")
 	$> Globals.update_blocks.emit()
@@ -136,7 +139,8 @@ else
 
 ~ checkitem2
 if Globals.item2 == CharacterGlobals.characters["Cookie"].item:
-	Cookie: What even is ownership? [rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Honk Honk![/rainbow][br]Yes, that's mine. I had it with me earlier.
+	Cookie: What even is ownership? [rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Honk Honk![/rainbow]
+	Cookie: Yes, that's mine. I had it with me earlier.
 	do Globals.blocks.append("The "+Globals.item2+" belongs to Cookie.")
 	$> Globals.update_blocks.emit()
 	do Globals.count_down(1, "cookie_item")
@@ -147,7 +151,8 @@ else
 
 ~ checkitem3
 if Globals.item3 == CharacterGlobals.characters["Cookie"].item:
-	Cookie: What even is ownership? [rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Honk Honk![/rainbow][br]Yes, that's mine. I had it with me earlier.
+	Cookie: What even is ownership? [rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Honk Honk![/rainbow]
+	Cookie: Yes, that's mine. I had it with me earlier.
 	do Globals.blocks.append("The "+Globals.item3+" belongs to Cookie.")
 	$> Globals.update_blocks.emit()
 	do Globals.count_down(1, "cookie_item")
@@ -158,7 +163,8 @@ else
 
 ~ checkitem4
 if Globals.item4 == CharacterGlobals.characters["Cookie"].item:
-	Cookie: What even is ownership? [rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Honk Honk![/rainbow][br]Yes, that's mine. I had it with me earlier.
+	Cookie: What even is ownership? [rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Honk Honk![/rainbow]
+	Cookie: Yes, that's mine. I had it with me earlier.
 	do Globals.blocks.append("The "+Globals.item4+" belongs to Cookie.")
 	$> Globals.update_blocks.emit()
 	do Globals.count_down(1, "cookie_item")

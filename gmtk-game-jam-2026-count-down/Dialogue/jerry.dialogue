@@ -6,7 +6,7 @@
 while CharacterGlobals.characters["Jerry"].has_met == false:
 	Jerry: Evening. My name is Gerard but you may call me Jerry.
 	Jerry: I served at the pleasure of his Count.
-	Jerry: I'm very eager for this matter to be over so I can take a nap for the first time in twenty years.
+	Jerry: When do you think we'll be done? This is my first chance to take a day off in twelve years.
 	set CharacterGlobals.characters["Jerry"].has_met = true
 ~ nuetral
 % Jerry: Sorry I kind of spaced out there for a minute.
@@ -27,14 +27,11 @@ while CharacterGlobals.characters["Jerry"].has_met == false:
 			Jerry: *sigh* The Count wanted fresh fish.
 			Jerry:  Store bought wasn't nearly good enough for our dearest Count, so I was forced to cultivate the habit of [color=crimson]fishing[/color].
 		when "Cooking"
-			Jerry: The Count's schedule necessitates an incredible need for meal prepping in order to secure gains and as such I was [color=crimson]Cooking[/color].
+			Jerry: The Count's schedule necessitates an incredible need for meal prepping and as such I was [color=crimson]Cooking[/color].
 		when "Gardening"
 			Jerry: [color=crimson]Gardening[/color]. Someone has to maintain the pristine edge of this manor both within and without.
 		when "Dressing up"
 			 Jerry: Well if you must know, I spent the day [color=crimson]dressing up[/color]. A man simply must have hobbies.
-		when ""
-			Jerry: Looks like initialization didn't assign me anything.
-			Jerry: So nothing, apparently. [rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Honk Honk![/rainbow]
 	do Globals.blocks.append("Jerry spent the day "+CharacterGlobals.characters["Mike"].activity+".")
 	do Globals.count_down(1, "Jerry_activity")
 	$> Globals.update_blocks.emit()
@@ -46,7 +43,8 @@ while CharacterGlobals.characters["Jerry"].has_met == false:
 
 ~ timesegments
 - Morning (-)
-	Jerry: As Usual. Languishing in the [color=crimson]{{CharacterGlobals.characters["Jerry"].morning}}[/color].
+	Jerry: Languishing in the [color=crimson]{{CharacterGlobals.characters["Jerry"].morning}}[/color].
+	Jerry: Just like every morning.
 	do Globals.count_down(1, "Jerry_morning")
 	do Globals.blocks.append("Jerry was in the "+CharacterGlobals.characters["Jerry"].morning+" in the Morning.")
 	$> Globals.update_blocks.emit()
@@ -58,7 +56,10 @@ while CharacterGlobals.characters["Jerry"].has_met == false:
 	$> Globals.update_blocks.emit()
 	=> nuetral
 - Evening (-)
-	Jerry: Around the [color=crimson]{{CharacterGlobals.characters["Jerry"].night}}[/color]. I will not lie, I sort of entered a fugue state and wandered into there.
+	Jerry: Around the [color=crimson]{{CharacterGlobals.characters["Jerry"].night}}[/color].
+	Jerry: The Count would often hide in there and jump out in an attempt to scare me.
+	Jerry: If I did not jump he docked my pay.
+	Jerry: You're very certain he's gone, right?
 	do Globals.count_down(1, "Jerry_night")
 	do Globals.blocks.append("Jerry was in the "+CharacterGlobals.characters["Jerry"].night+" in the Evening.")
 	$> Globals.update_blocks.emit()
