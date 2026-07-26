@@ -56,13 +56,13 @@ while CharacterGlobals.victim.has_met == false:
 	- Yes
 		Then name the murderer.
 		- Clay
-			You chouse Clay.
+			do game_end("Clay")
 		- Cookie
-			You chose Cookie.
+			do game_end("Cookie")
 		- Mike
-			You chose Mike.
+			do game_end("Mike")
 		- Jerry
-			You chose Jerry.
+			do game_end("Jerry")
 	- No
 		=> nuetral
 - (Leave)
