@@ -1,12 +1,9 @@
 extends Node3D
 
-
-
 func _ready() -> void:
 	%EndControl.visible = false
 	Globals.it_begins.connect(it_begins)
 	pass
-
 
 func it_begins(answer) -> void:
 	%EndControl.visible = true

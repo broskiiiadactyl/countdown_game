@@ -202,6 +202,7 @@ unique_name_in_owner = true
 unique_name_in_owner = true
 
 [node name="End" type="Node3D" parent="." unique_id=1276629397]
+visible = false
 script = ExtResource("18_2gh4u")
 
 [node name="EndControl" type="Control" parent="End" unique_id=1437261476]
@@ -331,7 +332,6 @@ fit_content = true
 
 [node name="Catch" type="ColorRect" parent="." unique_id=50410868]
 unique_name_in_owner = true
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
