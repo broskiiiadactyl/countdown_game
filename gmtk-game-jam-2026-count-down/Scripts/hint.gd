@@ -65,12 +65,14 @@ func play_hint(num : int) -> void:
 	hint_lab.visible = true
 	var tween4 = create_tween()
 	tween4.tween_property(hint_lab, "modulate", Color(1,1,1,1.0), 0.25)
+	tween4.parallel().tween_property(%Cat, "modulate", Color(1,1,1,1.0), 0.25)
 	await tween4.finished
 	
 	await get_tree().create_timer(3.0).timeout
 	
 	var tween2 = create_tween()
 	tween2.tween_property(hint_lab, "modulate", Color(0,0,0,0.0), 0.25)
+	tween2.parallel().tween_property(%Cat, "modulate", Color(0,0,0,0.0), 0.25)
 	await tween2.finished
 	
 	var tween6 = create_tween()

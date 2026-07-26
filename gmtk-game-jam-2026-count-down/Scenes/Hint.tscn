@@ -38,6 +38,13 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
+[node name="Cat" type="Sprite2D" parent="HintScreen/Text" unique_id=879795046]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+position = Vector2(597, 709)
+scale = Vector2(0.6064389, 0.60643893)
+texture = ExtResource("3_pcpks")
+
 [node name="Hour" type="RichTextLabel" parent="HintScreen/Text" unique_id=362211409]
 unique_name_in_owner = true
 visible = false
@@ -70,11 +77,6 @@ bbcode_enabled = true
 text = "PLACEHOLDER"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="Cat" type="Sprite2D" parent="HintScreen/Text/Hint" unique_id=879795046]
-position = Vector2(521, 672)
-scale = Vector2(0.6064389, 0.60643893)
-texture = ExtResource("3_pcpks")
 
 [node name="Chime" type="AudioStreamPlayer3D" parent="." unique_id=475756294]
 unique_name_in_owner = true
