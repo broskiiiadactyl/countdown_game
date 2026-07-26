@@ -4,14 +4,14 @@
 
 ~ start
 while CharacterGlobals.victim.has_met == false:
-	This is the Count of the Manor.
-	You have seen many bodies in your days.
-	It never gets easier.
+	[color=sky_blue]This is the Count of the Manor.[/color]
+	[color=sky_blue]You have seen many bodies in your days.[/color]
+	[color=sky_blue]It never gets easier.[/color]
 	set CharacterGlobals.victim.has_met = true
 ~ nuetral
-% You wonder what kind of person this used to be.
-% It lies still, ready to answer.
-% You find comfort in it's truth.
+% [color=sky_blue]You wonder what kind of person this used to be.[/color]
+% [color=sky_blue]It lies still, ready to answer.[/color]
+% [color=sky_blue]You find comfort in it's truth.[/color]
 - What do you remember?
 	if CharacterGlobals.victim.murder_weapon == "Hefty Knife":
 		The Count: A flash of steel.
@@ -41,18 +41,18 @@ while CharacterGlobals.victim.has_met == false:
 	$> Globals.update_blocks.emit()
 	=> nuetral
 - What should I do?
-	As always, the body does not tell you how to do your job.
+	[color=sky_blue]As always, the body does not tell you how to do your job.[/color]
 	=> nuetral
 - When did you die?
-	A shiver runs through you.
+	[color=sky_blue]A shiver runs through you.[/color]
 	if CharacterGlobals.victim.time_of_death == "morning":
-		The Count: As I began to wander the world.[br]My expectations unmet and my flowers unwatered.
+		The Count: [color=crimson]As I began to wander the world.[/color][br]My expectations unmet and my flowers unwatered.
 		do Globals.blocks.append("The Count died 'As I began to wander the world'.")
 	if CharacterGlobals.victim.time_of_death == "noon":
-		The Count: At the peak of my life.[br]With the sun above my head and ground below my feet.
+		The Count: [color=crimson]At the peak of my life.[/color][br]With the sun above my head and ground below my feet.
 		do Globals.blocks.append("The Count died 'At the peak'.")
 	if CharacterGlobals.victim.time_of_death == "night":
-		The Count: As the dust settled down.[br]My demons left to rest and my ambitions realized.
+		The Count: [color=crimson]As the dust settled down.[/color][br]My demons left to rest and my ambitions realized.
 	do Globals.blocks.append("The Count died 'As the dust settled down'.")
 	do Globals.count_down(1, "body_die")
 	$> Globals.update_blocks.emit()
