@@ -193,6 +193,7 @@ theme_override_icons/grabber = ExtResource("4_3fojq")
 theme_override_icons/grabber_highlight = ExtResource("4_3fojq")
 max_value = 1.0
 step = 0.01
+value = 0.5
 script = ExtResource("5_nsogc")
 
 [node name="Exit" type="Control" parent="JMenu" unique_id=2046026006]

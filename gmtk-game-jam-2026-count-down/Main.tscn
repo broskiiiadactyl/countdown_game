@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://dun3be2mqshyu" path="res://Scenes/Mike.tscn" id="10_c2ibq"]
 [ext_resource type="PackedScene" uid="uid://dto8xuuar0ffb" path="res://Scenes/item.tscn" id="14_c2ibq"]
 [ext_resource type="AudioStream" uid="uid://biayopnexkj2i" path="res://Assets/sounds/Three Red Hearts - Puzzle Pieces.ogg" id="16_fpfj3"]
+[ext_resource type="PackedScene" uid="uid://84xnf1jf31b5" path="res://Scenes/Start.tscn" id="17_sc1dx"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_cm0pq"]
 panorama = ExtResource("1_r0du0")
@@ -67,6 +68,7 @@ fov = 50.0
 script = ExtResource("4_cm0pq")
 
 [node name="PauseMenu" parent="PlayerCamera" unique_id=1851798099 instance=ExtResource("4_j4qnp")]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4580429, 0.23647738, -0.63678193)
 
 [node name="Journal" parent="PlayerCamera" unique_id=25934246 instance=ExtResource("6_3dxm6")]
@@ -98,6 +100,10 @@ visible = false
 unique_name_in_owner = true
 transform = Transform3D(0.37559357, 0, -0.9267846, -0.3157171, 0.9401871, -0.12794916, 0.8713509, 0.34065852, 0.35312822, 0.6484262, -0.32217443, -0.86066127)
 visible = false
+
+[node name="StartMenu" parent="PlayerCamera" unique_id=2104439559 instance=ExtResource("17_sc1dx")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.3, -4.5)
 
 [node name="Rooms" type="Node3D" parent="." unique_id=1488119261]
 
@@ -200,5 +206,5 @@ color = Color(1, 1, 1, 0)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1592129687]
 stream = ExtResource("16_fpfj3")
-volume_db = -10.0
+volume_db = -20.0
 autoplay = true

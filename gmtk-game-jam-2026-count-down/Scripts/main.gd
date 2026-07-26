@@ -34,6 +34,7 @@ var mouse_pos : Vector2 = Vector2.ZERO
 
 func _ready() -> void:
 	#connect signals
+	Globals.start.connect(down_count)
 	Globals.trans.connect(transition_to_room)
 	Globals.states.connect(change_camera_state)
 	Globals.characters.connect(toggle_characters)
@@ -41,9 +42,6 @@ func _ready() -> void:
 	#init start scenario
 	Input.set_custom_mouse_cursor(Globals.arrow)
 	mouse_pos = get_viewport().get_visible_rect().size / 2
-	down_count()
-	
-	Globals.set_active_state(Globals.gamestate.MOVE)
 	
 	cookie.talk_anim()
 	clay.talk_anim()
@@ -122,7 +120,7 @@ func transition_to_room(room : String) -> void:
 	%Catch.mouse_filter = Control.MOUSE_FILTER_IGNORE
 
 #init the murder
-func down_count() -> bool:
+func down_count() -> void:
 	assign_things()
 	
 	#pick random character to mark as culprit
@@ -153,8 +151,10 @@ func down_count() -> bool:
 	
 	print(CharacterGlobals.victim)
 	
-	place_things()
-	return true
+	await place_things()
+	
+	Globals.game_ready.emit()
+	print("Ready")
 
 func assign_things() -> void:
 	var met : bool = false
@@ -308,8 +308,6 @@ func place_things() -> void:
 	Globals.blocks.append("The body was found in the " + room_name2.trim_prefix("%"))
 	Globals.update_blocks.emit()
 	
-	transition_to_room(CharacterGlobals.victim.in_room)
-	
 	#Place Items
 	var items : Array = %Items.get_children()
 	var places : Dictionary = CharacterGlobals.places
@@ -329,7 +327,7 @@ func place_things() -> void:
 		
 		i += 1
 	
-	pass
+	await transition_to_room(CharacterGlobals.victim.in_room)
 
 func change_camera_state(state):
 	match state:

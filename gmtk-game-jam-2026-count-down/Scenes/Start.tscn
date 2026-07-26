@@ -4,7 +4,6 @@
 [ext_resource type="FontFile" uid="uid://brnnt80mky7j6" path="res://Assets/Test/NanumPenScript-Regular.ttf" id="3_7aetl"]
 [ext_resource type="Texture2D" uid="uid://c26mjbwwn2ohh" path="res://Assets/Test/smaller/icon_sound.png" id="4_27w08"]
 [ext_resource type="Script" uid="uid://cjjydw0rsgksj" path="res://Scripts/volume.gd" id="5_45hv8"]
-[ext_resource type="Texture2D" uid="uid://bl0c15e4cu0mg" path="res://Assets/Test/icon_cross.png" id="6_yf7sp"]
 
 [sub_resource type="DPITexture" id="DPITexture_nsogc"]
 _source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><circle cx=\"8\" cy=\"8\" r=\"7\" fill=\"#fefefe\" fill-opacity=\".75\"/></svg>
@@ -72,10 +71,7 @@ HSlider/styles/grabber_area = SubResource("StyleBoxFlat_qoltt")
 HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_2vhw8")
 HSlider/styles/slider = SubResource("StyleBoxFlat_r7l8j")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4xnl1"]
-size = Vector2(97.49951, 102.00001)
-
-[node name="PauseMenu" type="Node3D" unique_id=1851798099]
+[node name="StartMenu" type="Node3D" unique_id=1851798099]
 script = ExtResource("1_lmkek")
 
 [node name="JMenu" type="Control" parent="." unique_id=64371072]
@@ -98,7 +94,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-color = Color(0, 0, 0, 0.75686276)
+color = Color(0, 0, 0, 1)
 
 [node name="Label" type="Label" parent="JMenu" unique_id=1952981530]
 visible = false
@@ -157,7 +153,15 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
+[node name="Button" type="Button" parent="JMenu/MarginContainer/LPage/MarginContainer" unique_id=163417159]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "START"
+
 [node name="Volume" type="HSlider" parent="JMenu/MarginContainer/LPage" unique_id=1998662015]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(500, 100)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -167,28 +171,5 @@ max_value = 1.0
 step = 0.01
 script = ExtResource("5_45hv8")
 
-[node name="Exit" type="Control" parent="JMenu" unique_id=2046026006]
-unique_name_in_owner = true
-anchors_preset = 0
-offset_left = -44.0
-offset_top = 11.0
-offset_right = -4.0
-offset_bottom = 51.0
-
-[node name="ExitIMG" type="Sprite2D" parent="JMenu/Exit" unique_id=1557053452]
-unique_name_in_owner = true
-position = Vector2(1087.0001, 57)
-scale = Vector2(0.6666667, 0.6666667)
-texture = ExtResource("6_yf7sp")
-
-[node name="ExitArea" type="Area2D" parent="JMenu/Exit/ExitIMG" unique_id=765902895]
-scale = Vector2(0.9999999, 0.9999999)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="JMenu/Exit/ExitIMG/ExitArea" unique_id=32211110]
-position = Vector2(-0.75, 1.5)
-scale = Vector2(0.99999994, 0.99999994)
-shape = SubResource("RectangleShape2D_4xnl1")
-
+[connection signal="pressed" from="JMenu/MarginContainer/LPage/MarginContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="value_changed" from="JMenu/MarginContainer/LPage/Volume" to="JMenu/MarginContainer/LPage/Volume" method="_on_value_changed"]
-[connection signal="mouse_entered" from="JMenu/Exit/ExitIMG/ExitArea" to="." method="_on_exit_area_mouse_entered"]
-[connection signal="mouse_exited" from="JMenu/Exit/ExitIMG/ExitArea" to="." method="_on_exit_area_mouse_exited"]

@@ -6,6 +6,7 @@ var grabber_on = preload("res://Assets/Test/smaller/icon_sound.png")
 var grabber_off = preload("res://Assets/Test/smaller/icon_sound_disabled.png")
 
 func _ready() -> void:
+	await get_tree().process_frame
 	value = db_to_linear(AudioServer.get_bus_volume_db(bus_index))
 
 func _process(_delta: float) -> void:

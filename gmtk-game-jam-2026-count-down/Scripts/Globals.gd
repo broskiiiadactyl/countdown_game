@@ -24,6 +24,8 @@ signal states(state)
 signal states_finished()
 signal characters(character)
 signal hint(hour)
+signal start()
+signal game_ready()
 
 #Info blocks
 var blocks : Array = []
