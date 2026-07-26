@@ -19,10 +19,10 @@ func _on_button_pressed() -> void:
 	%Load.visible = true
 
 func turn_off() -> void:
+	Globals.set_active_state(Globals.gamestate.MOVE)
 	var tween = create_tween()
 	tween.tween_property(pause_menu, "modulate", Color(0,0,0,0), 0.25)
 	await tween.finished
 	print("tweened")
 	pause_menu.visible = false
-	Globals.set_active_state(Globals.gamestate.MOVE)
 	self.process_mode = Node.PROCESS_MODE_DISABLED
