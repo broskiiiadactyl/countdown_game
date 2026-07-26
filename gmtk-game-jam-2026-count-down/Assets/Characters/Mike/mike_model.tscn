@@ -5,6 +5,7 @@
 [ext_resource type="Animation" uid="uid://dsjgn68m1gwmk" path="res://Assets/Characters/Mike/MikeIdleAnimation_001.res" id="3_fwmwf"]
 [ext_resource type="Animation" uid="uid://cikxwculy28xa" path="res://Assets/Characters/Mike/MikeTalkPose.res" id="3_not51"]
 [ext_resource type="Animation" uid="uid://drl3fanwgt88t" path="res://Assets/Characters/Mike/MikeIdleAnimationnew.res" id="4_j41w3"]
+[ext_resource type="PackedScene" uid="uid://q671wdd7w3cu" path="res://Assets/Characters/Mike/Mike5_IdleAnimation_TalkAnimation.glb" id="6_j41w3"]
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fwmwf"]
 _data = {
@@ -14,10 +15,19 @@ _data = {
 &"TalkPose": ExtResource("3_not51")
 }
 
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rig0i"]
+_data = {
+&"IdleAnim": ExtResource("4_j41w3"),
+&"TalkAnim": ExtResource("3_fwmwf")
+}
+
 [node name="Mike_CutandMerged" unique_id=950788744 instance=ExtResource("1_our0i")]
 transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0, 0, 0)
 
-[node name="GeneralSkeleton" parent="MikeSkel" parent_id_path=PackedInt32Array(66897700) index="0" unique_id=482124562]
+[node name="MikeSkel" parent="." index="0" unique_id=66897700]
+visible = false
+
+[node name="GeneralSkeleton" parent="MikeSkel" index="0" unique_id=482124562]
 bones/2/position = Vector3(0.0011702066, 1, 0.06817761)
 bones/2/rotation = Quaternion(-0.0033227613, 0.70765984, -0.0033280482, 0.70653766)
 bones/3/position = Vector3(0.06956777, 0.20992997, -0.7217846)
@@ -49,5 +59,10 @@ bones/38/rotation = Quaternion(0.5415697, 0.65815395, -0.19899447, 0.48367015)
 bones/39/rotation = Quaternion(0.2090137, -0.7140306, 0.1570925, 0.64945793)
 
 [node name="AnimationPlayer" parent="." index="1" unique_id=788028321]
-unique_name_in_owner = true
 libraries/mike = SubResource("AnimationLibrary_fwmwf")
+
+[node name="Mike5_IdleAnimation_TalkAnimation" parent="." index="2" unique_id=2094605938 instance=ExtResource("6_j41w3")]
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="Mike5_IdleAnimation_TalkAnimation" index="2" unique_id=1236171885]
+unique_name_in_owner = true
+libraries/mike = SubResource("AnimationLibrary_rig0i")
