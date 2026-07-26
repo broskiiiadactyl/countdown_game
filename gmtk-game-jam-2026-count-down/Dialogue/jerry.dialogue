@@ -35,6 +35,8 @@ while CharacterGlobals.characters["Jerry"].has_met == false:
 		when ""
 			Jerry: Looks like initialization didn't assign me anything.
 			Jerry: So nothing, apparently. [rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Honk Honk![/rainbow]
+	do Globals.blocks.append("Jerry spent the day "+CharacterGlobals.characters["Clay"].activity)
+	$> Globals.update_blocks.emit()
 	=> nuetral
 - Where were you...
 	=> timesegments
@@ -49,14 +51,20 @@ while CharacterGlobals.characters["Jerry"].has_met == false:
 - Morning
 	Jerry: As Usual. Languishing in the [color=crimson]{{CharacterGlobals.characters["Jerry"].morning}}[/color].
 	do Globals.count_down(1, "Jerry_morning")
+	do Globals.blocks.append("Jerry was in the "+CharacterGlobals.characters["Jerry"].morning+" in the Morning.")
+	$> Globals.update_blocks.emit()
 	=> nuetral
 - Afternoon
 	Jerry: To be frank, hiding. The Count spends very little time in the [color=crimson]{{CharacterGlobals.characters["Jerry"].noon}}[/color] so I try to frequent it when possible.
 	do Globals.count_down(1, "Jerry_noon")
+	do Globals.blocks.append("Jerry was in the "+CharacterGlobals.characters["Jerry"].noon+" in the Aftenoon.")
+	$> Globals.update_blocks.emit()
 	=> nuetral
 - Evening
 	Jerry: Around the [color=crimson]{{CharacterGlobals.characters["Jerry"].night}}[/color]. I will not lie, I sort of entered a fugue state and wandered into there.
 	do Globals.count_down(1, "Jerry_night")
+	do Globals.blocks.append("Jerry was in the "+CharacterGlobals.characters["Jerry"].night+" in the Evening.")
+	$> Globals.update_blocks.emit()
 	=> nuetral
 - Nevermind
 	=> nuetral

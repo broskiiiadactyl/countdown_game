@@ -22,14 +22,12 @@ while CharacterGlobals.victim.has_met == false:
 if CharacterGlobals.victim.time_of_death == "morning":
 	The Count: As I began to wander the world.[br]My expectations unmet and my flowers unwatered.
 	do Globals.blocks.append("The Count died 'As I began to wander the world'.")
-	=> nuetral
 if CharacterGlobals.victim.time_of_death == "noon":
 	At the peak of my life.[br]With the sun above my head and ground below my feet.
 	do Globals.blocks.append("The Count died 'At the peak'.")
-	=> nuetral
 if CharacterGlobals.victim.time_of_death == "night":
 	As the dust settled down.[br]My demons left to rest and my ambitions realized.
 	do Globals.blocks.append("The Count died 'As the dust settled down'.")
-	=> nuetral
 do Globals.count_down(1, "body_remember")
 $> Globals.update_blocks.emit()
+=> nuetral

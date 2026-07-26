@@ -37,6 +37,8 @@ while CharacterGlobals.characters["Mike"].has_met == false:
 		when ""
 			Mike: Looks like initialization didn't assign me anything.
 			Mike: So nothing, apparently. [rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Honk Honk![/rainbow]
+	do Globals.blocks.append("Jerry spent the day "+CharacterGlobals.characters["Clay"].activity)
+	$> Globals.update_blocks.emit()
 	=> nuetral
 - Where were you...
 	=> timesegments
@@ -51,14 +53,20 @@ while CharacterGlobals.characters["Mike"].has_met == false:
 - Morning
 	Mike: I greeted the wonderful morning in my [wave amp=50.0 freq=5.0 connected=1]favorite [/wave] place in the Manor, the [color=crimson]{{CharacterGlobals.characters["Mike"].morning}}[/color].
 	do Globals.count_down(1, "Mike_morning")
+	do Globals.blocks.append("Mike was in the "+CharacterGlobals.characters["Mike"].morning+" in the Morning.")
+	$> Globals.update_blocks.emit()
 	=> nuetral
 - Afternoon
 	Mike: When it gets hot I like to make my way to the [color=crimson]{{CharacterGlobals.characters["Mike"].noon}}[/color]. It really gets the [wave amp=50.0 freq=5.0 connected=1]juices[/wave] flowing.
 	do Globals.count_down(1, "Mike_noon")
+	do Globals.blocks.append("Mike was in the "+CharacterGlobals.characters["Mike"].noon+" in the Aftenoon.")
+	$> Globals.update_blocks.emit()
 	=> nuetral
 - Evening
 	Mike: [wave amp=50.0 freq=5.0 connected=1]OH MY G O D[/wave]! Have you seen the [color=crimson]{{CharacterGlobals.characters["Mike"].night}}[/color] at night? It's not just good, it's also PRETTY good!
 	do Globals.count_down(1, "Mike_night")
+	do Globals.blocks.append("Mike was in the "+CharacterGlobals.characters["Mike"].night+" in the Evening.")
+	$> Globals.update_blocks.emit()
 	=> nuetral
 - Nevermind
 	=> nuetral
