@@ -50,7 +50,6 @@ func set_state(state) -> void:
 			icon.visible = false
 
 func populate_journal() -> void:
-	print("JOURNAL")
 	var journal_blocks : Array = Globals.blocks
 	var cleaned_journal : Array = []
 	
