@@ -51,6 +51,20 @@ while CharacterGlobals.victim.has_met == false:
 	do Globals.blocks.append("The Count died 'As the dust settled down'.")
 	do Globals.count_down(1, "body_die")
 	$> Globals.update_blocks.emit()
+- I know who killed you.
+	[color=crimson]Are you certain? Once you make an accusation, there is no going back.[/color]
+	- Yes
+		Then name the murderer.
+		- Clay
+			You chouse Clay.
+		- Cookie
+			You chose Cookie.
+		- Mike
+			You chose Mike.
+		- Jerry
+			You chose Jerry.
+	- No
+		=> nuetral
 - (Leave)
 	=> END
 => nuetral
