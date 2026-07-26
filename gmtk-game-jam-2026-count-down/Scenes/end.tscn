@@ -1,0 +1,133 @@
+[gd_scene format=3 uid="uid://c6xqo37bensuo"]
+
+[ext_resource type="Script" uid="uid://c2fcq1vm48te1" path="res://end.gd" id="1_xmt8n"]
+[ext_resource type="Theme" uid="uid://df22axcv83ry" path="res://text theme.tres" id="2_02kpm"]
+
+[node name="End" type="Node3D" unique_id=551840597]
+visible = false
+script = ExtResource("1_xmt8n")
+
+[node name="EndControl" type="Control" parent="." unique_id=1908579181]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 651.0
+
+[node name="ColorRect" type="ColorRect" parent="EndControl" unique_id=1978059474]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.012617188, 0.012617188, 0.012617188, 1)
+
+[node name="AccusedBox" type="VBoxContainer" parent="EndControl" unique_id=1646426992]
+layout_mode = 0
+offset_left = 97.0
+offset_top = 81.0
+offset_right = 299.0
+offset_bottom = 168.0
+
+[node name="AccusedText" type="RichTextLabel" parent="EndControl/AccusedBox" unique_id=247423046]
+layout_mode = 2
+theme = ExtResource("2_02kpm")
+theme_override_font_sizes/normal_font_size = 32
+text = "You Accused:"
+fit_content = true
+
+[node name="Accused" type="RichTextLabel" parent="EndControl/AccusedBox" unique_id=149685079]
+layout_mode = 2
+theme = ExtResource("2_02kpm")
+theme_override_font_sizes/normal_font_size = 32
+fit_content = true
+
+[node name="MurderBox" type="VBoxContainer" parent="EndControl" unique_id=1229304540]
+layout_mode = 0
+offset_left = 99.0
+offset_top = 193.0
+offset_right = 301.0
+offset_bottom = 280.0
+
+[node name="MurderText" type="RichTextLabel" parent="EndControl/MurderBox" unique_id=1572922501]
+layout_mode = 2
+theme = ExtResource("2_02kpm")
+theme_override_font_sizes/normal_font_size = 32
+text = "The Murderer:"
+fit_content = true
+
+[node name="Murder" type="RichTextLabel" parent="EndControl/MurderBox" unique_id=1677241016]
+layout_mode = 2
+theme = ExtResource("2_02kpm")
+theme_override_font_sizes/normal_font_size = 32
+fit_content = true
+
+[node name="GradeBox" type="VBoxContainer" parent="EndControl" unique_id=263095082]
+layout_mode = 0
+offset_left = 95.0
+offset_top = 329.0
+offset_right = 297.0
+offset_bottom = 457.0
+
+[node name="GradeText" type="RichTextLabel" parent="EndControl/GradeBox" unique_id=985742775]
+layout_mode = 2
+theme = ExtResource("2_02kpm")
+theme_override_font_sizes/normal_font_size = 32
+text = "Grade:"
+fit_content = true
+
+[node name="Grade" type="RichTextLabel" parent="EndControl/GradeBox" unique_id=1865152611]
+layout_mode = 2
+theme = ExtResource("2_02kpm")
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+fit_content = true
+horizontal_alignment = 1
+
+[node name="SnarkBox" type="VBoxContainer" parent="EndControl" unique_id=856854336]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 95.0
+offset_top = 171.0
+offset_right = -63.0
+offset_bottom = 243.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Snark" type="RichTextLabel" parent="EndControl/SnarkBox" unique_id=56827302]
+layout_mode = 2
+theme = ExtResource("2_02kpm")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+fit_content = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="EndControl" unique_id=959601609]
+
+[node name="TextureRect" type="TextureRect" parent="EndControl" unique_id=209064587]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -512.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Result" type="RichTextLabel" parent="EndControl" unique_id=473713910]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -507.0
+offset_top = 68.0
+offset_right = -2.0
+offset_bottom = 246.0
+grow_horizontal = 0
+theme = ExtResource("2_02kpm")
+theme_override_font_sizes/normal_font_size = 72
+bbcode_enabled = true
+fit_content = true
