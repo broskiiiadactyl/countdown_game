@@ -47,7 +47,7 @@ while CharacterGlobals.victim.has_met == false:
 		do Globals.blocks.append("The Count died 'At the peak'.")
 	if CharacterGlobals.victim.time_of_death == "night":
 		The Count: [color=crimson]As the dust settled down.[/color][br]My demons left to rest and my ambitions realized.
-	do Globals.blocks.append("The Count died 'As the dust settled down'.")
+		do Globals.blocks.append("The Count died 'As the dust settled down'.")
 	do Globals.count_down(1, "body_die")
 	$> Globals.update_blocks.emit()
 - I know who killed you.
