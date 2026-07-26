@@ -1,0 +1,137 @@
+[gd_scene format=3 uid="uid://bd3nyve56020h"]
+
+[ext_resource type="Texture2D" uid="uid://dwjfvgkk63uqe" path="res://Assets/Test/skybox-space.png" id="1_0ysuw"]
+[ext_resource type="PackedScene" uid="uid://dht0cbq0igohn" path="res://psychiccat.tscn" id="2_2um3o"]
+[ext_resource type="PackedScene" uid="uid://bt37vltorrs6j" path="res://Scenes/Clay.tscn" id="3_8onpl"]
+[ext_resource type="PackedScene" uid="uid://djmr3d6f1dgit" path="res://Scenes/Cookie.tscn" id="4_wtqgq"]
+[ext_resource type="PackedScene" uid="uid://dnlv4ds13wkxx" path="res://Scenes/Jerry.tscn" id="5_ynoon"]
+[ext_resource type="PackedScene" uid="uid://dun3be2mqshyu" path="res://Scenes/Mike.tscn" id="6_4p0ps"]
+[ext_resource type="PackedScene" uid="uid://om0os628vkyh" path="res://Scenes/Body.tscn" id="7_wtqgq"]
+[ext_resource type="PackedScene" uid="uid://qoobrt8rqvu3" path="res://Assets/Items/cleaver/cleaver.tscn" id="8_2um3o"]
+[ext_resource type="PackedScene" uid="uid://bp3b1jfcdicdg" path="res://Assets/Items/scissors/scissors.tscn" id="9_eptha"]
+[ext_resource type="PackedScene" uid="uid://bwbitjwkoi71k" path="res://Assets/Items/flower/nightshade.tscn" id="10_t7x8p"]
+[ext_resource type="PackedScene" uid="uid://bewmoaviak3wi" path="res://Assets/Items/bag/bag.tscn" id="11_6d00b"]
+[ext_resource type="PackedScene" uid="uid://bnguf5auu6xmu" path="res://Assets/Items/net/net_piece.tscn" id="12_t2i7t"]
+[ext_resource type="PackedScene" uid="uid://60q0vm5qilok" path="res://Assets/Items/gloves/gloves.tscn" id="13_ywoaj"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_8onpl"]
+viewport_path = NodePath("StartBG/SubViewport")
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_bja0w"]
+panorama = ExtResource("1_0ysuw")
+
+[sub_resource type="Sky" id="Sky_0sxkp"]
+sky_material = SubResource("PanoramaSkyMaterial_bja0w")
+
+[sub_resource type="Environment" id="Environment_8onpl"]
+background_mode = 2
+sky = SubResource("Sky_0sxkp")
+tonemap_mode = 2
+fog_enabled = true
+fog_light_color = Color(0, 0, 0, 1)
+fog_density = 0.689
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wtqgq"]
+albedo_color = Color(0.24115604, 0.24115604, 0.24115604, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ynoon"]
+material = SubResource("StandardMaterial3D_wtqgq")
+size = Vector3(50, 1, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4p0ps"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_67yjg"]
+material = SubResource("StandardMaterial3D_4p0ps")
+flip_faces = true
+radius = 10.0
+height = 20.0
+
+[node name="ColorRect" type="TextureRect" unique_id=288991106]
+custom_minimum_size = Vector2(1152, 648)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("ViewportTexture_8onpl")
+
+[node name="StartBG" type="Node3D" parent="." unique_id=1328972251]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="StartBG" unique_id=405142130]
+environment = SubResource("Environment_8onpl")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="StartBG" unique_id=238225356]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+sky_mode = 2
+
+[node name="SubViewport" type="SubViewport" parent="StartBG" unique_id=234466890]
+size = Vector2i(1152, 648)
+
+[node name="Camera3D" type="Camera3D" parent="StartBG/SubViewport" unique_id=1928697978]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -97207.07, 1.0045924)
+
+[node name="Floor" type="MeshInstance3D" parent="StartBG/SubViewport" unique_id=50789897]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -97208, -4.40947)
+mesh = SubResource("BoxMesh_ynoon")
+
+[node name="Orb" type="MeshInstance3D" parent="StartBG/SubViewport" unique_id=328418146]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -97206.836, -4.40947)
+mesh = SubResource("SphereMesh_67yjg")
+
+[node name="psychiccat2" parent="StartBG/SubViewport" unique_id=190570456 instance=ExtResource("2_2um3o")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -0.02291733, -97207.266, -0.4866621)
+
+[node name="Clay" parent="StartBG/SubViewport" unique_id=531970119 instance=ExtResource("3_8onpl")]
+transform = Transform3D(-0.8911174, 0, -0.45377284, 0, 1, 0, 0.45377284, 0, -0.8911174, -0.46911654, -97207.5, -0.99661577)
+
+[node name="Cookie" parent="StartBG/SubViewport" unique_id=54446952 instance=ExtResource("4_wtqgq")]
+transform = Transform3D(-0.43133283, 0, -0.7899063, 0, 0.9, 0, 0.7899063, 0, -0.43133283, -1.0838933, -97207.49, -0.86393857)
+
+[node name="Jerry" parent="StartBG/SubViewport" unique_id=1985747399 instance=ExtResource("5_ynoon")]
+transform = Transform3D(-0.6636521, 0, 0.7480414, 0, 1, 0, -0.7480414, 0, -0.6636521, 0.93449736, -97207.5, -0.75374043)
+
+[node name="Mike" parent="StartBG/SubViewport" unique_id=5928604 instance=ExtResource("6_4p0ps")]
+transform = Transform3D(-0.9493324, 0, 0.31427407, 0, 1, 0, -0.31427407, 0, -0.9493324, 0.39604998, -97207.5, -1.0117612)
+
+[node name="Body" parent="StartBG/SubViewport" unique_id=283952 instance=ExtResource("7_wtqgq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11890435, -97207.5, -0.5105838)
+
+[node name="Cleaver" parent="StartBG/SubViewport" unique_id=291411274 instance=ExtResource("8_2um3o")]
+transform = Transform3D(-0.18606673, 0.7006661, 0.68880045, -0.18297838, -0.71348923, 0.6763519, 0.96534866, -0.0001889934, 0.26096335, -0.4019798, -97206.984, -0.40212542)
+
+[node name="Scissors" parent="StartBG/SubViewport" unique_id=400729504 instance=ExtResource("9_eptha")]
+transform = Transform3D(-0.52921104, 0.17182906, -0.8309094, -0.3077037, -0.9514819, -0.0007846813, -0.79073024, 0.25525868, 0.55640715, -0.49399096, -97207, -0.42008257)
+
+[node name="nightshade" parent="StartBG/SubViewport" unique_id=1879796683 instance=ExtResource("10_t7x8p")]
+transform = Transform3D(1, 0, 0, 0, -0.091883935, -0.9957697, 0, 0.9957697, -0.091883935, -0.2972988, -97207.44, -0.21895498)
+
+[node name="Light1" type="OmniLight3D" parent="StartBG/SubViewport" unique_id=1898785193]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, -0.09188394, -0.99576974, 0, 0.99576974, -0.09188394, 0.036914676, -97207.77, -0.044122413)
+layers = 2
+light_cull_mask = 4294967294
+omni_attenuation = 0.1
+
+[node name="Light2" type="OmniLight3D" parent="StartBG/SubViewport" unique_id=1075359942]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, -0.09188394, -0.99576974, 0, 0.99576974, -0.09188394, 0.036914676, -97207.06, 0.25372303)
+layers = 2
+light_cull_mask = 4294967294
+omni_attenuation = 0.1
+
+[node name="bag" parent="StartBG/SubViewport" unique_id=2123464301 instance=ExtResource("11_6d00b")]
+transform = Transform3D(0.8438881, 0.5365192, 0, -0.5365192, 0.8438881, 0, 0, 0, 1, 0.26491112, -97207.61, -0.7277993)
+
+[node name="net" parent="StartBG/SubViewport" unique_id=1237615001 instance=ExtResource("12_t2i7t")]
+transform = Transform3D(0.81517833, -0.4402706, 0.37635896, 0, -0.64977974, -0.76012254, 0.57921004, 0.6196354, -0.5296864, 0.451136, -97207.336, -0.6128113)
+
+[node name="gloves" parent="StartBG/SubViewport" unique_id=243178703 instance=ExtResource("13_ywoaj")]
+transform = Transform3D(0.22797051, -0.21186568, 0.62701064, 0.51633906, 0.47179696, -0.028312923, -0.41403306, 0.4717208, 0.30992898, 0.37803102, -97207.54, -0.1586673)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="StartBG/SubViewport" unique_id=1421516895]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -97205.266, -1.2306204)
+spot_range = 5.499
+spot_attenuation = -3.23
+spot_angle = 32.65

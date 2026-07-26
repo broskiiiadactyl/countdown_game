@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://c26mjbwwn2ohh" path="res://Assets/Test/smaller/icon_sound.png" id="4_27w08"]
 [ext_resource type="Theme" uid="uid://df22axcv83ry" path="res://text theme.tres" id="5_37b1d"]
 [ext_resource type="Script" uid="uid://cjjydw0rsgksj" path="res://Scripts/volume.gd" id="5_45hv8"]
+[ext_resource type="PackedScene" uid="uid://bd3nyve56020h" path="res://start_bg.tscn" id="6_lmkek"]
 
 [sub_resource type="DPITexture" id="DPITexture_nsogc"]
 _source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><circle cx=\"8\" cy=\"8\" r=\"7\" fill=\"#fefefe\" fill-opacity=\".75\"/></svg>
@@ -71,6 +72,9 @@ HSlider/icons/tick = SubResource("DPITexture_vfiib")
 HSlider/styles/grabber_area = SubResource("StyleBoxFlat_qoltt")
 HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_2vhw8")
 HSlider/styles/slider = SubResource("StyleBoxFlat_r7l8j")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_lmkek"]
+viewport_path = NodePath("StartBG/SubViewport")
 
 [node name="StartMenu" type="Node3D" unique_id=1851798099]
 script = ExtResource("1_lmkek")
@@ -156,8 +160,21 @@ grow_vertical = 2
 mouse_filter = 2
 theme = SubResource("Theme_e0jm0")
 
-[node name="BGColor" type="ColorRect" parent="JMenu" unique_id=1041960575]
+[node name="BGColor" parent="JMenu" unique_id=288991106 instance=ExtResource("6_lmkek")]
 unique_name_in_owner = true
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1152.0
+offset_bottom = 648.0
+grow_horizontal = 1
+grow_vertical = 1
+texture = SubResource("ViewportTexture_lmkek")
+
+[node name="BGColorold" type="ColorRect" parent="JMenu" unique_id=1041960575]
+unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -210,6 +227,10 @@ text = "Minutes to Midnight"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="MarginContainer2" type="MarginContainer" parent="JMenu/MarginContainer/LPage" unique_id=1930070183]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+
 [node name="MarginContainer" type="MarginContainer" parent="JMenu/MarginContainer/LPage" unique_id=1980529122]
 custom_minimum_size = Vector2(0, 350)
 layout_mode = 2
@@ -229,7 +250,7 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 4
+size_flags_vertical = 8
 text = "START"
 
 [node name="Volume" type="HSlider" parent="JMenu/MarginContainer/LPage" unique_id=1998662015]

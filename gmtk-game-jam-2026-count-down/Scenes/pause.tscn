@@ -129,17 +129,6 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 0.75686276)
 
-[node name="Label" type="Label" parent="JMenu" unique_id=1952981530]
-visible = false
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 58.0
-grow_horizontal = 2
-text = "Journal"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="MarginContainer" type="MarginContainer" parent="JMenu" unique_id=804615254]
 custom_minimum_size = Vector2(1000, 500)
 layout_mode = 1
@@ -161,7 +150,6 @@ layout_mode = 2
 mouse_filter = 2
 
 [node name="BUFFER" type="Label" parent="JMenu/MarginContainer/LPage" unique_id=395847593]
-visible = false
 layout_mode = 2
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -173,11 +161,13 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="JMenu/MarginContainer/LPage" unique_id=1980529122]
+visible = false
 custom_minimum_size = Vector2(0, 350)
 layout_mode = 2
 
 [node name="FirstHint" type="Label" parent="JMenu/MarginContainer/LPage/MarginContainer" unique_id=1162005031]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "Play hints will go here... probably"

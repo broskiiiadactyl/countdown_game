@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dht0cbq0igohn"]
+
+[ext_resource type="PackedScene" uid="uid://dn1oryocssrrn" path="res://Assets/Characters/cat/psychiccat.glb" id="1_63fey"]
+
+[node name="psychiccat" unique_id=544903817 instance=ExtResource("1_63fey")]
+
+[node name="AnimationPlayer" parent="." index="13" unique_id=518764422]
+autoplay = &"catEye_001Action"

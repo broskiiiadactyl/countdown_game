@@ -63,6 +63,7 @@ func play_hint(num : int) -> void:
 	Globals.timer_down.emit()
 	
 	hint_lab.visible = true
+	%Cat.visible = true
 	var tween4 = create_tween()
 	tween4.tween_property(hint_lab, "modulate", Color(1,1,1,1.0), 0.25)
 	tween4.parallel().tween_property(%Cat, "modulate", Color(1,1,1,1.0), 0.25)
@@ -81,3 +82,4 @@ func play_hint(num : int) -> void:
 	await tween6.finished
 	hint_screen.visible = false
 	hint_lab.visible = false
+	%Cat.visible = false

@@ -9,13 +9,13 @@
 script = ExtResource("1_emsjw")
 
 [node name="HintScreen" type="Control" parent="." unique_id=96713456]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
 theme = ExtResource("1_bc60j")
 
 [node name="BG" type="ColorRect" parent="HintScreen" unique_id=675123367]
@@ -40,6 +40,7 @@ alignment = 1
 
 [node name="Cat" type="Sprite2D" parent="HintScreen/Text" unique_id=879795046]
 unique_name_in_owner = true
+visible = false
 modulate = Color(1, 1, 1, 0)
 position = Vector2(597, 709)
 scale = Vector2(0.6064389, 0.60643893)
