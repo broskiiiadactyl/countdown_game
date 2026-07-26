@@ -12,7 +12,7 @@ while CharacterGlobals.victim.has_met == false:
 % You wonder what kind of person this used to be.
 % A life complete and incomplete.
 % You find comfort in it's truth.
-- What's the last thing you remember? (time)
+- What's the last thing you remember? (-)
 	if CharacterGlobals.victim.murder_weapon == "Hefty Knife":
 		The Count: [color=crimson]A flash of steel.[/color]
 		do Globals.blocks.append("The Count remembers 'A flash of steel'.")
@@ -35,10 +35,7 @@ while CharacterGlobals.victim.has_met == false:
 	do Globals.count_down(1, "body_remember")
 	$> Globals.update_blocks.emit()
 	=> nuetral
-- What should I do?
-	[color=sky_blue]As always, the body does not tell you how to do your job.[/color]
-	=> nuetral
-- When did you die? (time)
+- When did you die? (-)
 	if CharacterGlobals.victim.time_of_death == "morning":
 		The Count: [color=crimson]As I began to wander the world.[/color][br]My expectations unmet and my flowers unwatered.
 		do Globals.blocks.append("The Count died 'As I began to wander the world'.")
@@ -50,6 +47,9 @@ while CharacterGlobals.victim.has_met == false:
 		do Globals.blocks.append("The Count died 'As the dust settled down'.")
 	do Globals.count_down(1, "body_die")
 	$> Globals.update_blocks.emit()
+- What should I do?
+	[color=sky_blue]As always, the body does not tell you how to do your job.[/color]
+	=> nuetral
 - I know who killed you.
 	[color=crimson][shake]Are you certain?[/shake][br]Once you make an accusation, there is no going back.[/color]
 	- Yes

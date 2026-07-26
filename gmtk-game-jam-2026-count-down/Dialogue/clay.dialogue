@@ -24,7 +24,7 @@ while CharacterGlobals.characters["Clay"].has_met == false:
 	=> nuetral
 - Do you recognize this item?
 	=> items
-- What were you doing today? (time)
+- What were you doing today? (-)
 	match CharacterGlobals.characters["Clay"].activity:
 		when "Fishing"
 			Clay: Welp, spent the day untanglin' bird's nests.
@@ -54,19 +54,19 @@ while CharacterGlobals.characters["Clay"].has_met == false:
 	=> END
 
 ~ timesegments
-- Morning (time)
+- Morning (-)
 	Clay: Welp. Started my ride today in the [color=crimson]{{CharacterGlobals.characters["Clay"].morning}}[/color].
 	do Globals.blocks.append("Clay was in the "+CharacterGlobals.characters["Clay"].morning+" in the Morning.")
 	$> Globals.update_blocks.emit()
 	do Globals.count_down(1, "clay_morning")
 	=> nuetral
-- Afternoon (time)
+- Afternoon (-)
 	Clay: Middle of the day? If I recall I was in the [color=crimson]{{CharacterGlobals.characters["Clay"].noon}}[/color].
 	do Globals.blocks.append("Clay was in the "+CharacterGlobals.characters["Clay"].noon+" in the Aftenoon.")
 	$> Globals.update_blocks.emit()
 	do Globals.count_down(1, "clay_noon")
 	=> nuetral
-- Evening (time)
+- Evening (-)
 	Clay: Spent the evenin' round the [color=crimson]{{CharacterGlobals.characters["Clay"].morning}}[/color].
 	do Globals.blocks.append("Clay was in the "+CharacterGlobals.characters["Clay"].night+" in the Evening.")
 	$> Globals.update_blocks.emit()
@@ -85,7 +85,7 @@ match Globals.inventory.size()
 			=> nuetral
 
 	when 1
-		- {{Globals.item1}} (time)
+		- {{Globals.item1}} (-)
 			=> checkitem1
 		- No Item [if Globals.item1==""]
 		- No Item [if Globals.item1==""]
@@ -94,9 +94,9 @@ match Globals.inventory.size()
 			=> nuetral
 
 	when 2
-		- {{Globals.item1}} (time)
+		- {{Globals.item1}} (-)
 			=> checkitem1
-		- {{Globals.item2}} (time)
+		- {{Globals.item2}} (-)
 			=> checkitem2
 		- No Item [if Globals.item1==""]
 		- No Item [if Globals.item1==""]
@@ -104,24 +104,24 @@ match Globals.inventory.size()
 			=> nuetral
 
 	when 3
-		- {{Globals.item1}} (time)
+		- {{Globals.item1}} (-)
 			=> checkitem1
-		- {{Globals.item2}} (time)
+		- {{Globals.item2}} (-)
 			=> checkitem2
-		- {{Globals.item3}} (time)
+		- {{Globals.item3}} (-)
 			=> checkitem3
 		- No Item [if Globals.item1==""]
 		- Go back
 			=> nuetral
 
 	when 4
-		- {{Globals.item1}} (time)
+		- {{Globals.item1}} (-)
 			=> checkitem1
-		- {{Globals.item2}} (time)
+		- {{Globals.item2}} (-)
 			=> checkitem2
-		- {{Globals.item3}} (time)
+		- {{Globals.item3}} (-)
 			=> checkitem3
-		- {{Globals.item4}} (time)
+		- {{Globals.item4}} (-)
 			=> checkitem4
 		- Go back
 			=> nuetral

@@ -87,9 +87,9 @@ match Globals.inventory.size()
 			=> nuetral
 
 	when 2
-		- {{Globals.item1}} (time)
+		- {{Globals.item1}} (-)
 			=> checkitem1
-		- {{Globals.item2}} (time)
+		- {{Globals.item2}} (-)
 			=> checkitem2
 		- No Item [if Globals.item1==""]
 		- No Item [if Globals.item1==""]
@@ -97,24 +97,24 @@ match Globals.inventory.size()
 			=> nuetral
 
 	when 3
-		- {{Globals.item1}} (time)
+		- {{Globals.item1}} (-)
 			=> checkitem1
-		- {{Globals.item2}} (time)
+		- {{Globals.item2}} (-)
 			=> checkitem2
-		- {{Globals.item3}} (time)
+		- {{Globals.item3}} (-)
 			=> checkitem3
 		- No Item [if Globals.item1==""]
 		- Go back
 			=> nuetral
 
 	when 4
-		- {{Globals.item1}} (time)
+		- {{Globals.item1}} (-)
 			=> checkitem1
-		- {{Globals.item2}} (time)
+		- {{Globals.item2}} (-)
 			=> checkitem2
-		- {{Globals.item3}} (time)
+		- {{Globals.item3}} (-)
 			=> checkitem3
-		- {{Globals.item4}} (time)
+		- {{Globals.item4}} (-)
 			=> checkitem4
 		- Go back
 			=> nuetral
