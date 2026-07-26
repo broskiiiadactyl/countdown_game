@@ -32,6 +32,8 @@ signal timer_down()
 signal start()
 signal game_ready()
 signal it_begins()
+signal shake()
+signal shake_done()
 
 #Info blocks
 var blocks : Array = []

@@ -13,6 +13,7 @@ var time_num : int = 0
 func _ready() -> void:
 	Globals.states.connect(set_state)
 	Globals.timer_down.connect(sub_time)
+	Globals.shake.connect(shake)
 	
 	%Icon.mesh.material.albedo_texture = time1
 	
@@ -43,3 +44,20 @@ func set_state(state) -> void:
 			icon.visible = true
 		"Menu":
 			icon.visible = false
+
+func shake():
+	var intensity : float = 0.001
+	var duration : float = 2.0
+	var original_pos = self.position
+	var elapsed = 0.0
+	var tween = create_tween()
+	
+	while elapsed < duration:
+		var random_offset = Vector3(randf_range(-intensity, intensity), randf_range(-intensity, intensity),0)
+		tween.tween_property(self, "position", original_pos + random_offset, 0.05)
+		elapsed += 0.05
+	
+	tween.tween_property(self, "position", original_pos, 0.05)
+	
+	await tween.finished
+	Globals.shake_done.emit()

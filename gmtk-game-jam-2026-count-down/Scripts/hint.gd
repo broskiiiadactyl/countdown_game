@@ -18,13 +18,16 @@ var hint3 : String = ""
 func _ready() -> void:
 	Globals.hint.connect(play_hint)
 
-
 func play_hint(num : int) -> void:
 	var ToD = CharacterGlobals.victim.time_of_death
 	var weapon = CharacterGlobals.victim.murder_weapon
 	
 	hint2 = "The Count was killed at " + ToD + "."
 	hint3 = "The murder weapon was the " + weapon + "."
+	
+	Globals.shake.emit()
+	await Globals.shake_done
+	print("finished")
 	
 	match num:
 		1:
