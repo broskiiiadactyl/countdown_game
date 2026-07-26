@@ -46,7 +46,19 @@ func it_begins(answer) -> void:
 		result = "You Guessed![br][rainbow]Honk Honk![/rainbow]"
 		grade = "[color=crimson]Huge L![/color]"
 		snark = "[wave]We agree that gambling is fun! Please play our game![/wave]"
-		
+	
+	match answer:
+		"Cookie":
+			%port.texture = load("res://Assets/Characters/images/cookie.png")
+		"Mike":
+			%port.texture = load("res://Assets/Characters/images/mike.png")
+		"Jerry":
+			%port.texture = load("res://Assets/Characters/images/jerry.png")
+		"Clay":
+			%port.texture = load("res://Assets/Characters/images/clay.png")
+		_:
+			pass
+	
 	#change all the text in the containers
 	accusedText.text = answer
 	murdererText.text = CharacterGlobals.murderer

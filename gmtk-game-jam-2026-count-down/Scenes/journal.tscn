@@ -25,7 +25,7 @@ material = SubResource("StandardMaterial3D_okafp")
 size = Vector2(0.05, 0.05)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_x6005"]
-size = Vector3(0.044677734, 0.04321289, 0.001)
+size = Vector3(0.051757813, 0.048583984, 0.001)
 
 [sub_resource type="QuadMesh" id="QuadMesh_nv2gc"]
 size = Vector2(150, 150)

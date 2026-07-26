@@ -16,7 +16,7 @@ var last_state : gamestate
 
 #time management
 const MAX_TIME : int = 16
-var current_time : int = 1
+var current_time : int = MAX_TIME
 var time_IDs : Array = []
 var hint1_played = false
 var hint2_played = false

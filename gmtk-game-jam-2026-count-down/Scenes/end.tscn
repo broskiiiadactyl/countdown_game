@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://c2fcq1vm48te1" path="res://end.gd" id="1_xmt8n"]
 [ext_resource type="Theme" uid="uid://df22axcv83ry" path="res://text theme.tres" id="2_02kpm"]
+[ext_resource type="Texture2D" uid="uid://bol1eqx7ok4io" path="res://Assets/Characters/images/cat.png" id="2_ql4ve"]
+[ext_resource type="Texture2D" uid="uid://ph0xfaxur5n8" path="res://Assets/Characters/images/clay.png" id="3_02kpm"]
 
 [node name="End" type="Node3D" unique_id=551840597]
 visible = false
@@ -9,7 +11,6 @@ script = ExtResource("1_xmt8n")
 
 [node name="EndControl" type="Control" parent="." unique_id=1908579181]
 unique_name_in_owner = true
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1152.0
@@ -24,11 +25,34 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.012617188, 0.012617188, 0.012617188, 1)
 
+[node name="TextureRect2" type="TextureRect" parent="EndControl" unique_id=1662070709]
+custom_minimum_size = Vector2(0, 350)
+layout_mode = 0
+offset_left = 1005.0
+offset_top = 453.0
+offset_right = 1311.1494
+offset_bottom = 803.0
+texture = ExtResource("2_ql4ve")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="port" type="TextureRect" parent="EndControl" unique_id=1179630521]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 325)
+layout_mode = 0
+offset_left = 158.0
+offset_top = 138.0
+offset_right = 483.0
+offset_bottom = 463.0
+texture = ExtResource("3_02kpm")
+expand_mode = 2
+stretch_mode = 5
+
 [node name="MurderBox" type="VBoxContainer" parent="EndControl" unique_id=1229304540]
 layout_mode = 0
-offset_left = 93.0
+offset_left = 158.0
 offset_top = 81.0
-offset_right = 295.0
+offset_right = 360.0
 offset_bottom = 168.0
 
 [node name="MurderText" type="RichTextLabel" parent="EndControl/MurderBox" unique_id=1572922501]
@@ -45,15 +69,12 @@ theme_override_font_sizes/normal_font_size = 32
 text = "placeholder"
 fit_content = true
 
-[node name="TextureRect" type="TextureRect" parent="EndControl/MurderBox" unique_id=1179630521]
-layout_mode = 2
-
 [node name="AccusedBox" type="VBoxContainer" parent="EndControl" unique_id=1646426992]
 layout_mode = 0
-offset_left = 93.0
-offset_top = 358.0
-offset_right = 295.0
-offset_bottom = 445.0
+offset_left = 418.0
+offset_top = 383.0
+offset_right = 620.0
+offset_bottom = 470.0
 
 [node name="AccusedText" type="RichTextLabel" parent="EndControl/AccusedBox" unique_id=247423046]
 layout_mode = 2
@@ -71,10 +92,10 @@ fit_content = true
 
 [node name="GradeBox" type="VBoxContainer" parent="EndControl" unique_id=263095082]
 layout_mode = 0
-offset_left = 690.0
-offset_top = 242.0
-offset_right = 892.0
-offset_bottom = 370.0
+offset_left = 721.0
+offset_top = 254.0
+offset_right = 923.0
+offset_bottom = 382.0
 
 [node name="GradeText" type="RichTextLabel" parent="EndControl/GradeBox" unique_id=985742775]
 layout_mode = 2
@@ -130,10 +151,10 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -507.0
-offset_top = 68.0
-offset_right = -2.0
-offset_bottom = 246.0
+offset_left = -580.0
+offset_top = 161.0
+offset_right = -75.0
+offset_bottom = 339.0
 grow_horizontal = 0
 theme = ExtResource("2_02kpm")
 theme_override_font_sizes/normal_font_size = 72
