@@ -42,6 +42,11 @@ func it_begins(answer) -> void:
 		grade = "[color=crimson]F[/color]"
 		snark = "[wave]Oof! Let the murderers get one over on ya, huh? Happens to the best of us. Not me, though. I'd just win![/wave]"
 	
+	if Globals.current_time == Globals.MAX_TIME:
+		result = "You Guessed![br][rainbow]Honk Honk![/rainbow]"
+		grade = "[color=crimson]Huge L![/color]"
+		snark = "[wave]We agree that gambling is fun! Please play our game![/wave]"
+		
 	#change all the text in the containers
 	accusedText.text = answer
 	murdererText.text = CharacterGlobals.murderer

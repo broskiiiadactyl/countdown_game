@@ -36,7 +36,7 @@ while CharacterGlobals.characters["Jerry"].has_met == false:
 			Jerry: Looks like initialization didn't assign me anything.
 			Jerry: So nothing, apparently. [rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Honk Honk![/rainbow]
 	do Globals.blocks.append("Jerry spent the day "+CharacterGlobals.characters["Mike"].activity+".")
-	do Globals.count_down(1, "Jerry_morning")
+	do Globals.count_down(1, "Jerry_activity")
 	$> Globals.update_blocks.emit()
 	=> nuetral
 - Where were you...
@@ -125,9 +125,9 @@ if Globals.item1 == CharacterGlobals.characters["Jerry"].item:
 	do Globals.blocks.append("The "+Globals.item1+" belongs to Jerry.")
 	$> Globals.update_blocks.emit()
 	do Globals.count_down(1, "jerry_item")
-	do Globals.count_down(1, "jerry_false1")
 else
 	Jerry: Unfortunately, no. You will have to continue your journey elsewhere.
+	do Globals.count_down(1, "jerry_false1")
 => nuetral
 
 ~ checkitem2
@@ -136,9 +136,9 @@ if Globals.item2 == CharacterGlobals.characters["Jerry"].item:
 	do Globals.blocks.append("The "+Globals.item2+" belongs to Jerry.")
 	$> Globals.update_blocks.emit()
 	do Globals.count_down(1, "jerry_item")
-	do Globals.count_down(1, "jerry_false2")
 else
 	Jerry: Unfortunately, no. You will have to continue your journey elsewhere.
+	do Globals.count_down(1, "jerry_false2")
 => nuetral
 
 ~ checkitem3

@@ -38,7 +38,7 @@ while CharacterGlobals.characters["Cookie"].has_met == false:
 			Cookie: Looks like initialization didn't assign me anything.
 			Cookie: So nothing, apparently. [rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Honk Honk![/rainbow]
 	do Globals.blocks.append("Cookie spent the day "+CharacterGlobals.characters["Cookie"].activity+".")
-	do Globals.count_down(1, "Cookie_morning")
+	do Globals.count_down(1, "Cookie_activity")
 	$> Globals.update_blocks.emit()
 	=> nuetral
 - Where were you...
