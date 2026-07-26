@@ -22,9 +22,21 @@ func it_begins(answer) -> void:
 	var murderer = CharacterGlobals.murderer
 	var result = "[rainbow]You Win![/rainbow]"
 	var grade = "[rainbow]S[/rainbow]"
-	var snark = "[wave]Whoa! You're a real life Columbo! Next time I lose the remote, I'll make sure to give you a call![/wave]"
+	var snark = "[wave]Wowzers! You'd have to be a genius AND get lucky to get this grade! Very nice! Now they'll HAVE to text you back![/wave]"
 	
 	#calculate all the results
+	if Globals.hint1_played == true:
+		grade = "[color=green]A[color]"
+		snark = "[wave]Whoa! You're a real life Columbo! Next time I lose the remote, I'll make sure to give you a call! I wonder if ANYONE can do better...[/wave]"
+	
+	if Globals.hint2_played == true:
+		grade = "[color=green]B[color]"
+		snark = "[wave]Solid detective work, but we BOTH know you can do it better.[/wave]"
+		
+	if Globals.hint3_played == true:
+		grade = "[color=green]C[color]"
+		snark = "[wave]C's get degrees! Maybe next time put it together a little faster. Be careful though, it won't be the same person![/wave]"
+		
 	if answer != murderer:
 		result = "You Lose!"
 		grade = "[color=crimson]F[/color]"
