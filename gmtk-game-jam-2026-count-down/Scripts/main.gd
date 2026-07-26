@@ -305,7 +305,7 @@ func place_things() -> void:
 	body.global_position = room_node2.body_pos
 	body.look_at(looking2)
 	
-	Globals.blocks.append("The body was found in the " + room_name2.trim_prefix("%"))
+	Globals.blocks.append("The Cound was found dead in the " + room_name2.trim_prefix("%") +".")
 	Globals.update_blocks.emit()
 	
 	#Place Items

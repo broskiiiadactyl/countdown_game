@@ -37,8 +37,8 @@ while CharacterGlobals.characters["Mike"].has_met == false:
 		when ""
 			Mike: Looks like initialization didn't assign me anything.
 			Mike: So nothing, apparently. [rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Honk Honk![/rainbow]
-	do Globals.blocks.append("Mike spent the day "+CharacterGlobals.characters["Mike"].activity)
-	do Globals.count_down(1, "Mike_+activity")
+	do Globals.blocks.append("Mike spent the day "+CharacterGlobals.characters["Mike"].activity+".")
+	do Globals.count_down(1, "Mike_activity")
 	$> Globals.update_blocks.emit()
 	=> nuetral
 - Where were you...
@@ -87,9 +87,9 @@ match Globals.inventory.size()
 			=> nuetral
 
 	when 2
-		- {{Globals.item1}} ⏱
+		- {{Globals.item1}} (time)
 			=> checkitem1
-		- {{Globals.item2}} ⏱
+		- {{Globals.item2}} (time)
 			=> checkitem2
 		- No Item [if Globals.item1==""]
 		- No Item [if Globals.item1==""]
@@ -97,24 +97,24 @@ match Globals.inventory.size()
 			=> nuetral
 
 	when 3
-		- {{Globals.item1}} ⏱
+		- {{Globals.item1}} (time)
 			=> checkitem1
-		- {{Globals.item2}} ⏱
+		- {{Globals.item2}} (time)
 			=> checkitem2
-		- {{Globals.item3}} ⏱
+		- {{Globals.item3}} (time)
 			=> checkitem3
 		- No Item [if Globals.item1==""]
 		- Go back
 			=> nuetral
 
 	when 4
-		- {{Globals.item1}} ⏱
+		- {{Globals.item1}} (time)
 			=> checkitem1
-		- {{Globals.item2}} ⏱
+		- {{Globals.item2}} (time)
 			=> checkitem2
-		- {{Globals.item3}} ⏱
+		- {{Globals.item3}} (time)
 			=> checkitem3
-		- {{Globals.item4}} ⏱
+		- {{Globals.item4}} (time)
 			=> checkitem4
 		- Go back
 			=> nuetral
@@ -139,7 +139,7 @@ if Globals.item2 == CharacterGlobals.characters["Mike"].item:
 	$> Globals.update_blocks.emit()
 	do Globals.count_down(1, "jerry_item")
 else
-	Mike:[wave amp=50.0 freq=5.0 connected=1]Uhhh...[/wave]Yeeeees? I mean... it isn't. I have no idea what that is. But if I say it's mine, will that help?
+	Mike:[wave amp=50.0 freq=5.0 connected=1] Uhhh...[/wave]Yeeeees? I mean... it isn't. I have no idea what that is. But if I say it's mine, will that help?
 	do Globals.count_down(1, "jerry_false2")
 => nuetral
 
@@ -150,7 +150,7 @@ if Globals.item3 == CharacterGlobals.characters["Mike"].item:
 	$> Globals.update_blocks.emit()
 	do Globals.count_down(1, "jerry_item")
 else
-	Mike: [wave amp=50.0 freq=5.0 connected=1]Uhhh...[/wave]Yeeeees? I mean... it isn't. I have no idea what that is. But if I say it's mine, will that help?
+	Mike: [wave amp=50.0 freq=5.0 connected=1] Uhhh...[/wave]Yeeeees? I mean... it isn't. I have no idea what that is. But if I say it's mine, will that help?
 	do Globals.count_down(1, "jerry_false3")
 => nuetral
 
@@ -161,6 +161,6 @@ if Globals.item4 == CharacterGlobals.characters["Mike"].item:
 	$> Globals.update_blocks.emit()
 	do Globals.count_down(1, "jerry_item")
 else
-	Mike:[wave amp=50.0 freq=5.0 connected=1]Uhhh...[/wave]Yeeeees? I mean... it isn't. I have no idea what that is. But if I say it's mine, will that help?
+	Mike:[wave amp=50.0 freq=5.0 connected=1] Uhhh...[/wave]Yeeeees? I mean... it isn't. I have no idea what that is. But if I say it's mine, will that help?
 	do Globals.count_down(1, "jerry_false4")
 => nuetral

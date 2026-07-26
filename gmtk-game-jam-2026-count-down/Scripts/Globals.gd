@@ -30,6 +30,7 @@ signal characters(character)
 signal hint(hour)
 signal start()
 signal game_ready()
+signal it_begins()
 
 #Info blocks
 var blocks : Array = []
@@ -117,5 +118,6 @@ func toggle_characters(character: String):
 		_:
 			pass
 
-func game_end(answer) ->void:
+func game_end(answer) -> void:
+	it_begins.emit(answer)
 	pass

@@ -19,7 +19,6 @@
 [ext_resource type="Script" uid="uid://c2fcq1vm48te1" path="res://end.gd" id="18_2gh4u"]
 [ext_resource type="AudioStream" uid="uid://ragfnfavs36q" path="res://Assets/sounds/Azureflux - Pocket Mirror Main Theme.mp3" id="18_5tuhn"]
 [ext_resource type="PackedScene" uid="uid://dg3bra6k3717k" path="res://Scenes/Hint.tscn" id="18_kjvhd"]
-[ext_resource type="Theme" uid="uid://df22axcv83ry" path="res://text theme.tres" id="19_2gh4u"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_cm0pq"]
 panorama = ExtResource("1_r0du0")
@@ -209,7 +208,7 @@ unique_name_in_owner = true
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1152.0
-offset_bottom = 651.0
+offset_bottom = 646.0
 
 [node name="ColorRect" type="ColorRect" parent="End/EndControl" unique_id=1538787589]
 layout_mode = 1
@@ -229,77 +228,64 @@ offset_bottom = 168.0
 
 [node name="AccusedText" type="RichTextLabel" parent="End/EndControl/AccusedBox" unique_id=766223337]
 layout_mode = 2
-theme = ExtResource("19_2gh4u")
-theme_override_font_sizes/normal_font_size = 32
 text = "You Accused:"
 fit_content = true
 
 [node name="Accused" type="RichTextLabel" parent="End/EndControl/AccusedBox" unique_id=1500128896]
 layout_mode = 2
-theme = ExtResource("19_2gh4u")
-theme_override_font_sizes/normal_font_size = 32
+text = "Clay"
 fit_content = true
 
-[node name="MurderBox" type="VBoxContainer" parent="End/EndControl" unique_id=2047837666]
+[node name="MurderLabel" type="VBoxContainer" parent="End/EndControl" unique_id=2047837666]
 layout_mode = 0
 offset_left = 99.0
 offset_top = 193.0
 offset_right = 301.0
 offset_bottom = 280.0
 
-[node name="MurderText" type="RichTextLabel" parent="End/EndControl/MurderBox" unique_id=404785190]
+[node name="MurderText" type="RichTextLabel" parent="End/EndControl/MurderLabel" unique_id=404785190]
 layout_mode = 2
-theme = ExtResource("19_2gh4u")
-theme_override_font_sizes/normal_font_size = 32
 text = "The Murderer:"
 fit_content = true
 
-[node name="Murder" type="RichTextLabel" parent="End/EndControl/MurderBox" unique_id=1454057090]
+[node name="Murder" type="RichTextLabel" parent="End/EndControl/MurderLabel" unique_id=1454057090]
 layout_mode = 2
-theme = ExtResource("19_2gh4u")
-theme_override_font_sizes/normal_font_size = 32
+text = "Clay"
 fit_content = true
 
-[node name="GradeBox" type="VBoxContainer" parent="End/EndControl" unique_id=350537413]
+[node name="GradeLabel" type="VBoxContainer" parent="End/EndControl" unique_id=350537413]
 layout_mode = 0
-offset_left = 95.0
-offset_top = 329.0
-offset_right = 297.0
-offset_bottom = 457.0
+offset_left = 102.0
+offset_top = 320.0
+offset_right = 304.0
+offset_bottom = 407.0
 
-[node name="GradeText" type="RichTextLabel" parent="End/EndControl/GradeBox" unique_id=1537028636]
+[node name="GradeText" type="RichTextLabel" parent="End/EndControl/GradeLabel" unique_id=1537028636]
 layout_mode = 2
-theme = ExtResource("19_2gh4u")
-theme_override_font_sizes/normal_font_size = 32
 text = "Grade:"
 fit_content = true
 
-[node name="Grade" type="RichTextLabel" parent="End/EndControl/GradeBox" unique_id=617132587]
+[node name="Grade" type="RichTextLabel" parent="End/EndControl/GradeLabel" unique_id=617132587]
 layout_mode = 2
-theme = ExtResource("19_2gh4u")
-theme_override_font_sizes/normal_font_size = 64
-bbcode_enabled = true
+text = "A"
 fit_content = true
-horizontal_alignment = 1
 
-[node name="SnarkBox" type="VBoxContainer" parent="End/EndControl" unique_id=531465284]
+[node name="SnarkLabel" type="VBoxContainer" parent="End/EndControl" unique_id=531465284]
 layout_mode = 1
 anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 95.0
-offset_top = 171.0
-offset_right = -63.0
-offset_bottom = 243.0
+offset_left = 101.0
+offset_top = 135.0
+offset_right = -605.0
+offset_bottom = 276.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Snark" type="RichTextLabel" parent="End/EndControl/SnarkBox" unique_id=664357087]
+[node name="Snark" type="RichTextLabel" parent="End/EndControl/SnarkLabel" unique_id=664357087]
 layout_mode = 2
-theme = ExtResource("19_2gh4u")
-theme_override_font_sizes/normal_font_size = 32
-bbcode_enabled = true
+text = "\"This is why no one likes you\""
 fit_content = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="End/EndControl" unique_id=1638008003]
@@ -313,21 +299,6 @@ anchor_bottom = 1.0
 offset_left = -512.0
 grow_horizontal = 0
 grow_vertical = 2
-
-[node name="Result" type="RichTextLabel" parent="End/EndControl" unique_id=778275141]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -507.0
-offset_top = 68.0
-offset_right = -2.0
-offset_bottom = 246.0
-grow_horizontal = 0
-theme = ExtResource("19_2gh4u")
-theme_override_font_sizes/normal_font_size = 72
-bbcode_enabled = true
-fit_content = true
 
 [node name="Catch" type="ColorRect" parent="." unique_id=50410868]
 unique_name_in_owner = true
