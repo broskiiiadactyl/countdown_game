@@ -76,7 +76,7 @@ while CharacterGlobals.characters["Cookie"].has_met == false:
 #did you know toby fox used one giant match case for the entirety of the homsetuck dialogue wow
 match Globals.inventory.size()
 	when 0
-		You don't have anything. Maybe there are things to find in the Manor...?
+		[color=sky_blue]You don't have anything. Maybe there are things to find in the Manor...?[/color]
 		- Go back
 			=> nuetral
 
