@@ -4,7 +4,7 @@ var is_mouse_over : bool = false
 
 var item_name : String = "Hefty Knife"
 
-#var resource := "res://Dialogue/items.dialogue"
+var resource := "res://Dialogue/items.dialogue"
 
 @onready var bag = %bag
 @onready var gloves = %gloves
@@ -14,14 +14,14 @@ var item_name : String = "Hefty Knife"
 @onready var scissors = %scissors
 
 func _ready() -> void:
-	#DialogueManager.dialogue_ended.connect(test)
+	DialogueManager.dialogue_ended.connect(test)
 	pass
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("LMB") and is_mouse_over and Globals.can_move:
-		#Globals.set_active_state(Globals.gamestate.SPEAK)
+		Globals.set_active_state(Globals.gamestate.SPEAK)
 		take_item()
-		#DialogueManager.show_example_dialogue_balloon(load(resource), "start")
+		DialogueManager.show_example_dialogue_balloon(load(resource), item_name.replace(" ",""))
 
 
 func _on_mouse_entered() -> void:
@@ -32,11 +32,6 @@ func _on_mouse_entered() -> void:
 func _on_mouse_exited() -> void:
 	is_mouse_over = false
 	Input.set_custom_mouse_cursor(Globals.arrow)
-
-#func test(x : Resource) -> void:
-	#if x.resource_path == resource:
-		#self.visible = true
-		#Globals.set_active_state(Globals.gamestate.MOVE)
 
 func set_item(naem: String):
 	item_name = naem
@@ -62,6 +57,7 @@ func take_item() -> void:
 	self.visible = false
 	Globals.inventory.append(item_name)
 	Globals.items.emit(item_name)
+	Globals.set_active_state(Globals.gamestate.SPEAK)
 	if Globals.item1 == "":
 		Globals.item1 = item_name
 	elif Globals.item2 == "":
@@ -75,3 +71,7 @@ func turn_off_lights() -> void:
 	%Light3.visible = false
 	%Light1.visible = false
 	%Light2.visible = false
+
+func test(x : Resource) -> void:
+	if x.resource_path == resource:
+		Globals.set_active_state(Globals.gamestate.MOVE)

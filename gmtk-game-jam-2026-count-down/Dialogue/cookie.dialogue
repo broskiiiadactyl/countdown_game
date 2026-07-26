@@ -42,10 +42,6 @@ while CharacterGlobals.characters["Cookie"].has_met == false:
 	=> nuetral
 - Where were you...
 	=> timesegments
-- Count down once.
-	Cookie: I'm counting down.
-	do Globals.count_down(1, "count_down_once")
-	=> nuetral
 - That's all. (Leave)
 	=> END
 
@@ -76,7 +72,7 @@ while CharacterGlobals.characters["Cookie"].has_met == false:
 #did you know toby fox used one giant match case for the entirety of the homsetuck dialogue wow
 match Globals.inventory.size()
 	when 0
-		[color=sky_blue]You don't have anything. Maybe there are things to find in the Manor...?[/color]
+		You don't have anything. Maybe there are things to find in the Manor...?
 		- Go back
 			=> nuetral
 
