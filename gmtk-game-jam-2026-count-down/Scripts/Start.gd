@@ -14,6 +14,9 @@ func _ready() -> void:
 
 func _on_button_pressed() -> void:
 	Globals.start.emit()
+	%Start.process_mode = Node.PROCESS_MODE_DISABLED
+	%Start.visible = false
+	%Load.visible = true
 
 func turn_off() -> void:
 	var tween = create_tween()

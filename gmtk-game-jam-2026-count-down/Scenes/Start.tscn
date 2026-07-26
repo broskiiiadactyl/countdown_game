@@ -143,17 +143,18 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(0, 350)
 layout_mode = 2
 
-[node name="FirstHint" type="Label" parent="JMenu/MarginContainer/LPage/MarginContainer" unique_id=1162005031]
+[node name="Load" type="Label" parent="JMenu/MarginContainer/LPage/MarginContainer" unique_id=1162005031]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
-text = "Play hints will go here... probably"
+text = "Loading..."
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="Button" type="Button" parent="JMenu/MarginContainer/LPage/MarginContainer" unique_id=163417159]
+[node name="Start" type="Button" parent="JMenu/MarginContainer/LPage/MarginContainer" unique_id=163417159]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -171,5 +172,5 @@ max_value = 1.0
 step = 0.01
 script = ExtResource("5_45hv8")
 
-[connection signal="pressed" from="JMenu/MarginContainer/LPage/MarginContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="JMenu/MarginContainer/LPage/MarginContainer/Start" to="." method="_on_button_pressed"]
 [connection signal="value_changed" from="JMenu/MarginContainer/LPage/Volume" to="JMenu/MarginContainer/LPage/Volume" method="_on_value_changed"]
