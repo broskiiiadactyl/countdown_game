@@ -53,7 +53,11 @@ func _ready() -> void:
 	
 	%Catch.mouse_filter = Control.MOUSE_FILTER_IGNORE
 
-func _process(delta: float) -> void:
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_accept"):
+		get_tree().reload_current_scene()
+
+func _process(_delta: float) -> void:
 	if Globals.can_move == false:
 		Input.set_custom_mouse_cursor(Globals.arrow)
 

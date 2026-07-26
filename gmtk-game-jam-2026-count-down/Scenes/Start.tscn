@@ -1,28 +1,10 @@
-[gd_scene format=3 uid="uid://bae5obpixdshh"]
+[gd_scene format=3 uid="uid://84xnf1jf31b5"]
 
-[ext_resource type="Script" uid="uid://dfyrs0el7uq6g" path="res://Scripts/pause.gd" id="1_0pswh"]
-[ext_resource type="Texture2D" uid="uid://dmwn4bfx1xq01" path="res://Assets/Test/icon_pause.png" id="2_0pswh"]
-[ext_resource type="Texture2D" uid="uid://c26mjbwwn2ohh" path="res://Assets/Test/smaller/icon_sound.png" id="4_3fojq"]
-[ext_resource type="FontFile" uid="uid://brnnt80mky7j6" path="res://Assets/Test/NanumPenScript-Regular.ttf" id="5_2vhw8"]
-[ext_resource type="Script" uid="uid://cjjydw0rsgksj" path="res://Scripts/volume.gd" id="5_nsogc"]
-[ext_resource type="Texture2D" uid="uid://bl0c15e4cu0mg" path="res://Assets/Test/icon_cross.png" id="6_r7l8j"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_okafp"]
-resource_local_to_scene = true
-transparency = 1
-shading_mode = 0
-albedo_color = Color(1, 1, 1, 0.50980395)
-albedo_texture = ExtResource("2_0pswh")
-texture_repeat = false
-billboard_mode = 1
-
-[sub_resource type="QuadMesh" id="QuadMesh_4xnl1"]
-resource_local_to_scene = true
-material = SubResource("StandardMaterial3D_okafp")
-size = Vector2(0.05, 0.05)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_x6005"]
-size = Vector3(0.044677734, 0.04321289, 0.001)
+[ext_resource type="Script" uid="uid://c0fvq4ex1wf40" path="res://Scripts/Start.gd" id="1_lmkek"]
+[ext_resource type="FontFile" uid="uid://brnnt80mky7j6" path="res://Assets/Test/NanumPenScript-Regular.ttf" id="3_7aetl"]
+[ext_resource type="Texture2D" uid="uid://c26mjbwwn2ohh" path="res://Assets/Test/smaller/icon_sound.png" id="4_27w08"]
+[ext_resource type="Script" uid="uid://cjjydw0rsgksj" path="res://Scripts/volume.gd" id="5_45hv8"]
+[ext_resource type="Texture2D" uid="uid://bl0c15e4cu0mg" path="res://Assets/Test/icon_cross.png" id="6_yf7sp"]
 
 [sub_resource type="DPITexture" id="DPITexture_nsogc"]
 _source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><circle cx=\"8\" cy=\"8\" r=\"7\" fill=\"#fefefe\" fill-opacity=\".75\"/></svg>
@@ -77,7 +59,7 @@ corner_radius_bottom_left = 4
 corner_detail = 6
 
 [sub_resource type="Theme" id="Theme_e0jm0"]
-default_font = ExtResource("5_2vhw8")
+default_font = ExtResource("3_7aetl")
 default_font_size = 64
 HSlider/constants/center_grabber = 0
 HSlider/constants/grabber_offset = 0
@@ -94,18 +76,7 @@ HSlider/styles/slider = SubResource("StyleBoxFlat_r7l8j")
 size = Vector2(97.49951, 102.00001)
 
 [node name="PauseMenu" type="Node3D" unique_id=1851798099]
-script = ExtResource("1_0pswh")
-
-[node name="Icon" type="MeshInstance3D" parent="." unique_id=1206285594]
-unique_name_in_owner = true
-mesh = SubResource("QuadMesh_4xnl1")
-
-[node name="IconArea" type="Area3D" parent="Icon" unique_id=840845887]
-unique_name_in_owner = true
-
-[node name="IconColl" type="CollisionShape3D" parent="Icon/IconArea" unique_id=1534128127]
-unique_name_in_owner = true
-shape = SubResource("BoxShape3D_x6005")
+script = ExtResource("1_lmkek")
 
 [node name="JMenu" type="Control" parent="." unique_id=64371072]
 unique_name_in_owner = true
@@ -166,9 +137,9 @@ layout_mode = 2
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CluesTitle" type="Label" parent="JMenu/MarginContainer/LPage" unique_id=1271017074]
+[node name="Title" type="Label" parent="JMenu/MarginContainer/LPage" unique_id=1271017074]
 layout_mode = 2
-text = "Paused"
+text = "COUNTDOWN"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -178,6 +149,7 @@ layout_mode = 2
 
 [node name="FirstHint" type="Label" parent="JMenu/MarginContainer/LPage/MarginContainer" unique_id=1162005031]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "Play hints will go here... probably"
@@ -189,11 +161,11 @@ autowrap_mode = 2
 custom_minimum_size = Vector2(500, 100)
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_icons/grabber = ExtResource("4_3fojq")
-theme_override_icons/grabber_highlight = ExtResource("4_3fojq")
+theme_override_icons/grabber = ExtResource("4_27w08")
+theme_override_icons/grabber_highlight = ExtResource("4_27w08")
 max_value = 1.0
 step = 0.01
-script = ExtResource("5_nsogc")
+script = ExtResource("5_45hv8")
 
 [node name="Exit" type="Control" parent="JMenu" unique_id=2046026006]
 unique_name_in_owner = true
@@ -207,7 +179,7 @@ offset_bottom = 51.0
 unique_name_in_owner = true
 position = Vector2(1087.0001, 57)
 scale = Vector2(0.6666667, 0.6666667)
-texture = ExtResource("6_r7l8j")
+texture = ExtResource("6_yf7sp")
 
 [node name="ExitArea" type="Area2D" parent="JMenu/Exit/ExitIMG" unique_id=765902895]
 scale = Vector2(0.9999999, 0.9999999)
@@ -217,8 +189,6 @@ position = Vector2(-0.75, 1.5)
 scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("RectangleShape2D_4xnl1")
 
-[connection signal="mouse_entered" from="Icon/IconArea" to="." method="_on_pause_area_mouse_entered"]
-[connection signal="mouse_exited" from="Icon/IconArea" to="." method="_on_pause_area_mouse_exited"]
 [connection signal="value_changed" from="JMenu/MarginContainer/LPage/Volume" to="JMenu/MarginContainer/LPage/Volume" method="_on_value_changed"]
 [connection signal="mouse_entered" from="JMenu/Exit/ExitIMG/ExitArea" to="." method="_on_exit_area_mouse_entered"]
 [connection signal="mouse_exited" from="JMenu/Exit/ExitIMG/ExitArea" to="." method="_on_exit_area_mouse_exited"]
