@@ -135,7 +135,7 @@ vertical_alignment = 1
 
 [node name="Title" type="Label" parent="JMenu/MarginContainer/LPage" unique_id=1271017074]
 layout_mode = 2
-text = "COUNTDOWN"
+text = "Minutes to Midnight"
 horizontal_alignment = 1
 vertical_alignment = 1
 
