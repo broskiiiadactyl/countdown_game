@@ -11,7 +11,7 @@ var hour = Globals.current_time
 var hour_text : String = "The clock strikes a new hour."
 var hour_remain : String = ""
 
-var hint1 : String = ""
+var hint1 : String = "You will only have 1 chance to accuse."
 var hint2 : String = ""
 var hint3 : String = ""
 
@@ -36,11 +36,11 @@ func play_hint(num : int) -> void:
 	hint_screen.visible = true
 	hour_lab.visible = true
 	var tween = create_tween()
-	tween.tween_property(bg, "modulate", Color(0,0,0,1.0), 0.25)
+	tween.tween_property(bg, "modulate", Color(0,0,0,1.0), 0.5)
 	await tween.finished
 	
 	var tween5 = create_tween()
-	tween5.tween_property(hour_lab, "modulate", Color(1,1,1,1.0), 0.5)
+	tween5.tween_property(hour_lab, "modulate", Color(1,1,1,1.0), 0.25)
 	
 	await get_tree().create_timer(2.0).timeout
 	
@@ -57,9 +57,12 @@ func play_hint(num : int) -> void:
 	await get_tree().create_timer(2.0).timeout
 	
 	var tween2 = create_tween()
-	tween2.tween_property(bg, "modulate", Color(0,0,0,1.0), 0.5)
-	tween2.parallel().tween_property(hint_lab, "modulate", Color(1,1,1,0.0), 0.25)
-	Globals.game_ready.emit()
+	tween2.tween_property(hint_lab, "modulate", Color(0,0,0,1.0), 0.25)
 	await tween2.finished
+	
+	var tween6 = create_tween()
+	tween6.parallel().tween_property(bg, "modulate", Color(1,1,1,0.0), 0.5)
+	Globals.game_ready.emit()
+	await tween6.finished
 	hint_screen.visible = false
 	hint_lab.visible = false

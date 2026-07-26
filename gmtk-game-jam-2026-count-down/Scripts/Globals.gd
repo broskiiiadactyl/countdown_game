@@ -116,3 +116,6 @@ func toggle_characters(character: String):
 			characters.emit(character)
 		_:
 			pass
+
+func game_end(answer) ->void:
+	pass
