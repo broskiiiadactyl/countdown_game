@@ -13,7 +13,8 @@ while CharacterGlobals.characters["Cookie"].has_met == false:
 % Cookie: Murder? I hardly know her.[br][font_size=18]Is that anything?[/font_size] 
 % Cookie: When will the suffering end?
 - Who do you think did it?
-	Cookie: Maybe it was a cabal?[br]I swear everywhere I look there's cars with 6, sometimes 7 people gettin' out of em.
+	Cookie: It could have been anyone! [rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Honk Honk![/rainbow]
+	Cookie: I have seen cars that break the rules of euclidian space!
 	Cookie: This world has horrors beyond even my comprehension.
 	=> nuetral
 - Tell me about yourself.
@@ -123,7 +124,8 @@ match Globals.inventory.size()
 
 ~ checkitem1
 if Globals.item1 == CharacterGlobals.characters["Cookie"].item:
-	Cookie: What even is ownership? [rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Honk Honk![/rainbow][br]Yes, that's mine.
+	Cookie: What even is ownership? [rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]Honk Honk![/rainbow]
+	Cookie: Yes, that's mine. I must have lost it earlier...
 	do Globals.blocks.append("The "+Globals.item1+" belongs to Cookie.")
 	$> Globals.update_blocks.emit()
 	do Globals.count_down(1, "cookie_item")
