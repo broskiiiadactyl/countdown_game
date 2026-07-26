@@ -126,10 +126,10 @@ if Globals.item1 == CharacterGlobals.characters["Mike"].item:
 	Mike: Oh my god, [wave amp=50.0 freq=5.0 connected=1]YES[/wave]! I had it with me earlier! I've been looking for it everywhere. Thaaaaaaaanks~
 	do Globals.blocks.append("The "+Globals.item1+" belongs to Mike.")
 	$> Globals.update_blocks.emit()
-	do Globals.count_down(1, "jerry_item")
+	do Globals.count_down(1, "mike_item")
 else
 	Mike:[wave amp=50.0 freq=5.0 connected=1] Uhhh...[/wave]Yeeeees? I mean... it isn't. I have no idea what that is. But if I say it's mine, will that help?
-	do Globals.count_down(1, "jerry_false1")
+	do Globals.count_down(1, "mike_false1")
 => nuetral
 
 ~ checkitem2
@@ -137,10 +137,10 @@ if Globals.item2 == CharacterGlobals.characters["Mike"].item:
 	Mike: Oh my god, [wave amp=50.0 freq=5.0 connected=1]YES[/wave]! I had it with me earlier! I've been looking for it everywhere. Thaaaaaaaanks~
 	do Globals.blocks.append("The "+Globals.item2+" belongs to Mike.")
 	$> Globals.update_blocks.emit()
-	do Globals.count_down(1, "jerry_item")
+	do Globals.count_down(1, "mike_item")
 else
 	Mike:[wave amp=50.0 freq=5.0 connected=1] Uhhh...[/wave]Yeeeees? I mean... it isn't. I have no idea what that is. But if I say it's mine, will that help?
-	do Globals.count_down(1, "jerry_false2")
+	do Globals.count_down(1, "mike_false2")
 => nuetral
 
 ~ checkitem3
@@ -148,10 +148,10 @@ if Globals.item3 == CharacterGlobals.characters["Mike"].item:
 	Mike: Oh my god, [wave amp=50.0 freq=5.0 connected=1]YES[/wave]! I had it with me earlier! I've been looking for it everywhere. Thaaaaaaaanks~
 	do Globals.blocks.append("The "+Globals.item3+" belongs to Mike.")
 	$> Globals.update_blocks.emit()
-	do Globals.count_down(1, "jerry_item")
+	do Globals.count_down(1, "mike_item")
 else
 	Mike: [wave amp=50.0 freq=5.0 connected=1] Uhhh...[/wave]Yeeeees? I mean... it isn't. I have no idea what that is. But if I say it's mine, will that help?
-	do Globals.count_down(1, "jerry_false3")
+	do Globals.count_down(1, "mike_false3")
 => nuetral
 
 ~ checkitem4
@@ -159,8 +159,8 @@ if Globals.item4 == CharacterGlobals.characters["Mike"].item:
 	Mike: Oh my god, [wave amp=50.0 freq=5.0 connected=1]YES[/wave]! I had it with me earlier! I've been looking for it everywhere. Thaaaaaaaanks~
 	do Globals.blocks.append("The "+Globals.item4+" belongs to Mike.")
 	$> Globals.update_blocks.emit()
-	do Globals.count_down(1, "jerry_item")
+	do Globals.count_down(1, "mike_item")
 else
 	Mike:[wave amp=50.0 freq=5.0 connected=1] Uhhh...[/wave]Yeeeees? I mean... it isn't. I have no idea what that is. But if I say it's mine, will that help?
-	do Globals.count_down(1, "jerry_false4")
+	do Globals.count_down(1, "mike_false4")
 => nuetral

@@ -48,7 +48,7 @@ while CharacterGlobals.victim.has_met == false:
 	do Globals.count_down(1, "body_die")
 	$> Globals.update_blocks.emit()
 - What should I do?
-	[color=sky_blue]As always, the body does not tell you how to do your job.[/color]
+	As always, the body does not tell you how to do your job.
 	=> nuetral
 - I know who killed you.
 	[color=crimson][shake]Are you certain?[/shake][br]Once you make an accusation, there is no going back.[/color]
