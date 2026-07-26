@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bgsp08iy42s0p"
+path="res://.godot/imported/FAILURE- 850020__yoshicakes77__failure.wav-08625de3c7c3372c97f65b0c04c19c3b.sample"
+
+[deps]
+
+source_file="res://Assets/sounds/SFX/FAILURE- 850020__yoshicakes77__failure.wav"
+dest_files=["res://.godot/imported/FAILURE- 850020__yoshicakes77__failure.wav-08625de3c7c3372c97f65b0c04c19c3b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -34,34 +34,39 @@ func it_begins(answer) -> void:
 		snark = "[wave]Solid detective work, but we both know you can do it better.[/wave]"
 		
 	if Globals.hint3_played == true:
+		%Win.play()
 		grade = "[color=green]C[/color]"
 		snark = "[wave]C's get degrees! Maybe next time put it together a little faster. Be careful though, it won't be the same person![/wave]"
 		
 	if answer != murderer:
+		%Lose.play()
 		result = "You Lose!"
 		grade = "[color=crimson]F[/color]"
 		snark = "[wave]Oof! Let the murderers get one over on ya, huh? Happens to the best of us. Not me, though. I'd just win![/wave]"
 	
 	if Globals.current_time == Globals.MAX_TIME:
-		result = "You Guessed![br][rainbow]Honk Honk![/rainbow]"
+		result = "You Guessed![br][rainbow][font_size=24]Honk Honk![/font_size][/rainbow]"
 		grade = "[color=crimson]Huge L![/color]"
 		snark = "[wave]We agree that gambling is fun! Please play our game![/wave]"
 	
-	match answer:
-		"Cookie":
-			%port.texture = load("res://Assets/Characters/images/cookie.png")
-		"Mike":
-			%port.texture = load("res://Assets/Characters/images/mike.png")
-		"Jerry":
-			%port.texture = load("res://Assets/Characters/images/jerry.png")
-		"Clay":
-			%port.texture = load("res://Assets/Characters/images/clay.png")
-		_:
-			pass
 	
 	#change all the text in the containers
 	accusedText.text = answer
-	murdererText.text = CharacterGlobals.murderer
+	if Globals.current_time != Globals.MAX_TIME:
+		murdererText.text = CharacterGlobals.murderer
+		match murderer:
+			"Cookie":
+				%port.texture = load("res://Assets/Characters/images/cookie.png")
+			"Mike":
+				%port.texture = load("res://Assets/Characters/images/mike.png")
+			"Jerry":
+				%port.texture = load("res://Assets/Characters/images/jerry.png")
+			"Clay":
+				%port.texture = load("res://Assets/Characters/images/clay.png")
+			_:
+				pass
+	else:
+		murdererText.text = "? ? ?"
 	gradeText.text = grade
 	snarkText.text = snark
 	resultText.text = result

@@ -59,6 +59,8 @@ func _unhandled_input(event: InputEvent) -> void:
 func _process(_delta: float) -> void:
 	if Globals.can_move == false:
 		Input.set_custom_mouse_cursor(Globals.arrow)
+	if $BGM.playing != true:
+		$BGM.play()
 
 #handle literal movement between rooms
 func transition_to_room(room : String) -> void:
@@ -317,7 +319,7 @@ func place_things() -> void:
 	body.global_position = room_node2.body_pos
 	body.look_at(looking2)
 	
-	Globals.blocks.append("The Cound was found dead in the " + room_name2.trim_prefix("%") +".")
+	Globals.blocks.append("The Count was found dead in the " + room_name2.trim_prefix("%") +".")
 	Globals.update_blocks.emit()
 	
 	#Place Items

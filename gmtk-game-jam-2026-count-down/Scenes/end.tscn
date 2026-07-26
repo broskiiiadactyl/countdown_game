@@ -3,7 +3,8 @@
 [ext_resource type="Script" uid="uid://c2fcq1vm48te1" path="res://end.gd" id="1_xmt8n"]
 [ext_resource type="Theme" uid="uid://df22axcv83ry" path="res://text theme.tres" id="2_02kpm"]
 [ext_resource type="Texture2D" uid="uid://bol1eqx7ok4io" path="res://Assets/Characters/images/cat.png" id="2_ql4ve"]
-[ext_resource type="Texture2D" uid="uid://ph0xfaxur5n8" path="res://Assets/Characters/images/clay.png" id="3_02kpm"]
+[ext_resource type="AudioStream" uid="uid://b2fxe2mnv8a8d" path="res://Assets/sounds/SFX/SUCCESS - 580310__colorscrimsontears__fanfare-2-rpg.wav" id="5_t3us6"]
+[ext_resource type="AudioStream" uid="uid://djv4mun4d8bco" path="res://Assets/sounds/SFX/FAILURE- 631984__el_boss__game-puzzle-almost-solved-failed-fakeout.wav" id="6_t3us6"]
 
 [node name="End" type="Node3D" unique_id=551840597]
 visible = false
@@ -44,7 +45,6 @@ offset_left = 158.0
 offset_top = 138.0
 offset_right = 483.0
 offset_bottom = 463.0
-texture = ExtResource("3_02kpm")
 expand_mode = 2
 stretch_mode = 5
 
@@ -161,3 +161,13 @@ theme_override_font_sizes/normal_font_size = 72
 bbcode_enabled = true
 text = "placeholder"
 fit_content = true
+
+[node name="Win" type="AudioStreamPlayer3D" parent="." unique_id=11795625]
+unique_name_in_owner = true
+stream = ExtResource("5_t3us6")
+volume_db = -10.0
+
+[node name="Lose" type="AudioStreamPlayer3D" parent="." unique_id=638726780]
+unique_name_in_owner = true
+stream = ExtResource("6_t3us6")
+volume_db = -10.0

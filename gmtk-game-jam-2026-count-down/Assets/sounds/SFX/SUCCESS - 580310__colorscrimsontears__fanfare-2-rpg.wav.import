@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b2fxe2mnv8a8d"
+path="res://.godot/imported/SUCCESS - 580310__colorscrimsontears__fanfare-2-rpg.wav-254be588c3dd23c54ea4500e83592f55.sample"
+
+[deps]
+
+source_file="res://Assets/sounds/SFX/SUCCESS - 580310__colorscrimsontears__fanfare-2-rpg.wav"
+dest_files=["res://.godot/imported/SUCCESS - 580310__colorscrimsontears__fanfare-2-rpg.wav-254be588c3dd23c54ea4500e83592f55.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
