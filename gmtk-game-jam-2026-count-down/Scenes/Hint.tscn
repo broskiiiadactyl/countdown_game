@@ -57,6 +57,7 @@ vertical_alignment = 1
 
 [node name="Hint" type="RichTextLabel" parent="HintScreen/Text" unique_id=1074710762]
 unique_name_in_owner = true
+visible = false
 modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(1000, 500)
 layout_mode = 2

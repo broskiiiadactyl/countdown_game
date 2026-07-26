@@ -9,6 +9,7 @@ script = ExtResource("1_xmt8n")
 
 [node name="EndControl" type="Control" parent="." unique_id=1908579181]
 unique_name_in_owner = true
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1152.0
@@ -23,32 +24,12 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.012617188, 0.012617188, 0.012617188, 1)
 
-[node name="AccusedBox" type="VBoxContainer" parent="EndControl" unique_id=1646426992]
-layout_mode = 0
-offset_left = 97.0
-offset_top = 81.0
-offset_right = 299.0
-offset_bottom = 168.0
-
-[node name="AccusedText" type="RichTextLabel" parent="EndControl/AccusedBox" unique_id=247423046]
-layout_mode = 2
-theme = ExtResource("2_02kpm")
-theme_override_font_sizes/normal_font_size = 32
-text = "You Accused:"
-fit_content = true
-
-[node name="Accused" type="RichTextLabel" parent="EndControl/AccusedBox" unique_id=149685079]
-layout_mode = 2
-theme = ExtResource("2_02kpm")
-theme_override_font_sizes/normal_font_size = 32
-fit_content = true
-
 [node name="MurderBox" type="VBoxContainer" parent="EndControl" unique_id=1229304540]
 layout_mode = 0
-offset_left = 99.0
-offset_top = 193.0
-offset_right = 301.0
-offset_bottom = 280.0
+offset_left = 93.0
+offset_top = 81.0
+offset_right = 295.0
+offset_bottom = 168.0
 
 [node name="MurderText" type="RichTextLabel" parent="EndControl/MurderBox" unique_id=1572922501]
 layout_mode = 2
@@ -61,14 +42,39 @@ fit_content = true
 layout_mode = 2
 theme = ExtResource("2_02kpm")
 theme_override_font_sizes/normal_font_size = 32
+text = "placeholder"
+fit_content = true
+
+[node name="TextureRect" type="TextureRect" parent="EndControl/MurderBox" unique_id=1179630521]
+layout_mode = 2
+
+[node name="AccusedBox" type="VBoxContainer" parent="EndControl" unique_id=1646426992]
+layout_mode = 0
+offset_left = 93.0
+offset_top = 358.0
+offset_right = 295.0
+offset_bottom = 445.0
+
+[node name="AccusedText" type="RichTextLabel" parent="EndControl/AccusedBox" unique_id=247423046]
+layout_mode = 2
+theme = ExtResource("2_02kpm")
+theme_override_font_sizes/normal_font_size = 32
+text = "You Accused:"
+fit_content = true
+
+[node name="Accused" type="RichTextLabel" parent="EndControl/AccusedBox" unique_id=149685079]
+layout_mode = 2
+theme = ExtResource("2_02kpm")
+theme_override_font_sizes/normal_font_size = 32
+text = "placeholder"
 fit_content = true
 
 [node name="GradeBox" type="VBoxContainer" parent="EndControl" unique_id=263095082]
 layout_mode = 0
-offset_left = 95.0
-offset_top = 329.0
-offset_right = 297.0
-offset_bottom = 457.0
+offset_left = 690.0
+offset_top = 242.0
+offset_right = 892.0
+offset_bottom = 370.0
 
 [node name="GradeText" type="RichTextLabel" parent="EndControl/GradeBox" unique_id=985742775]
 layout_mode = 2
@@ -82,6 +88,7 @@ layout_mode = 2
 theme = ExtResource("2_02kpm")
 theme_override_font_sizes/normal_font_size = 64
 bbcode_enabled = true
+text = "P"
 fit_content = true
 horizontal_alignment = 1
 
@@ -103,6 +110,7 @@ layout_mode = 2
 theme = ExtResource("2_02kpm")
 theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
+text = "lorem ipsum dolor sit etc etc"
 fit_content = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="EndControl" unique_id=959601609]
@@ -130,4 +138,5 @@ grow_horizontal = 0
 theme = ExtResource("2_02kpm")
 theme_override_font_sizes/normal_font_size = 72
 bbcode_enabled = true
+text = "placeholder"
 fit_content = true
